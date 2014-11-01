@@ -7,7 +7,6 @@ public class _437C_The_Child_and_Toy {
 	int[] a = new int[n];
 	for (int i = 0; i < n; i++) {
 	    a[i] = in.nextInt();
-	    // /123
 	}
     }
 }
