@@ -1,0 +1,1 @@
+java -jar "D:\Lab\Eclipse\WorkSpace\javaProject\Contests\URLCodeforcesClassName.jar"
