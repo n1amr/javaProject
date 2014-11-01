@@ -8,5 +8,6 @@ public class _437C_The_Child_and_Toy {
 	for (int i = 0; i < n; i++) {
 	    a[i] = in.nextInt();
 	}
+	// Final
     }
 }
