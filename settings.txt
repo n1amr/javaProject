@@ -1,2 +1,0 @@
-#Sat Oct 25 16:58:58 EET 2014
-browser=C\:\\Users\\N1amr\\Documents\\AutoHotkey.exe
