@@ -14,7 +14,7 @@ public class URLCodeforcesClassName {
 	String url = (String) Toolkit.getDefaultToolkit().getSystemClipboard()
 		.getData(DataFlavor.stringFlavor);
 	String[] segments = url.split("/");
-	String problemNumber = segments[segments.length - 2]
+	String problemNumber = segments[segments.length - 3]
 		+ segments[segments.length - 1];
 
 	System.out.println("Connecting...");
@@ -27,6 +27,7 @@ public class URLCodeforcesClassName {
 
 	String newName = problemCompleteName.trim().replaceAll(
 		"^|([^a-zA-Z0-9]+)", "_");
+	System.out.println(newName);
 	File newFile = new File(projectPath + "src/" + newName + ".java");
 	newFile.createNewFile();
 	System.out.println("New path: " + newFile.getPath());
