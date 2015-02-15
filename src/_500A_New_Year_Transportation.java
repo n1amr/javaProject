@@ -1,7 +1,7 @@
 import java.io.*;
 import java.util.*;
 
-public class Codeforces {
+public class _500A_New_Year_Transportation {
     public static Scanner in = new Scanner(new BufferedReader(
 	    new InputStreamReader(System.in)));
     public static PrintWriter out = new PrintWriter(new BufferedWriter(

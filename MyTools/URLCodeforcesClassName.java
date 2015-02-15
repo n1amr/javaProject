@@ -14,7 +14,7 @@ public class URLCodeforcesClassName {
 	String url = (String) Toolkit.getDefaultToolkit().getSystemClipboard()
 		.getData(DataFlavor.stringFlavor);
 	String[] segments = url.split("/");
-	String problemNumber = segments[segments.length - 3]
+	String problemNumber = segments[segments.length - 2]
 		+ segments[segments.length - 1];
 
 	System.out.println("Connecting...");
