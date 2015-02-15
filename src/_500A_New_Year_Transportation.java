@@ -12,7 +12,8 @@ public class _500A_New_Year_Transportation {
 	int[] a = new int[n];
 	for (int i = 0; i < n; i++) {
 	    a[i] = in.nextInt();
-	    ;
 	}
+	out.println(Arrays.toString(a));
+	out.close();
     }
 }

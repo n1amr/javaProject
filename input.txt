@@ -1,6 +1,6 @@
-2 3
-aaaaa
-acacaca
-aabaa
-ccacacc
-caaac
+5
+1
+2
+3
+4
+5
