@@ -12,8 +12,8 @@ public class No_to_Palindromes {
 		do {
 			intValue++;
 			isChanged = true;
-			s = getString(intValue, length, maxChar);
-		} while (!isValid(s) && intValue < (Math.pow(maxChar, length) - 1));
+	    s = getString(intValue, length, maxChar);
+	} while (!isValid(s) && intValue < (Math.pow(maxChar, length) - 1));
 		if (isValid(s) && isChanged && intValue < (Math.pow(maxChar, length))) {
 			System.out.println(s);
 		} else

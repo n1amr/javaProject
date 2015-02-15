@@ -2,14 +2,8 @@ import java.io.*;
 import java.util.*;
 
 //Make Scanners and Writers "public static"
-
-//public static Scanner in = new Scanner(new BufferedReader(
-//	    new InputStreamReader(System.in)));
-//public static PrintWriter out = new PrintWriter(new BufferedWriter(
-//	    new OutputStreamWriter(System.out)));
-
 public class UseFileStreams {
-    public static void main(String[] args) throws Exception {
+    public static void main(String[] args) throws FileNotFoundException {
 	_514C_Watto_and_Mechanism.in = new Scanner(new BufferedInputStream(
 		new FileInputStream(new File("input.txt"))));
 	_514C_Watto_and_Mechanism.out = new PrintWriter(
