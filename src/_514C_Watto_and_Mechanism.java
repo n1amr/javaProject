@@ -2,14 +2,12 @@ import java.io.*;
 import java.util.*;
 
 public class _514C_Watto_and_Mechanism {
-    public static PrintWriter out;
+    public static Scanner in = new Scanner(new BufferedReader(
+	    new InputStreamReader(System.in)));
+    public static PrintWriter out = new PrintWriter(new BufferedWriter(
+	    new OutputStreamWriter(System.out)));
 
     public static void main(String[] args) {
-	Scanner in = new Scanner(new BufferedReader(new InputStreamReader(
-		System.in)));
-	out = new PrintWriter(new BufferedWriter(new OutputStreamWriter(
-		System.out)));
-
 	HashMap<Integer, String> inputs = new HashMap<Integer, String>();
 	HashMap<String, ArrayList<String>> firstHalves = new HashMap<String, ArrayList<String>>();
 	HashMap<String, ArrayList<String>> lastHalves = new HashMap<String, ArrayList<String>>();
