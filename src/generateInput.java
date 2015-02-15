@@ -1,11 +1,11 @@
 import java.io.*;
 
 public class generateInput {
-    public static void main(String[] args) throws FileNotFoundException {
-	PrintWriter out = new PrintWriter(new BufferedOutputStream(
-		new FileOutputStream(new File("input.txt"))));
-	out.println("15000 15000");
-	for (int i = 0; i < 30000; i++) {
+
+    // out.print("Hello World");
+    private static void write() {
+	out.println("1500 1500");
+	for (int i = 0; i < 3000; i++) {
 	    char[] x = new char[20];
 	    int rndd = 5;
 	    for (int j = 0; j < rndd; j++) {
@@ -16,6 +16,23 @@ public class generateInput {
 	    }
 	    out.println(x);
 	}
-	out.close();
     }
+
+    public static PrintWriter out;
+
+    public static void main(String[] args) throws Exception {
+	File mFile = new File("input.txt");
+	mFile.createNewFile();
+	out = new PrintWriter(new BufferedOutputStream(new FileOutputStream(
+		mFile)));
+
+	long start = System.currentTimeMillis();
+	write();
+	out.close();
+	System.out.println("DONE!");
+	System.out.printf("Time: %d ms, memory: %d KB",
+		System.currentTimeMillis() - start, mFile.length() * 16 / 1024);
+
+    }
+
 }
