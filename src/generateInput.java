@@ -4,8 +4,8 @@ public class generateInput {
     public static void main(String[] args) throws FileNotFoundException {
 	PrintWriter out = new PrintWriter(new BufferedOutputStream(
 		new FileOutputStream(new File("input.txt"))));
-	out.println("1500 1500");
-	for (int i = 0; i < 3000; i++) {
+	out.println("15000 15000");
+	for (int i = 0; i < 30000; i++) {
 	    char[] x = new char[20];
 	    int rndd = 5;
 	    for (int j = 0; j < rndd; j++) {
