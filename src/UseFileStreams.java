@@ -10,13 +10,12 @@ import java.util.*;
 
 public class UseFileStreams {
     public static void main(String[] args) throws Exception {
-	_486A_Calculating_Function.in = new Scanner(new BufferedInputStream(
+	_515D_Drazil_and_Tiles.in = new Scanner(new BufferedInputStream(
 		new FileInputStream(new File("input.txt"))));
-	_486A_Calculating_Function.out = new PrintWriter(
-		new BufferedOutputStream(new FileOutputStream(new File(
-			"output.txt"))));
+	_515D_Drazil_and_Tiles.out = new PrintWriter(new BufferedOutputStream(
+		new FileOutputStream(new File("output.txt"))));
 	long start = System.currentTimeMillis();
-	_486A_Calculating_Function.main(null);
+	_515D_Drazil_and_Tiles.main(null);
 	System.out.println("DONE!");
 	System.out.printf("Time: %d ms, memory: %d KB",
 		System.currentTimeMillis() - start, 0);
