@@ -18,11 +18,6 @@ public class _518D_Ilya_and_Escalator {
 		    DP[i + 1][j + 1] += DP[i][j] * p;
 		    DP[i + 1][j] += DP[i][j] * (1 - p);
 		}
-		System.out.println((i + 1) + "," + (j + 1));
-		for (int j2 = 0; j2 < DP.length; j2++) {
-		    System.out.println(Arrays.toString(DP[j2]));
-		}
-		System.out.println("_________________");
 	    }
 	double sum = 0;
 	for (int i = 0; i <= n; i++)
