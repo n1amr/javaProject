@@ -4,34 +4,37 @@ import java.util.Scanner;
 public class Test {
     public static void main(String args[]) {
 	Scanner in = new Scanner(System.in);
-	int w[] = new int[26];
-	for (int i = 0; i < 26; i++)
+	int[] w = new int[256];
+	for (int i = 'a'; i <= 'z'; i++)
 	    w[i] = in.nextInt();
 	String s = in.next();
-	int n = s.length();
+	char c;
+	long sum[] = new long[s.length()];
+	HashMap<Character, HashMap<Long, Long>> mp = new HashMap<Character, HashMap<Long, Long>>();
+	for (c = 'a'; c <= 'z'; c++)
+	    mp.put(c, new HashMap<Long, Long>());
 
 	long ans = 0;
 
-	HashMap<Long, long[]> map = new HashMap<Long, long[]>();
-	long sum[] = new long[n];
-	long p[];
-	for (int i = 0; i < n; i++) {
-	    int cIndex = s.charAt(i) - 'a';
-	    if (i == 0)
-		sum[i] = w[cIndex];
+	long p;
+	for (int i = 0; i < s.length(); i++) {
+	    c = s.charAt(i);
+	    if (i > 0)
+		sum[i] = sum[i - 1] + w[c];
 	    else
-		sum[i] = sum[i - 1] + w[cIndex];
+		sum[i] = w[c];
 
-	    if (i > 0 && map.containsKey(sum[i - 1])) {
-		p = map.get(sum[i - 1]);
-		ans += p[cIndex];
+	    HashMap<Long, Long> m = mp.get(c);
+	    if (i > 0 && m.containsKey(sum[i - 1])) {
+		p = m.get(sum[i - 1]);
+		ans += p;
 	    }
-	    if (map.containsKey(sum[i]))
-		p = map.get(sum[i]);
+	    if (m.containsKey(sum[i]))
+		p = m.get(sum[i]);
 	    else
-		p = new long[26];
-	    p[cIndex]++;
-	    map.put(sum[i], p);
+		p = 0;
+	    p++;
+	    m.put(sum[i], p);
 	}
 	System.out.println(ans);
     }
