@@ -24,7 +24,8 @@ public class _2015C_Dijkstra {
 	in.nextLong();
 	long X = in.nextLong();
 	in.nextLine();
-	String s = in.nextLine().trim();
+	String s = in.next();
+	System.err.println(s.length());
 	boolean negative = false;
 	char last = '1';
 	for (int i = 0; i < s.length(); i++) {
