@@ -4,7 +4,7 @@ import java.util.*;
 public class _2015B_Infinite_House_of_Pancakes {
     public static Scanner in;
     public static PrintWriter out;
-    public static int N = 9;
+    public static int N = 11;
 
     public static void main(String[] args) throws FileNotFoundException {
 	in = new Scanner(new BufferedInputStream(new FileInputStream(new File(
@@ -43,27 +43,33 @@ public class _2015B_Infinite_House_of_Pancakes {
 	}
 	if (max == 0)
 	    return r;
-	int[] s1 = new int[N + 1];
-	int[] s2 = new int[N + 1];
-	for (int i = 0; i < N; i++) {
-	    s1[i] = a[i + 1];
-	}
-
-	int r1 = rec(s1, r + 1);
+	int r1 = rec(eat(a), r + 1);
 	if (max < 2)
 	    return r1;
 
+	int r2 = rec(splitMax(a, max), r + 1);
+
+	return Math.min(r1, r2);
+    }
+
+    static int[] eat(int[] a) {
+	int[] s1 = new int[N + 1];
+	for (int i = 0; i < N; i++) {
+	    s1[i] = a[i + 1];
+	}
+	return s1;
+    }
+
+    static int[] splitMax(int[] a, int max) {
+	int[] s2 = new int[N + 1];
 	for (int i = 0; i < N + 1; i++) {
 	    s2[i] = a[i];
 	}
-
 	int q = max - max / 2;
 	int w = max / 2;
 	s2[max]--;
 	s2[q]++;
 	s2[w]++;
-	int r2 = rec(s2, r + 1);
-
-	return Math.min(r1, r2);
+	return s2;
     }
 }

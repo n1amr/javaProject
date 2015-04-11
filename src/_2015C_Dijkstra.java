@@ -26,26 +26,72 @@ public class _2015C_Dijkstra {
 	in.nextLine();
 	String s = in.next();
 	System.err.println(s.length());
+
+	if (found(s, X))
+	    out.println("YES");
+	else
+	    out.println("NO");
+    }
+
+    private static boolean found(String s, long X) {
 	boolean found = false;
 
 	char ans = '1';
 	boolean negative = false;
 	boolean found_i = false;
 	boolean found_j = false;
-	for (long i = 0; i < X; i++) {
-	    Object[] ret = eval(s, ans, negative, found_i, found_j);
+
+	char sans = '1';
+	boolean snegative = false;
+	Object[] ret = eval(s, ans, negative, found_i, found_j);
+	sans = (Character) ret[0];
+	snegative = (Boolean) ret[1];
+	int res = (int) (X % 4);
+	switch (res) {
+	    case 0:
+		snegative = false;
+		sans = '1';
+		break;
+	    case 2:
+		snegative = false;
+		sans = '1';
+		break;
+	    case 3:
+		snegative ^= true;
+		break;
+	}
+	if (sans != '1' || !snegative)
+	    return false;
+
+	long v = 0;
+	for (long i = 1; i < X; i++) {
+	    ret = eval(s, sans, snegative, found_i, found_j);
 	    ans = (Character) ret[0];
 	    negative = (Boolean) ret[1];
 	    found_i = (Boolean) ret[2];
 	    found_j = (Boolean) ret[3];
+	    if (found_i) {
+		v = i;
+		break;
+	    }
 	}
-	if ((negative && ans == '1') && (found_i && found_j)) {
+	ans = '1';
+	negative = false;
+	boolean found_k = false;
+	for (long j = X - 1; j >= v; j--) {
+	    for (int i = s.length() - 1; i >= 0; i--) {
+		char c = s.charAt(i);
+		negative = negative ^ sign(c, ans);
+		ans = multiply(c, ans);
+		if (ans == 'k' && !negative) {
+		    found_k = true;
+		}
+	    }
+	}
+	if ((found_i && found_k)) {
 	    found = true;
 	}
-	if (found)
-	    out.println("YES");
-	else
-	    out.println("NO");
+	return found;
     }
 
     static Object[] eval(String s, char ans, boolean negative, boolean found_i,
