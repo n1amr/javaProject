@@ -39,8 +39,9 @@ public class _2015C_Dijkstra {
 	    found_i = (Boolean) ret[2];
 	    found_j = (Boolean) ret[3];
 	}
-	if (negative && ans == '1' && found_i && found_j)
+	if ((negative && ans == '1') && (found_i && found_j)) {
 	    found = true;
+	}
 	if (found)
 	    out.println("YES");
 	else
