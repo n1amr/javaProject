@@ -1,100 +1,100 @@
-Case #1: 15 25
-Case #2: 0 0
-Case #3: 81 567
-Case #4: 181 244
-Case #5: 0 0
-Case #6: 500 500
-Case #7: 100 900
-Case #8: 75 231
-Case #9: 58 164
-Case #10: 60 194
-Case #11: 114 259
-Case #12: 108 307
-Case #13: 277 480
-Case #14: 151 494
-Case #15: 279 441
-Case #16: 133 215
-Case #17: 138 278
-Case #18: 158 423
-Case #19: 98 314
-Case #20: 141 378
-Case #21: 113 222
-Case #22: 154 317
-Case #23: 169 497
-Case #24: 139 391
-Case #25: 110 305
-Case #26: 182 510
-Case #27: 181 351
-Case #28: 119 430
-Case #29: 190 380
-Case #30: 111 194
-Case #31: 75 270
-Case #32: 156 377
-Case #33: 167 484
-Case #34: 151 349
-Case #35: 136 382
-Case #36: 145 516
-Case #37: 134 424
-Case #38: 139 399
-Case #39: 146 332
-Case #40: 119 228
-Case #41: 118 428
-Case #42: 152 393
-Case #43: 141 349
-Case #44: 204 311
-Case #45: 105 293
-Case #46: 108 314
-Case #47: 143 323
-Case #48: 198 548
-Case #49: 149 269
-Case #50: 79 261
-Case #51: 179 486
-Case #52: 113 432
-Case #53: 96 364
-Case #54: 125 376
-Case #55: 122 341
-Case #56: 220 525
-Case #57: 147 279
-Case #58: 171 331
-Case #59: 126 245
-Case #60: 212 424
-Case #61: 174 277
-Case #62: 124 366
-Case #63: 132 383
-Case #64: 130 450
-Case #65: 198 417
-Case #66: 75 309
-Case #67: 125 353
-Case #68: 121 377
-Case #69: 111 357
-Case #70: 73 315
-Case #71: 145 343
-Case #72: 149 327
-Case #73: 182 278
-Case #74: 135 402
-Case #75: 134 296
-Case #76: 185 467
-Case #77: 144 432
-Case #78: 245 547
-Case #79: 140 377
-Case #80: 178 379
-Case #81: 302 493
-Case #82: 160 339
-Case #83: 136 437
-Case #84: 110 474
-Case #85: 146 401
-Case #86: 104 258
-Case #87: 92 339
-Case #88: 210 528
-Case #89: 95 372
-Case #90: 138 376
-Case #91: 199 413
-Case #92: 157 343
-Case #93: 169 293
-Case #94: 171 389
-Case #95: 115 539
-Case #96: 177 355
-Case #97: 159 467
-Case #98: 151 338
-Case #99: 184 380
-Case #100: 196 528
+Case #1: 7
+Case #2: 18
+Case #3: 0
+Case #4: 0
+Case #5: 10
+Case #6: 0
+Case #7: 4
+Case #8: 16
+Case #9: 0
+Case #10: 0
+Case #11: 0
+Case #12: 8
+Case #13: 16
+Case #14: 0
+Case #15: 14
+Case #16: 2
+Case #17: 2
+Case #18: 0
+Case #19: 0
+Case #20: 0
+Case #21: 17
+Case #22: 14
+Case #23: 2
+Case #24: 0
+Case #25: 15
+Case #26: 7
+Case #27: 0
+Case #28: 6
+Case #29: 0
+Case #30: 4
+Case #31: 0
+Case #32: 20
+Case #33: 4
+Case #34: 8
+Case #35: 0
+Case #36: 1
+Case #37: 24
+Case #38: 0
+Case #39: 0
+Case #40: 0
+Case #41: 1
+Case #42: 22
+Case #43: 0
+Case #44: 0
+Case #45: 10
+Case #46: 6
+Case #47: 14
+Case #48: 0
+Case #49: 0
+Case #50: 0
+Case #51: 0
+Case #52: 0
+Case #53: 16
+Case #54: 0
+Case #55: 10
+Case #56: 0
+Case #57: 0
+Case #58: 7
+Case #59: 0
+Case #60: 22
+Case #61: 2
+Case #62: 17
+Case #63: 7
+Case #64: 0
+Case #65: 0
+Case #66: 15
+Case #67: 0
+Case #68: 12
+Case #69: 0
+Case #70: 2
+Case #71: 11
+Case #72: 2
+Case #73: 0
+Case #74: 0
+Case #75: 0
+Case #76: 2
+Case #77: 0
+Case #78: 0
+Case #79: 4
+Case #80: 0
+Case #81: 4
+Case #82: 0
+Case #83: 11
+Case #84: 0
+Case #85: 0
+Case #86: 0
+Case #87: 2
+Case #88: 0
+Case #89: 0
+Case #90: 0
+Case #91: 4
+Case #92: 0
+Case #93: 2
+Case #94: 16
+Case #95: 4
+Case #96: 0
+Case #97: 18
+Case #98: 2
+Case #99: 0
+Case #100: 14
