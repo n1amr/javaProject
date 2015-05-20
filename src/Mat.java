@@ -25,22 +25,12 @@ public class Mat {
 	}
     }
 
-    public static void main(String[] args) {
-	Mat X = new Mat(3, 3);
-	X.setRow(0, new float[] { 1, 2, 3 });
-	X.setRow(1, new float[] { 1, -1, 2 });
-	X.setRow(2, new float[] { 3, 1, 1 });
-	X = X.inv();
-	System.out.println(X.toString());
+    public int getN() {
+	return n;
+    }
 
-	Mat Y = new Mat(3, 3);
-	Y.setRow(0, new float[] { 1, 2, 3 });
-	Y.setRow(1, new float[] { 3, 4, 4 });
-	Y.setRow(2, new float[] { 3, 5, 1 });
-	System.out.println(Y.toString());
-
-	Mat Z = Y.multiply(Y);
-	System.out.println(Z.toString());
+    public int getM() {
+	return m;
     }
 
     @Override
@@ -207,8 +197,6 @@ public class Mat {
 	for (int i = 0; i < n; i++) {
 	    S.setRow(i, divide(S.getRow(i), new Mat(S.data[i][i], 1, m)));
 	}
-	System.out.println(S.toString());
-
 	ans = S.subMat(0, n, n, 2 * n);
 	return ans;
     }
@@ -272,11 +260,38 @@ public class Mat {
 	return ans;
     }
 
-    public int getN() {
-	return n;
+    public static float det(Mat A) {
+	return A.det();
     }
 
-    public int getM() {
-	return m;
+    @Deprecated
+    public float det() {
+	float sum = 0;
+
+	for (int j = 0; j < m; j++) {
+	    float prod = 1;
+	    for (int i = 0; i < n; i++) {
+		prod *= data[i][(i + j) % m];
+	    }
+	    sum += prod;
+	}
+
+	for (int j = m - 1; j >= 0; j--) {
+	    float prod = 1;
+	    for (int i = 0; i < n; i++) {
+		prod *= data[i][(m - 1 - i + j) % m];
+	    }
+	    sum -= prod;
+	}
+
+	return sum;
+    }
+
+    public static void main(String[] args) {
+	Mat Y = new Mat(2, 2);
+	Y.setRow(0, new float[] { 1, 2 });
+	Y.setRow(1, new float[] { 5, -2 });
+	System.out.println(Y.toString());
+	System.out.println(det(Y));
     }
 }
