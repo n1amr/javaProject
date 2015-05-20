@@ -283,6 +283,7 @@ public class Mat {
 			smaller.data[a - 1][b - 1] = data[a][b];
 		}
 	    }
+	    if (i % 2 == 0)
 		sign = 1;
 	    else
 		sign = -1;
