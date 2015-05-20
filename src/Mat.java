@@ -174,6 +174,7 @@ public class Mat {
 	    System.err.println("Dimension Error");
 	    return null;
 	}
+	float s = 0; // /////////////////////////////////////////
 	Mat ans = new Mat(n, n);
 	int m = 2 * n;
 	Mat S = new Mat(n, m);
@@ -194,6 +195,7 @@ public class Mat {
 		S.setRow(j, minus(S.getRow(j), S.getRow(i)));
 	    }
 	}
+	System.out.println(S);
 	for (int i = 0; i < n; i++) {
 	    S.setRow(i, divide(S.getRow(i), new Mat(S.data[i][i], 1, m)));
 	}
@@ -264,33 +266,44 @@ public class Mat {
 	return A.det();
     }
 
-    @Deprecated
     public float det() {
+	return determinant(data);
+    }
+
+    public static float determinant(float[][] matrix) {
 	float sum = 0;
+	float s;
+	if (matrix.length == 1)
+	    return matrix[0][0];
 
-	for (int j = 0; j < m; j++) {
-	    float prod = 1;
-	    for (int i = 0; i < n; i++) {
-		prod *= data[i][(i + j) % m];
+	for (int i = 0; i < matrix.length; i++) {
+	    float[][] smaller = new float[matrix.length - 1][matrix.length - 1];
+	    // creates smaller matrix- values not in same row, column
+	    for (int a = 1; a < matrix.length; a++) {
+		for (int b = 0; b < matrix.length; b++) {
+		    if (b < i)
+			smaller[a - 1][b] = matrix[a][b];
+		    else if (b > i)
+			smaller[a - 1][b - 1] = matrix[a][b];
+
+		}
 	    }
-	    sum += prod;
-	}
+	    if (i % 2 == 0) // sign changes based on i
+		s = 1;
+	    else
+		s = -1;
 
-	for (int j = m - 1; j >= 0; j--) {
-	    float prod = 1;
-	    for (int i = 0; i < n; i++) {
-		prod *= data[i][(m - 1 - i + j) % m];
-	    }
-	    sum -= prod;
+	    sum += s * matrix[0][i] * (determinant(smaller));
+	    // recursive step: determinant of larger determined by smaller.
 	}
-
 	return sum;
     }
 
     public static void main(String[] args) {
-	Mat Y = new Mat(2, 2);
-	Y.setRow(0, new float[] { 1, 2 });
-	Y.setRow(1, new float[] { 5, -2 });
+	Mat Y = new Mat(3, 3);
+	Y.setRow(0, new float[] { 1, 2, 3 });
+	Y.setRow(1, new float[] { 1, -1, 2 });
+	Y.setRow(2, new float[] { 3, 1, 1 });
 	System.out.println(Y.toString());
 	System.out.println(det(Y));
     }
