@@ -13,9 +13,9 @@ public class TestRationalMatrix {
 		RationalMatrix rationalMatrix = new RationalMatrix();
 
 		System.out.println("\nm1 + m2 is ");
-		Matrix.printResult(m1, m2, rationalMatrix.addMatrix(m1, m2), '+');
+		.Mat.printResult(m1, m2, rationalMatrix.addMatrix(m1, m2), '+');
 
 		System.out.println("\nm1 * m2 is ");
-		Matrix.printResult(m1, m2, rationalMatrix.multiplyMatrix(m1, m2), '*');
+		.Mat.printResult(m1, m2, rationalMatrix.multiplyMatrix(m1, m2), '*');
 	}
 }

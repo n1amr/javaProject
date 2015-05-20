@@ -1,4 +1,4 @@
-public abstract class Matrix<E extends Number> {
+public abstract class .Mat<E extends Number> {
 	protected abstract E add(E o1, E o2);
 
 	protected abstract E multiply(E o1, E o2);

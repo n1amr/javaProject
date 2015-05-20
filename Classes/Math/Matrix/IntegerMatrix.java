@@ -1,4 +1,4 @@
-public class IntegerMatrix extends Matrix<Integer> {
+public class IntegerMatrix extends .Mat<Integer> {
 	@Override
 	/** Add two integers */
 	protected Integer add(Integer o1, Integer o2) {

@@ -1,4 +1,4 @@
-public class RationalMatrix extends Matrix<Rational> {
+public class RationalMatrix extends .Mat<Rational> {
 	@Override
 	/** Add two rational numbers */
 	protected Rational add(Rational r1, Rational r2) {

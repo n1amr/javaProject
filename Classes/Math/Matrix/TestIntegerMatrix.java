@@ -10,9 +10,9 @@ public class TestIntegerMatrix {
 		IntegerMatrix integerMatrix = new IntegerMatrix();
 
 		System.out.println("\nm1 + m2 is ");
-		Matrix.printResult(m1, m2, integerMatrix.addMatrix(m1, m2), '+');
+		.Mat.printResult(m1, m2, integerMatrix.addMatrix(m1, m2), '+');
 
 		System.out.println("\nm1 * m2 is ");
-		Matrix.printResult(m1, m2, integerMatrix.multiplyMatrix(m1, m2), '*');
+		.Mat.printResult(m1, m2, integerMatrix.multiplyMatrix(m1, m2), '*');
 	}
 }
