@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 public class Mat {
     private float[][] data;
     private int n, m;
@@ -76,7 +78,7 @@ public class Mat {
 	if (name != null) {
 	    s.append(name + " = \n");
 	}
-	s.append("[    ");
+	s.append("[");
 	for (int i = 0; i < n; i++) {
 	    for (int j = 0; j < m; j++) {
 		s.append("\t");
@@ -340,6 +342,13 @@ public class Mat {
 	X.name = "Test Name";
 	System.out.println(X);
 	// System.out.println(det(Y));
+
+	Scanner in = new Scanner(System.in);
+
+	// while (in.hasNextLine())
+	Console.run("a=[1 2 3]");
+	Console.run("b=[2;2;2]");
+	Console.run("a*b");
     }
 
     private static boolean isPartOfNumber(char c) {
@@ -379,14 +388,18 @@ public class Mat {
 		i++;
 	    int num_end = i;
 
-	    float number = Float.valueOf(s.substring(num_start, num_end));
-	    row[c++] = number;
-
-	    if (s.charAt(i) == ';' || s.charAt(i) == ']') {
+	    if (i < s.length()) {
+		String num = s.substring(num_start, num_end).trim();
+		float number = Float.valueOf(num);
+		row[c++] = number;
+	    }
+	    if (i < s.length() && (s.charAt(i) == ';' || s.charAt(i) == ']')) {
 		X.setRow(r, row);
 		r++;
 		c = 0;
 		row = new float[cols];
+	    } else if (i >= s.length()) {
+		X.setRow(r, row);
 	    }
 	}
 	return X;
