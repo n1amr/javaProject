@@ -342,17 +342,24 @@ public class Mat {
 	// System.out.println(det(Y));
     }
 
+    private static boolean isPartOfNumber(char c) {
+	return (Character.isDigit(c) || c == '.' || c == 'i' || c == 'j');
+    }
+
     private static Mat valueOf(String s) {
 	int rows = 1;
 	for (int i = 0; i < s.length(); i++) {
 	    if (s.charAt(i) == ';')
 		rows++;
 	}
-	int cols = 1;
+	int cols = 0;
 	for (int i = 0; i < s.length(); i++) {
-	    if (s.charAt(i) == ',')
+	    if (isPartOfNumber(s.charAt(i))) {
 		cols++;
-	    else if (s.charAt(i) == ';')
+		while (isPartOfNumber(s.charAt(i)))
+		    i++;
+	    }
+	    if (s.charAt(i) == ';')
 		break;
 	}
 
@@ -363,13 +370,12 @@ public class Mat {
 	float[] row = new float[cols];
 	for (int i = 0; i < s.length(); i++) {
 	    // Detect Number
-	    while (i < s.length() && !Character.isDigit(s.charAt(i)))
+	    while (i < s.length() && !isPartOfNumber(s.charAt(i)))
 		i++;
 
 	    // Select Number
 	    int num_start = i;
-	    while (i < s.length()
-		    && (Character.isDigit(s.charAt(i)) || s.charAt(i) == '.'))
+	    while (i < s.length() && isPartOfNumber(s.charAt(i)))
 		i++;
 	    int num_end = i;
 
