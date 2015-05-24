@@ -3,10 +3,37 @@ public class Mat {
     private int n, m;
     private String name;
 
+    public String getName() {
+	return name;
+    }
+
+    public void setName(String name) {
+	this.name = name;
+    }
+
     public Mat(int n, int m) {
 	data = new float[n][m];
 	this.n = n;
 	this.m = m;
+    }
+
+    public Mat(String s) {
+	Mat.copyMat(this, Mat.valueOf(s));
+    }
+
+    public Mat duplicate(Mat src) {
+	Mat r = new Mat(src.n, src.m);
+	Mat.copyMat(r, src);
+	return r;
+    }
+
+    private static void copyMat(Mat dst, Mat src) {
+	int n = dst.n = src.n;
+	int m = dst.m = src.m;
+	dst.data = new float[n][m];
+	for (int i = 0; i < n; i++)
+	    for (int j = 0; j < m; j++)
+		dst.data[i][j] = src.data[i][j];
     }
 
     public Mat() {
@@ -18,11 +45,21 @@ public class Mat {
 	this.n = n;
 	this.m = m;
 
+	this.fill(k);
+    }
+
+    public static void fill(Mat A, float k) {
+	A.fill(k);
+    }
+
+    public void fill(float k) {
+	Mat r = new Mat(n, m);
 	for (int i = 0; i < n; i++) {
 	    for (int j = 0; j < m; j++) {
 		data[i][j] = k;
 	    }
 	}
+	return r;
     }
 
     public int getN() {
@@ -36,6 +73,9 @@ public class Mat {
     @Override
     public String toString() {
 	StringBuilder s = new StringBuilder();
+	if (name != null) {
+	    s.append(name + " = \n");
+	}
 	s.append("[    ");
 	for (int i = 0; i < n; i++) {
 	    for (int j = 0; j < m; j++) {
@@ -294,13 +334,55 @@ public class Mat {
     }
 
     public static void main(String[] args) {
-	Mat Y = new Mat(3, 3);
-	Y.setRow(0, new float[] { 1, 2, 3 });
-	Y.setRow(1, new float[] { 1, -1, 2 });
-	Y.setRow(2, new float[] { 3, 1, 1 });
 
-	Mat Z = Y.multiply(Y.multiply(Y));
-	System.out.println(Z.toString());
+	String s = "[1,  2.123,3;  \n" + "4,5,6;7,8,9]";
+	Mat X = Mat.valueOf(s);
+	X.name = "Test Name";
+	System.out.println(X);
 	// System.out.println(det(Y));
+    }
+
+    private static Mat valueOf(String s) {
+	int rows = 1;
+	for (int i = 0; i < s.length(); i++) {
+	    if (s.charAt(i) == ';')
+		rows++;
+	}
+	int cols = 1;
+	for (int i = 0; i < s.length(); i++) {
+	    if (s.charAt(i) == ',')
+		cols++;
+	    else if (s.charAt(i) == ';')
+		break;
+	}
+
+	Mat X = new Mat(rows, cols);
+
+	int r = 0;
+	int c = 0;
+	float[] row = new float[cols];
+	for (int i = 0; i < s.length(); i++) {
+	    // Detect Number
+	    while (i < s.length() && !Character.isDigit(s.charAt(i)))
+		i++;
+
+	    // Select Number
+	    int num_start = i;
+	    while (i < s.length()
+		    && (Character.isDigit(s.charAt(i)) || s.charAt(i) == '.'))
+		i++;
+	    int num_end = i;
+
+	    float number = Float.valueOf(s.substring(num_start, num_end));
+	    row[c++] = number;
+
+	    if (s.charAt(i) == ';' || s.charAt(i) == ']') {
+		X.setRow(r, row);
+		r++;
+		c = 0;
+		row = new float[cols];
+	    }
+	}
+	return X;
     }
 }
