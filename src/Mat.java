@@ -61,7 +61,7 @@ public class Mat {
 		data[i][j] = k;
 	    }
 	}
-	return r;
+	// return r;
     }
 
     public int getN() {
