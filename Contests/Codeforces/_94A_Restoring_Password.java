@@ -1,7 +1,7 @@
 import java.util.*;
 
 public class _94A_Restoring_Password {
-	public static void main(String[] args) {
+    public static void main(String[] args) {
 		Scanner in = new Scanner(System.in);
 		String s = in.next();
 		ArrayList<String> p = new ArrayList<>(10);

@@ -3,7 +3,7 @@ import java.util.Scanner;
 import java.util.Vector;
 
 public class _388A_Fox_and_Box_Accumulation {
-	public static void main(String[] args) {
+    public static void main(String[] args) {
 		Scanner in = new Scanner(System.in);
 		int n = in.nextInt();
 		Integer[] boxes = new Integer[n];

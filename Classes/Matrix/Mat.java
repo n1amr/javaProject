@@ -142,14 +142,6 @@ public class Mat {
 	return 0;
     }
 
-    private static float[] constToVector(float k, int n) {
-	float[] ans = new float[n];
-	for (int i = 0; i < n; i++) {
-	    ans[i] = k;
-	}
-	return ans;
-    }
-
     private static Mat elementOp(Mat A, Mat B, int Op) {
 	int n = A.getNumberOfRows();
 	int m = A.getNumberOfColumns();
@@ -428,7 +420,7 @@ public class Mat {
 
 	String s = "[2,1 ; 7,4]";
 	Mat X = Mat.fromString(s);
-	// X = X.transpose();
+	X = X.transpose();
 	X.name = "Test Name";
 	System.out.println(X);
 	// System.out.println(det(Y));

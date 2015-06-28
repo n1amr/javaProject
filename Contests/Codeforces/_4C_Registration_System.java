@@ -1,7 +1,7 @@
 import java.util.*;
 
 public class _4C_Registration_System {
-	public static void main(String[] args) {
+    public static void main(String[] args) {
 		Scanner in = new Scanner(System.in);
 		int n = in.nextInt();
 		HashMap<String, Integer> a = new HashMap<>(n + 5);
