@@ -421,7 +421,7 @@ public class Mat {
 	String s = "[2,1 ; 7,4]";
 	Mat X = Mat.fromString(s);
 	X = X.transpose();
-	X.name = "Test Name";
+	X.name = ".Solution Name";
 	System.out.println(X);
 	// System.out.println(det(Y));
 
