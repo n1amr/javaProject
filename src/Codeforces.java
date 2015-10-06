@@ -1,7 +1,7 @@
 import java.io.*;
 import java.util.*;
 
-public class D {
+public class Codeforces {
     public static Scanner in = new Scanner(
             new BufferedReader(new InputStreamReader(System.in)));
     public static PrintWriter out = new PrintWriter(
