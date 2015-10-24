@@ -64,9 +64,8 @@ public class _584C_Marina_and_Vasya {
 
     static char differentChar(char a, char b) {
         char c = ((a != 'z') ? (char) (a + 1) : 'a');
-        if (b == c) {
+        if (b == c)
             c = ((b != 'z') ? (char) (b + 1) : 'a');
-        }
         return c;
     }
 }
