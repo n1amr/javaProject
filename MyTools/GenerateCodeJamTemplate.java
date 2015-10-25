@@ -7,19 +7,17 @@ public class GenerateCodeJamTemplate {
     public static void main(String[] args) throws Exception {
 	String projectPath = "D:\\Lab\\Eclipse\\WorkSpace\\javaProject\\";
 
-	String problemCompleteName = (String) Toolkit.getDefaultToolkit()
-		.getSystemClipboard().getData(DataFlavor.stringFlavor);
+	String problemCompleteName = (String) Toolkit.getDefaultToolkit().getSystemClipboard()
+		.getData(DataFlavor.stringFlavor);
 	System.out.println(problemCompleteName);
 
-	String newName = problemCompleteName.trim().replaceAll(
-		"^|([^a-zA-Z0-9]+)", "_");
+	String newName = problemCompleteName.trim().replaceAll("^|([^a-zA-Z0-9]+)", "_");
 	File newFile = new File(projectPath + "src/" + newName + ".java");
 	newFile.createNewFile();
 	System.out.println("New path: " + newFile.getPath());
 
 	String templateName = "CodeJam";
-	File templateFile = new File(projectPath + "Contests/Templates/"
-		+ templateName + ".java");
+	File templateFile = new File(projectPath + "Contests/Templates/" + templateName + ".java");
 
 	Scanner in = new Scanner(templateFile);
 	PrintWriter out = new PrintWriter(newFile);

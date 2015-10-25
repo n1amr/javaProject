@@ -8,14 +8,13 @@ public class BisectionMethod {
 	for (int i = 0; i < 100; i++) {
 	    c = (a + b) / 2;
 	    System.out.println("Iteration " + i + ": " + c);
-	    if (f(a) * f(c) < 0) {
+	    if (f(a) * f(c) < 0)
 		b = c;
-	    } else if (f(c) * f(b) < 0) {
+	    else if (f(c) * f(b) < 0)
 		a = c;
-	    } else {
+	    else
 		// System.out.println("Error");
 		break;
-	    }
 	}
 
     }

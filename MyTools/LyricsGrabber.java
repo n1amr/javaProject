@@ -22,8 +22,7 @@ public class LyricsGrabber {
 	    reselectBrowser(propertiesFile);
 
 	// Get song name from clipboard
-	String songName = (String) Toolkit.getDefaultToolkit()
-		.getSystemClipboard().getData(DataFlavor.stringFlavor);
+	String songName = (String) Toolkit.getDefaultToolkit().getSystemClipboard().getData(DataFlavor.stringFlavor);
 	System.out.println("Searching for lyrics of: " + songName);
 
 	// Open google for JSON result
@@ -32,8 +31,7 @@ public class LyricsGrabber {
 	String charset = "UTF-8";
 
 	URL url = new URL(google + URLEncoder.encode(searchingFor, charset));
-	Scanner in = new Scanner(new InputStreamReader(url.openStream(),
-		charset));
+	Scanner in = new Scanner(new InputStreamReader(url.openStream(), charset));
 
 	String resultFromGoogle = "";
 	while (in.hasNextLine())
@@ -59,12 +57,10 @@ public class LyricsGrabber {
 	in.close();
     }
 
-    static void reselectBrowser(File propertiesFile) throws Exception,
-	    IOException {
+    static void reselectBrowser(File propertiesFile) throws Exception, IOException {
 	System.out.println("Select your browser");
 	JFileChooser chooser = new JFileChooser();
-	FileFilter exeFilter = new FileNameExtensionFilter("Applications",
-		new String[] { "exe" });
+	FileFilter exeFilter = new FileNameExtensionFilter("Applications", new String[] { "exe" });
 	chooser.setFileFilter(exeFilter);
 	if (chooser.showOpenDialog(null) == JFileChooser.APPROVE_OPTION) {
 	    Properties p = new Properties();
