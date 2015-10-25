@@ -1,4 +1,6 @@
-import java.util.*;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Scanner;
 
 public class Big_File_System_Search {
     public static void main(String[] args) {
@@ -51,8 +53,7 @@ public class Big_File_System_Search {
 	}
     }
 
-    private static boolean haveAll(HashMap<Integer, Integer> file,
-	    HashMap<Integer, Integer> q) {
+    private static boolean haveAll(HashMap<Integer, Integer> file, HashMap<Integer, Integer> q) {
 	boolean found = true;
 	for (Integer z : q.keySet())
 	    if (!file.containsKey(z) || q.get(z) > file.get(z))
@@ -60,8 +61,7 @@ public class Big_File_System_Search {
 	return found;
     }
 
-    private static boolean haveSome(HashMap<Integer, Integer> file,
-	    HashMap<Integer, Integer> q) {
+    private static boolean haveSome(HashMap<Integer, Integer> file, HashMap<Integer, Integer> q) {
 	boolean found = false;
 	for (Integer z : q.keySet())
 	    if (file.containsKey(z))

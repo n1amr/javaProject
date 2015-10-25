@@ -1,86 +1,96 @@
-package Introduction.to.JAVA.Programming.Daniel.Liang.Examples;
-import javax.swing.*;
-import java.awt.*;
-import java.awt.event.*;
+import java.awt.BorderLayout;
+import java.awt.GridLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.rmi.registry.LocateRegistry;
 import java.rmi.registry.Registry;
 
+import javax.swing.JApplet;
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JTextField;
+
 public class StudentServerInterfaceClient extends JApplet {
-  // Declare a Student instance
-  private StudentServerInterface student;
+    /**
+     *
+     */
+    private static final long serialVersionUID = 1L;
 
-  private boolean isStandalone; // Is applet or application
+    // Declare a Student instance
+    private StudentServerInterface student;
 
-  private JButton jbtGetScore = new JButton("Get Score");
-  private JTextField jtfName = new JTextField();
-  private JTextField jtfScore = new JTextField();
+    private boolean isStandalone; // Is applet or application
 
-  public void init() {
-    // Initialize RMI
-    initializeRMI();
+    private JButton jbtGetScore = new JButton("Get Score");
+    private JTextField jtfName = new JTextField();
+    private JTextField jtfScore = new JTextField();
 
-    JPanel jPanel1 = new JPanel();
-    jPanel1.setLayout(new GridLayout(2, 2));
-    jPanel1.add(new JLabel("Name"));
-    jPanel1.add(jtfName);
-    jPanel1.add(new JLabel("Score"));
-    jPanel1.add(jtfScore);
+    @Override
+    public void init() {
+	// Initialize RMI
+	initializeRMI();
 
-    add(jbtGetScore, BorderLayout.SOUTH);
-    add(jPanel1, BorderLayout.CENTER);
+	JPanel jPanel1 = new JPanel();
+	jPanel1.setLayout(new GridLayout(2, 2));
+	jPanel1.add(new JLabel("Name"));
+	jPanel1.add(jtfName);
+	jPanel1.add(new JLabel("Score"));
+	jPanel1.add(jtfScore);
 
-    jbtGetScore.addActionListener(new ActionListener() {
-      @Override
-      public void actionPerformed(ActionEvent evt) {
-        getScore();
-      }
-    });
-  }
+	add(jbtGetScore, BorderLayout.SOUTH);
+	add(jPanel1, BorderLayout.CENTER);
 
-  private void getScore() {
-    try {
-      // Get student score
-      double score = student.findScore(jtfName.getText().trim());
-
-      // Display the result
-      if (score < 0)
-        jtfScore.setText("Not found");
-      else
-        jtfScore.setText(new Double(score).toString());
+	jbtGetScore.addActionListener(new ActionListener() {
+	    @Override
+	    public void actionPerformed(ActionEvent evt) {
+		getScore();
+	    }
+	});
     }
-    catch(Exception ex) {
-      ex.printStackTrace();
-    }
-  }
 
-  /** Initialize RMI */
-  protected void initializeRMI() {
-    String host = "";
-    if (!isStandalone) host = getCodeBase().getHost();
+    private void getScore() {
+	try {
+	    // Get student score
+	    double score = student.findScore(jtfName.getText().trim());
 
-    try {
-      Registry registry = LocateRegistry.getRegistry(host);
-      student = (StudentServerInterface)
-        registry.lookup("StudentServerInterfaceImpl");
-      System.out.println("Server object " + student + " found");
+	    // Display the result
+	    if (score < 0)
+		jtfScore.setText("Not found");
+	    else
+		jtfScore.setText(new Double(score).toString());
+	} catch (Exception ex) {
+	    ex.printStackTrace();
+	}
     }
-    catch(Exception ex) {
-      System.out.println(ex);
-    }
-  }
 
-  /** Main method */
-  public static void main(String[] args) {
-    StudentServerInterfaceClient applet =
-      new StudentServerInterfaceClient();
-    applet.isStandalone = true;
-    JFrame frame = new JFrame();
-    frame.setTitle("StudentServerInterfaceClient");
-    frame.add(applet, BorderLayout.CENTER);
-    frame.setSize(250, 150);
-    applet.init();
-    frame.setLocationRelativeTo(null);
-    frame.setVisible(true);
-    frame.setDefaultCloseOperation(3);
-  }
+    /** Initialize RMI */
+    protected void initializeRMI() {
+	String host = "";
+	if (!isStandalone)
+	    host = getCodeBase().getHost();
+
+	try {
+	    Registry registry = LocateRegistry.getRegistry(host);
+	    student = (StudentServerInterface) registry.lookup("StudentServerInterfaceImpl");
+	    System.out.println("Server object " + student + " found");
+	} catch (Exception ex) {
+	    System.out.println(ex);
+	}
+    }
+
+    /** Main method */
+    public static void main(String[] args) {
+	StudentServerInterfaceClient applet = new StudentServerInterfaceClient();
+	applet.isStandalone = true;
+	JFrame frame = new JFrame();
+	frame.setTitle("StudentServerInterfaceClient");
+	frame.add(applet, BorderLayout.CENTER);
+	frame.setSize(250, 150);
+	applet.init();
+	frame.setLocationRelativeTo(null);
+	frame.setVisible(true);
+	frame.setDefaultCloseOperation(3);
+    }
 }

@@ -1,4 +1,4 @@
-import java.util.*;
+import java.util.Scanner;
 
 public class _441B_Valera_and_Fruits {
 

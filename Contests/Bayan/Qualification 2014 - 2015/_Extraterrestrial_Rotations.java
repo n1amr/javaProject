@@ -1,15 +1,19 @@
-import java.io.*;
-import java.util.*;
+import java.io.BufferedInputStream;
+import java.io.BufferedOutputStream;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.PrintWriter;
+import java.util.Scanner;
 
 public class _Extraterrestrial_Rotations {
     static Scanner in;
     static PrintWriter out;
 
     public static void main(String[] args) throws FileNotFoundException {
-	in = new Scanner(new BufferedInputStream(new FileInputStream(new File(
-		"input.txt"))));
-	out = new PrintWriter(new BufferedOutputStream(new FileOutputStream(
-		new File("output.txt"))));
+	in = new Scanner(new BufferedInputStream(new FileInputStream(new File("input.txt"))));
+	out = new PrintWriter(new BufferedOutputStream(new FileOutputStream(new File("output.txt"))));
 	int nCases = in.nextInt();
 	in.nextLine();
 	for (int CASE = 1; CASE <= nCases; CASE++)
@@ -43,8 +47,7 @@ public class _Extraterrestrial_Rotations {
 		    break;
 	    }
 	}
-	out.println(Front + " " + Up + " " + Down + " " + Left + " " + Right
-		+ " " + Back);
+	out.println(Front + " " + Up + " " + Down + " " + Left + " " + Right + " " + Back);
     }
 
     private static void rotateZ(int m) {

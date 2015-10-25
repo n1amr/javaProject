@@ -1,12 +1,10 @@
-import java.util.*;
+import java.util.Scanner;
 
 public class _475A_Bayan_Bus {
 
     public static void main(String[] args) {
-	char[][] rows = { "|#.#.#.#.#.#.#.#.#.#.#.|D|)".toCharArray(),
-		"|#.#.#.#.#.#.#.#.#.#.#.|.|".toCharArray(),
-		"|#.......................|".toCharArray(),
-		"|#.#.#.#.#.#.#.#.#.#.#.|.|)".toCharArray(),
+	char[][] rows = { "|#.#.#.#.#.#.#.#.#.#.#.|D|)".toCharArray(), "|#.#.#.#.#.#.#.#.#.#.#.|.|".toCharArray(),
+		"|#.......................|".toCharArray(), "|#.#.#.#.#.#.#.#.#.#.#.|.|)".toCharArray(),
 		"+------------------------+".toCharArray() };
 	int k = new Scanner(System.in).nextInt();
 	for (int c = 1; c < 22; c += 2)

@@ -1,4 +1,6 @@
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Scanner;
 
 public class _460B_Little_Dima_and_Equation {
     public static void main(String[] args) {
@@ -9,19 +11,16 @@ public class _460B_Little_Dima_and_Equation {
 	ArrayList<Long> v = new ArrayList<Long>();
 	for (int i = 1; i < 9 * 9 + 1; i++) {
 	    Long RHS = 1L;
-	    for (int j = 0; j < a; j++) {
+	    for (int j = 0; j < a; j++)
 		RHS *= i;
-	    }
 	    RHS = b * RHS + c;
-	    if (i == sumDigits(RHS) && RHS < 1E9) {
+	    if (i == sumDigits(RHS) && RHS < 1E9)
 		v.add(RHS);
-	    }
 	}
 	Collections.sort(v);
 	System.out.println(v.size());
-	for (int i = 0; i < v.size(); i++) {
+	for (int i = 0; i < v.size(); i++)
 	    System.out.print(v.get(i) + " ");
-	}
     }
 
     private static int sumDigits(Long n) {

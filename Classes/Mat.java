@@ -18,11 +18,9 @@ public class Mat {
 	this.n = n;
 	this.m = m;
 
-	for (int i = 0; i < n; i++) {
-	    for (int j = 0; j < m; j++) {
+	for (int i = 0; i < n; i++)
+	    for (int j = 0; j < m; j++)
 		data[i][j] = k;
-	    }
-	}
     }
 
     public static void main(String[] args) {
@@ -66,11 +64,9 @@ public class Mat {
 
     public Mat transpose() {
 	Mat ans = new Mat(m, n);
-	for (int i = 0; i < m; i++) {
-	    for (int j = 0; j < n; j++) {
+	for (int i = 0; i < m; i++)
+	    for (int j = 0; j < n; j++)
 		ans.data[i][j] = data[j][i];
-	    }
-	}
 	return ans;
     }
 
@@ -90,9 +86,8 @@ public class Mat {
 
     private static float[] constToVector(float k, int n) {
 	float[] ans = new float[n];
-	for (int i = 0; i < n; i++) {
+	for (int i = 0; i < n; i++)
 	    ans[i] = k;
-	}
 	return ans;
     }
 
@@ -104,11 +99,9 @@ public class Mat {
 	    return null;
 	}
 	Mat ans = new Mat(n, m);
-	for (int i = 0; i < n; i++) {
-	    for (int j = 0; j < m; j++) {
+	for (int i = 0; i < n; i++)
+	    for (int j = 0; j < m; j++)
 		ans.data[i][j] = op(A.data[i][j], B.data[i][j], Op);
-	    }
-	}
 	return ans;
     }
 
@@ -133,11 +126,9 @@ public class Mat {
 
     public Mat subMat(int n1, int n2, int m1, int m2) {
 	Mat ans = new Mat(n2 - n1, m2 - m1);
-	for (int i = n1; i < n2; i++) {
-	    for (int j = m1; j < m2; j++) {
+	for (int i = n1; i < n2; i++)
+	    for (int j = m1; j < m2; j++)
 		ans.data[i - n1][j - m1] = data[i][j];
-	    }
-	}
 	return ans;
     }
 
@@ -162,9 +153,8 @@ public class Mat {
     }
 
     public void setColumn(int c, float[] colData) {
-	for (int i = 0; i < n; i++) {
+	for (int i = 0; i < n; i++)
 	    data[i][c] = colData[i];
-	}
     }
 
     public void setColumn(int c, Mat colData) {
@@ -189,9 +179,8 @@ public class Mat {
 	Mat S = new Mat(n, m);
 	for (int i = 0; i < n; i++) {
 	    S.setElement(i, i + n, 1);
-	    for (int j = 0; j < n; j++) {
-		S.setElement(i, j, this.getElement(i, j));
-	    }
+	    for (int j = 0; j < n; j++)
+		S.setElement(i, j, getElement(i, j));
 	}
 	for (int i = 0; i < n; i++) {
 	    float pivot = S.getElement(i, i);
@@ -204,9 +193,8 @@ public class Mat {
 		S.setRow(j, minus(S.getRow(j), S.getRow(i)));
 	    }
 	}
-	for (int i = 0; i < n; i++) {
+	for (int i = 0; i < n; i++)
 	    S.setRow(i, divide(S.getRow(i), new Mat(S.data[i][i], 1, m)));
-	}
 	System.out.println(S.toString());
 
 	ans = S.subMat(0, n, n, 2 * n);
@@ -217,9 +205,8 @@ public class Mat {
 	Mat ans = new Mat(1, A.m);
 	for (int j = 0; j < A.m; j++) {
 	    float sum = 0;
-	    for (int i = 0; i < A.n; i++) {
+	    for (int i = 0; i < A.n; i++)
 		sum += A.data[i][j];
-	    }
 	    ans.data[0][j] = sum;
 	}
 	return ans;
@@ -233,9 +220,8 @@ public class Mat {
 	Mat ans = new Mat(A.n, 1);
 	for (int i = 0; i < A.n; i++) {
 	    float sum = 0;
-	    for (int j = 0; j < A.m; j++) {
+	    for (int j = 0; j < A.m; j++)
 		sum += A.data[i][j];
-	    }
 	    ans.data[i][0] = sum;
 	}
 	return ans;
@@ -258,17 +244,14 @@ public class Mat {
     }
 
     public Mat multiply(Mat A) {
-	if (this.m != A.n) {
+	if (m != A.n) {
 	    System.err.println("Dimension Error");
 	    return null;
 	}
-	Mat ans = new Mat(this.n, A.m);
-	for (int i = 0; i < this.n; i++) {
-	    for (int j = 0; j < A.m; j++) {
-		ans.data[i][j] = sum(Mat.times(this.getRow(i), A.getColumn(j)
-			.transpose()));
-	    }
-	}
+	Mat ans = new Mat(n, A.m);
+	for (int i = 0; i < n; i++)
+	    for (int j = 0; j < A.m; j++)
+		ans.data[i][j] = sum(Mat.times(getRow(i), A.getColumn(j).transpose()));
 	return ans;
     }
 

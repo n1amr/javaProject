@@ -7,9 +7,7 @@ public class _452A_Eevee {
 	Scanner scanner = new Scanner(System.in);
 	scanner.nextLine();
 	Matcher matcher = Pattern.compile("\\b" + scanner.nextLine() + "\\b")
-		.matcher(
-			"Vaporeon, Jolteon, Flareon, Espeon, Umbreon, Leafeon, Glaceon, Sylveon"
-				.toLowerCase());
+		.matcher("Vaporeon, Jolteon, Flareon, Espeon, Umbreon, Leafeon, Glaceon, Sylveon".toLowerCase());
 	if (matcher.find())
 	    System.out.println(matcher.group());
 

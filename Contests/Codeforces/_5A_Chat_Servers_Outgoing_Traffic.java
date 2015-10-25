@@ -1,4 +1,4 @@
-import java.util.*;
+import java.util.Scanner;
 
 public class _5A_Chat_Servers_Outgoing_Traffic {
     public static void main(String[] args) {

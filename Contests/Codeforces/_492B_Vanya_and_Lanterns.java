@@ -1,4 +1,5 @@
-import java.util.*;
+import java.util.Arrays;
+import java.util.Scanner;
 
 public class _492B_Vanya_and_Lanterns {
     public static void main(String[] args) {

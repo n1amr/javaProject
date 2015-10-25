@@ -20,12 +20,11 @@ public class _456A_Laptops {
 	    }
 	});
 
-	for (int i = 1; i < a.length; i++) {
+	for (int i = 1; i < a.length; i++)
 	    if (a[i][1] < a[i - 1][1]) {
 		System.out.println("Happy Alex");
 		return;
 	    }
-	}
 	System.out.println("Poor Alex");
     }
 }

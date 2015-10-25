@@ -1,4 +1,3 @@
-import java.util.Arrays;
 import java.util.Scanner;
 
 public class _467B_Fedor_and_New_Game {
@@ -12,9 +11,8 @@ public class _467B_Fedor_and_New_Game {
 	for (int i = 0; i < m + 1; i++) {
 	    int x = in.nextInt();
 	    String s = Integer.toBinaryString(x);
-	    while (s.length() < n) {
+	    while (s.length() < n)
 		s = "0" + s;
-	    }
 	    a[i] = s;
 	}
 	// System.out.println(Arrays.toString(a));
@@ -23,9 +21,8 @@ public class _467B_Fedor_and_New_Game {
 	    int temp_k = k;
 	    boolean friend = true;
 	    for (int j = 0; j < fedor.length(); j++) {
-		if (fedor.charAt(j) != a[i].charAt(j)) {
+		if (fedor.charAt(j) != a[i].charAt(j))
 		    temp_k--;
-		}
 		if (temp_k < 0)
 		    friend = false;
 	    }

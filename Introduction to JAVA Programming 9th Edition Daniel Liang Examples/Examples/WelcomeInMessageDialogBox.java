@@ -1,12 +1,12 @@
-package Introduction.to.JAVA.Programming.Daniel.Liang.Examples;
+
 /** This application program displays Welcome to Java!
- *  in a message dialog box. 
+ *  in a message dialog box.
  */
 import javax.swing.JOptionPane;
 
-public class WelcomeInMessageDialogBox { 
-  public static void main(String[] args) { 
-    // Display Welcome to Java! in a message dialog box
-    JOptionPane.showMessageDialog(null, "Welcome to Java!");
-  }
+public class WelcomeInMessageDialogBox {
+    public static void main(String[] args) {
+	// Display Welcome to Java! in a message dialog box
+	JOptionPane.showMessageDialog(null, "Welcome to Java!");
+    }
 }

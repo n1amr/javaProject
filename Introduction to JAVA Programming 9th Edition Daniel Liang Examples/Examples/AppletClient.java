@@ -1,67 +1,75 @@
-package Introduction.to.JAVA.Programming.Daniel.Liang.Examples;
-import java.io.*;
-import java.net.*;
-import javax.swing.*;
+import java.io.DataInputStream;
+import java.io.IOException;
+import java.net.Socket;
+
+import javax.swing.JApplet;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
 
 public class AppletClient extends JApplet {
-  // Label for displaying the visit count
-  private JLabel jlblCount = new JLabel();
+    /**
+     *
+     */
+    private static final long serialVersionUID = 1L;
 
-  // Indicate if it runs as application
-  private boolean isStandAlone = false;
+    // Label for displaying the visit count
+    private JLabel jlblCount = new JLabel();
 
-  // Host name or ip
-  private String host = "localhost";
+    // Indicate if it runs as application
+    private boolean isStandAlone = false;
 
-  /** Initialize the applet */
-  public void init() {
-    add(jlblCount);
+    // Host name or ip
+    private String host = "localhost";
 
-    try {
-      // Create a socket to connect to the server
-      Socket socket;
-      if (isStandAlone)
-        socket = new Socket(host, 8000);
-      else
-        socket = new Socket(getCodeBase().getHost(), 8000);
+    /** Initialize the applet */
+    @Override
+    public void init() {
+	add(jlblCount);
 
-      // Create an input stream to receive data from the server
-      DataInputStream inputFromServer =
-        new DataInputStream(socket.getInputStream());
+	try {
+	    // Create a socket to connect to the server
+	    Socket socket;
+	    if (isStandAlone)
+		socket = new Socket(host, 8000);
+	    else
+		socket = new Socket(getCodeBase().getHost(), 8000);
 
-      // Receive the count from the server and display it on label
-      int count = inputFromServer.readInt();
-      jlblCount.setText("You are visitor number " + count);
+	    // Create an input stream to receive data from the server
+	    DataInputStream inputFromServer = new DataInputStream(socket.getInputStream());
 
-      // Close the stream
-      inputFromServer.close();
+	    // Receive the count from the server and display it on label
+	    int count = inputFromServer.readInt();
+	    jlblCount.setText("You are visitor number " + count);
+
+	    // Close the stream
+	    inputFromServer.close();
+	} catch (IOException ex) {
+	    ex.printStackTrace();
+	}
     }
-    catch (IOException ex) {
-      ex.printStackTrace();
+
+    /** Run the applet as an application */
+    public static void main(String[] args) {
+	// Create a frame
+	JFrame frame = new JFrame("Applet Client");
+
+	// Create an instance of the applet
+	AppletClient applet = new AppletClient();
+	applet.isStandAlone = true;
+
+	// Get host
+	if (args.length == 1)
+	    applet.host = args[0];
+
+	// Add the applet instance to the frame
+	frame.add(applet, java.awt.BorderLayout.CENTER);
+
+	// Invoke init() and start()
+	applet.init();
+	applet.start();
+
+	// Display the frame
+	frame.pack();
+	frame.setVisible(true);
     }
-  }
-
-  /** Run the applet as an application */
-  public static void main(String[] args) {
-    // Create a frame
-    JFrame frame = new JFrame("Applet Client");
-
-    // Create an instance of the applet
-    AppletClient applet = new AppletClient();
-    applet.isStandAlone = true;
-
-    // Get host
-    if (args.length == 1) applet.host = args[0];
-
-    // Add the applet instance to the frame
-    frame.add(applet, java.awt.BorderLayout.CENTER);
-
-    // Invoke init() and start()
-    applet.init();
-    applet.start();
-
-    // Display the frame
-    frame.pack();
-    frame.setVisible(true);
-  }
 }

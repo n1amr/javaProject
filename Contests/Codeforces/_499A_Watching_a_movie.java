@@ -1,4 +1,4 @@
-import java.util.*;
+import java.util.Scanner;
 
 public class _499A_Watching_a_movie {
     public static void main(String[] args) {

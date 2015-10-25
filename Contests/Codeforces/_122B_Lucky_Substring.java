@@ -1,4 +1,4 @@
-import java.util.*;
+import java.util.Scanner;
 
 public class _122B_Lucky_Substring {
     public static void main(String[] args) {

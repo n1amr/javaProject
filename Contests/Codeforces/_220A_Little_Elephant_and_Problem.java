@@ -1,4 +1,5 @@
-import java.util.*;
+import java.util.Arrays;
+import java.util.Scanner;
 
 public class _220A_Little_Elephant_and_Problem {
     public static void main(String[] args) {

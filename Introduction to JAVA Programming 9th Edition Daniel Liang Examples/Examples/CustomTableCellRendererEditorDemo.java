@@ -1,82 +1,78 @@
-package Introduction.to.JAVA.Programming.Daniel.Liang.Examples;
-import java.awt.*;
-import javax.swing.*;
-import javax.swing.table.*;
-import java.util.*;
+import java.awt.BorderLayout;
+import java.awt.Dimension;
+import java.awt.Toolkit;
+import java.util.GregorianCalendar;
+
+import javax.swing.DefaultCellEditor;
+import javax.swing.ImageIcon;
+import javax.swing.JApplet;
+import javax.swing.JComboBox;
+import javax.swing.JFrame;
+import javax.swing.JScrollPane;
+import javax.swing.JTable;
+import javax.swing.table.TableColumn;
 
 public class CustomTableCellRendererEditorDemo extends JApplet {
-  // Create table column names
-  private String[] columnNames =
-    {"Title", "Copies Needed", "Publisher", "Date Published",
-     "In-stock", "Book Photo"};
+    /**
+     *
+     */
+    private static final long serialVersionUID = 1L;
 
-  // Create image icons
-  private ImageIcon intro1eImageIcon =
-    new ImageIcon(getClass().getResource("/image/intro1e.gif"));
-  private ImageIcon intro2eImageIcon =
-    new ImageIcon(getClass().getResource("/image/intro2e.gif"));
-  private ImageIcon intro3eImageIcon =
-    new ImageIcon(getClass().getResource("/image/intro3e.jpg"));
+    // Create table column names
+    private String[] columnNames = { "Title", "Copies Needed", "Publisher", "Date Published", "In-stock",
+	    "Book Photo" };
 
-  // Create table data
-  private Object[][] rowData = {
-    {"Introduction to Java Programming", 120,
-     "Que Education & Training",
-      new GregorianCalendar(1998, 1-1, 6).getTime(),
-      false, intro1eImageIcon},
-    {"Introduction to Java Programming, 2E", 220,
-     "Que Education & Training",
-      new GregorianCalendar(1999, 1-1, 6).getTime(),
-      false, intro2eImageIcon},
-    {"Introduction to Java Programming, 3E", 220,
-      "Prentice Hall",
-      new GregorianCalendar(2000, 12-1, 0).getTime(),
-      true, intro3eImageIcon},
-  };
+    // Create image icons
+    private ImageIcon intro1eImageIcon = new ImageIcon(getClass().getResource("/image/intro1e.gif"));
+    private ImageIcon intro2eImageIcon = new ImageIcon(getClass().getResource("/image/intro2e.gif"));
+    private ImageIcon intro3eImageIcon = new ImageIcon(getClass().getResource("/image/intro3e.jpg"));
 
-  // Create a table model
-  private MyTableModel tableModel = new MyTableModel(
-    rowData, columnNames);
+    // Create table data
+    private Object[][] rowData = {
+	    { "Introduction to Java Programming", 120, "Que Education & Training",
+		    new GregorianCalendar(1998, 1 - 1, 6).getTime(), false, intro1eImageIcon },
+	    { "Introduction to Java Programming, 2E", 220, "Que Education & Training",
+		    new GregorianCalendar(1999, 1 - 1, 6).getTime(), false, intro2eImageIcon },
+	    { "Introduction to Java Programming, 3E", 220, "Prentice Hall",
+		    new GregorianCalendar(2000, 12 - 1, 0).getTime(), true, intro3eImageIcon }, };
 
-  // Create a table
-  private JTable jTable1 = new JTable(tableModel);
+    // Create a table model
+    private MyTableModel tableModel = new MyTableModel(rowData, columnNames);
 
-  public CustomTableCellRendererEditorDemo() {
-    // Set custom renderer for displaying images
-    TableColumn bookCover = jTable1.getColumn("Book Photo");
-    bookCover.setCellRenderer(new MyImageCellRenderer());
+    // Create a table
+    private JTable jTable1 = new JTable(tableModel);
 
-    // Create a combo box for publishers
-    JComboBox jcboPublishers = new JComboBox();
-    jcboPublishers.addItem("Prentice Hall");
-    jcboPublishers.addItem("Que Education & Training");
-    jcboPublishers.addItem("McGraw-Hill");
+    public CustomTableCellRendererEditorDemo() {
+	// Set custom renderer for displaying images
+	TableColumn bookCover = jTable1.getColumn("Book Photo");
+	bookCover.setCellRenderer(new MyImageCellRenderer());
 
-    // Set combo box as the editor for the publisher column
-    TableColumn publisherColumn = jTable1.getColumn("Publisher");
-    publisherColumn.setCellEditor(
-      new DefaultCellEditor(jcboPublishers));
+	// Create a combo box for publishers
+	JComboBox jcboPublishers = new JComboBox();
+	jcboPublishers.addItem("Prentice Hall");
+	jcboPublishers.addItem("Que Education & Training");
+	jcboPublishers.addItem("McGraw-Hill");
 
-    jTable1.setRowHeight(60);
-    add(new JScrollPane(jTable1),
-      BorderLayout.CENTER);
-  }
+	// Set combo box as the editor for the publisher column
+	TableColumn publisherColumn = jTable1.getColumn("Publisher");
+	publisherColumn.setCellEditor(new DefaultCellEditor(jcboPublishers));
 
-  public static void main(String[] args) {
-    CustomTableCellRendererEditorDemo applet =
-        new CustomTableCellRendererEditorDemo();
-    JFrame frame = new JFrame();
-    //EXIT_ON_CLOSE == 3
-    frame.setDefaultCloseOperation(3);
-    frame.setTitle("CustomTableCellRenderEditorDemo");
-    frame.getContentPane().add(applet, BorderLayout.CENTER);
-    applet.init();
-    applet.start();
-    frame.setSize(400,320);
-    Dimension d = Toolkit.getDefaultToolkit().getScreenSize();
-    frame.setLocation((d.width - frame.getSize().width) / 2,
-                      (d.height - frame.getSize().height) / 2);
-    frame.setVisible(true);
-  }
+	jTable1.setRowHeight(60);
+	add(new JScrollPane(jTable1), BorderLayout.CENTER);
+    }
+
+    public static void main(String[] args) {
+	CustomTableCellRendererEditorDemo applet = new CustomTableCellRendererEditorDemo();
+	JFrame frame = new JFrame();
+	// EXIT_ON_CLOSE == 3
+	frame.setDefaultCloseOperation(3);
+	frame.setTitle("CustomTableCellRenderEditorDemo");
+	frame.getContentPane().add(applet, BorderLayout.CENTER);
+	applet.init();
+	applet.start();
+	frame.setSize(400, 320);
+	Dimension d = Toolkit.getDefaultToolkit().getScreenSize();
+	frame.setLocation((d.width - frame.getSize().width) / 2, (d.height - frame.getSize().height) / 2);
+	frame.setVisible(true);
+    }
 }
-

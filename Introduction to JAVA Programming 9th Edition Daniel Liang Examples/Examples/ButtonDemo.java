@@ -1,67 +1,74 @@
-package Introduction.to.JAVA.Programming.Daniel.Liang.Examples;
-import java.awt.*;
-import java.awt.event.ActionListener;
+import java.awt.BorderLayout;
+import java.awt.Color;
 import java.awt.event.ActionEvent;
-import javax.swing.*;
+import java.awt.event.ActionListener;
+
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JPanel;
 
 public class ButtonDemo extends JFrame {
-  // Create a panel for displaying message
-  protected MessagePanel messagePanel
-    = new MessagePanel("Welcome to Java");
+    /**
+     *
+     */
+    private static final long serialVersionUID = 1L;
 
-  // Declare two buttons to move the message left and right
-  private JButton jbtLeft = new JButton("<=");
-  private JButton jbtRight = new JButton("=>");
+    // Create a panel for displaying message
+    protected MessagePanel messagePanel = new MessagePanel("Welcome to Java");
 
-  public static void main(String[] args) {
-    ButtonDemo frame = new ButtonDemo();
-    frame.setTitle("ButtonDemo");
-    frame.setLocationRelativeTo(null); // Center the frame
-    frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-    frame.setSize(250, 100);
-    frame.setVisible(true);
-  }
+    // Declare two buttons to move the message left and right
+    private JButton jbtLeft = new JButton("<=");
+    private JButton jbtRight = new JButton("=>");
 
-  public ButtonDemo() {
-    // Set the background color of messagePanel
-    messagePanel.setBackground(Color.white);
+    public static void main(String[] args) {
+	ButtonDemo frame = new ButtonDemo();
+	frame.setTitle("ButtonDemo");
+	frame.setLocationRelativeTo(null); // Center the frame
+	frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+	frame.setSize(250, 100);
+	frame.setVisible(true);
+    }
 
-    // Create Panel jpButtons to hold two Buttons "<=" and "right =>"
-    JPanel jpButtons = new JPanel();
-    jpButtons.add(jbtLeft);
-    jpButtons.add(jbtRight);
+    public ButtonDemo() {
+	// Set the background color of messagePanel
+	messagePanel.setBackground(Color.white);
 
-    // Set keyboard mnemonics
-    jbtLeft.setMnemonic('L');
-    jbtRight.setMnemonic('R');
+	// Create Panel jpButtons to hold two Buttons "<=" and "right =>"
+	JPanel jpButtons = new JPanel();
+	jpButtons.add(jbtLeft);
+	jpButtons.add(jbtRight);
 
-    // Set icons and remove text
-//    jbtLeft.setIcon(new ImageIcon("image/left.gif"));
-//    jbtRight.setIcon(new ImageIcon("image/right.gif"));
-//    jbtLeft.setText(null);
-//    jbtRight.setText(null);
+	// Set keyboard mnemonics
+	jbtLeft.setMnemonic('L');
+	jbtRight.setMnemonic('R');
 
-    // Set tool tip text on the buttons
-    jbtLeft.setToolTipText("Move message to left");
-    jbtRight.setToolTipText("Move message to right");
+	// Set icons and remove text
+	// jbtLeft.setIcon(new ImageIcon("image/left.gif"));
+	// jbtRight.setIcon(new ImageIcon("image/right.gif"));
+	// jbtLeft.setText(null);
+	// jbtRight.setText(null);
 
-    // Place panels in the frame
-    setLayout(new BorderLayout());
-    add(messagePanel, BorderLayout.CENTER);
-    add(jpButtons, BorderLayout.SOUTH);
+	// Set tool tip text on the buttons
+	jbtLeft.setToolTipText("Move message to left");
+	jbtRight.setToolTipText("Move message to right");
 
-    // Register listeners with the buttons
-    jbtLeft.addActionListener(new ActionListener() {
-      @Override
-      public void actionPerformed(ActionEvent e) {
-        messagePanel.moveLeft();
-      }
-    });
-    jbtRight.addActionListener(new ActionListener() {
-      @Override
-      public void actionPerformed(ActionEvent e) {
-        messagePanel.moveRight();
-      }
-    });
-  }
+	// Place panels in the frame
+	setLayout(new BorderLayout());
+	add(messagePanel, BorderLayout.CENTER);
+	add(jpButtons, BorderLayout.SOUTH);
+
+	// Register listeners with the buttons
+	jbtLeft.addActionListener(new ActionListener() {
+	    @Override
+	    public void actionPerformed(ActionEvent e) {
+		messagePanel.moveLeft();
+	    }
+	});
+	jbtRight.addActionListener(new ActionListener() {
+	    @Override
+	    public void actionPerformed(ActionEvent e) {
+		messagePanel.moveRight();
+	    }
+	});
+    }
 }

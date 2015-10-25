@@ -1,5 +1,5 @@
 import java.io.FileNotFoundException;
-import java.util.*;
+import java.util.Scanner;
 
 public class _4B_Before_an_Exam {
     public static void main(String[] args) throws FileNotFoundException {
@@ -19,8 +19,7 @@ public class _4B_Before_an_Exam {
 	else {
 	    System.out.println("YES");
 	    int i = 0;
-	    for (; i < maxTimes.length
-		    && minTime + maxTimes[i] - minTimes[i] <= sumTime; i++) {
+	    for (; i < maxTimes.length && minTime + maxTimes[i] - minTimes[i] <= sumTime; i++) {
 		minTime += maxTimes[i] - minTimes[i];
 		minTimes[i] = maxTimes[i];
 	    }

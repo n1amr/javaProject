@@ -1,19 +1,25 @@
-package Introduction.to.JAVA.Programming.Daniel.Liang.Examples;
-import java.awt.*;
-import javax.swing.*;
+import java.awt.BorderLayout;
+
+import javax.swing.JApplet;
+import javax.swing.JFrame;
 
 public class BounceBallApp extends JApplet {
-  public BounceBallApp() {
-    add(new BallControl());
-  }
+    /**
+     *
+     */
+    private static final long serialVersionUID = 1L;
 
-  public static void main(String[] args) {
-    BounceBallApp applet = new BounceBallApp();
-    JFrame frame = new JFrame();
-    frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-    frame.setTitle("BounceBallApp");
-    frame.add(applet, BorderLayout.CENTER);
-    frame.setSize(400, 320);
-    frame.setVisible(true);
-  }
+    public BounceBallApp() {
+	add(new BallControl());
+    }
+
+    public static void main(String[] args) {
+	BounceBallApp applet = new BounceBallApp();
+	JFrame frame = new JFrame();
+	frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+	frame.setTitle("BounceBallApp");
+	frame.add(applet, BorderLayout.CENTER);
+	frame.setSize(400, 320);
+	frame.setVisible(true);
+    }
 }

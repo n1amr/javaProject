@@ -1,4 +1,5 @@
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Scanner;
 
 public class _490A_Team_Olympiad {
     public static void main(String[] args) {
@@ -19,7 +20,6 @@ public class _490A_Team_Olympiad {
 
 	System.out.println(min);
 	for (int i = 0; i < min; i++)
-	    System.out.println(arr[0].get(i) + " " + arr[1].get(i) + " "
-		    + arr[2].get(i));
+	    System.out.println(arr[0].get(i) + " " + arr[1].get(i) + " " + arr[2].get(i));
     }
 }

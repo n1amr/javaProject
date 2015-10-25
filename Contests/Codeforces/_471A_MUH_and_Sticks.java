@@ -1,4 +1,4 @@
-import java.util.*;
+import java.util.Scanner;
 
 public class _471A_MUH_and_Sticks {
     public static void main(String[] args) {
@@ -11,24 +11,21 @@ public class _471A_MUH_and_Sticks {
 	int p = 0;
 	boolean have4 = false;
 	boolean morethan4 = false;
-	for (int i = 0; i < 9; i++) {
+	for (int i = 0; i < 9; i++)
 	    if (a[i] != 0) {
 		c[p++] = a[i];
-		if (a[i] == 4) {
+		if (a[i] == 4)
 		    have4 = true;
-		}
 		if (a[i] > 4) {
 		    have4 = true;
 		    morethan4 = true;
 		}
 	    }
-	}
-	if (p > 3 || !have4) {
+	if (p > 3 || !have4)
 	    System.out.println("Alien");
-	} else if ((!morethan4 && c[2] == 0) || (c[1] == 0)) {
+	else if (!morethan4 && c[2] == 0 || c[1] == 0)
 	    System.out.println("Elephant");
-	} else {
+	else
 	    System.out.println("Bear");
-	}
     }
 }

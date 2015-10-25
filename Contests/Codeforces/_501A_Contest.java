@@ -1,8 +1,8 @@
-import java.util.*;
+import java.util.Scanner;
 
 public class _501A_Contest {
     public static void main(String[] args) {
-	Scanner in = new Scanner(((System.in)));
+	Scanner in = new Scanner(System.in);
 	double a = in.nextInt();
 	double b = in.nextInt();
 	double c = in.nextInt();

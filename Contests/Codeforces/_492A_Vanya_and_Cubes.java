@@ -1,8 +1,8 @@
-import java.util.*;
+import java.util.Scanner;
 
 public class _492A_Vanya_and_Cubes {
     public static void main(String[] args) {
-	int n = (new Scanner(System.in)).nextInt();
+	int n = new Scanner(System.in).nextInt();
 	int l = 0;
 	while (n >= 0) {
 	    l++;

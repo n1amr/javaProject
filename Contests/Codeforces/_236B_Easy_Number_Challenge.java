@@ -1,4 +1,4 @@
-import java.util.*;
+import java.util.Scanner;
 
 public class _236B_Easy_Number_Challenge {
     public static void main(String[] args) {

@@ -1,42 +1,56 @@
-package Introduction.to.JAVA.Programming.Daniel.Liang.Examples;
-import javax.swing.*;
-import java.awt.*;
+import java.awt.Color;
+import java.awt.Font;
+import java.awt.FontMetrics;
+import java.awt.Graphics;
+
+import javax.swing.JFrame;
+import javax.swing.JPanel;
 
 public class TestCenterMessage extends JFrame {
-  public TestCenterMessage() {
-    CenterMessage messagePanel = new CenterMessage();
-    add(messagePanel);
-    messagePanel.setBackground(Color.WHITE);
-    messagePanel.setFont(new Font("Californian FB", Font.BOLD, 30));
-  }
+    /**
+     *
+     */
+    private static final long serialVersionUID = 1L;
 
-  /** Main method */
-  public static void main(String[] args) {
-    TestCenterMessage frame = new TestCenterMessage();
-    frame.setSize(300, 150);
-    frame.setTitle("CenterMessage");
-    frame.setLocationRelativeTo(null); // Center the frame   
-    frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-    frame.setVisible(true);
-  }
+    public TestCenterMessage() {
+	CenterMessage messagePanel = new CenterMessage();
+	add(messagePanel);
+	messagePanel.setBackground(Color.WHITE);
+	messagePanel.setFont(new Font("Californian FB", Font.BOLD, 30));
+    }
+
+    /** Main method */
+    public static void main(String[] args) {
+	TestCenterMessage frame = new TestCenterMessage();
+	frame.setSize(300, 150);
+	frame.setTitle("CenterMessage");
+	frame.setLocationRelativeTo(null); // Center the frame
+	frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+	frame.setVisible(true);
+    }
 }
 
 class CenterMessage extends JPanel {
-  @Override /** Paint the message */
-  protected void paintComponent(Graphics g) {
-    super.paintComponent(g);
+    /**
+     *
+     */
+    private static final long serialVersionUID = 1L;
 
-    // Get font metrics for the current font
-    FontMetrics fm = g.getFontMetrics();
+    @Override /** Paint the message */
+    protected void paintComponent(Graphics g) {
+	super.paintComponent(g);
 
-    // Find the center location to display
-    int stringWidth = fm.stringWidth("Welcome to Java");
-    int stringAscent = fm.getAscent();
+	// Get font metrics for the current font
+	FontMetrics fm = g.getFontMetrics();
 
-    // Get the position of the leftmost character in the baseline
-    int xCoordinate = getWidth() / 2 - stringWidth / 2;
-    int yCoordinate = getHeight() / 2 + stringAscent / 2;
+	// Find the center location to display
+	int stringWidth = fm.stringWidth("Welcome to Java");
+	int stringAscent = fm.getAscent();
 
-    g.drawString("Welcome to Java", xCoordinate, yCoordinate);
-  }
+	// Get the position of the leftmost character in the baseline
+	int xCoordinate = getWidth() / 2 - stringWidth / 2;
+	int yCoordinate = getHeight() / 2 + stringAscent / 2;
+
+	g.drawString("Welcome to Java", xCoordinate, yCoordinate);
+    }
 }

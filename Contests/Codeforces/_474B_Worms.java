@@ -1,4 +1,4 @@
-import java.util.*;
+import java.util.Scanner;
 
 public class _474B_Worms {
     public static void main(String[] args) {

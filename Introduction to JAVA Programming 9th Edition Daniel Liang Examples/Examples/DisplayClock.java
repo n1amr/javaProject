@@ -1,30 +1,37 @@
-package Introduction.to.JAVA.Programming.Daniel.Liang.Examples;
-import java.awt.*;
-import javax.swing.*;
+import java.awt.BorderLayout;
+import java.awt.Color;
+import java.awt.Font;
+
+import javax.swing.JFrame;
 
 public class DisplayClock extends JFrame {
-  public DisplayClock() {
-    // Create an analog clock for the current time
-    StillClock clock = new StillClock();
+    /**
+     *
+     */
+    private static final long serialVersionUID = 1L;
 
-    // Display hour, minute, and seconds in the message panel
-    MessagePanel messagePanel = new MessagePanel(clock.getHour() +
-      ":" + clock.getMinute() + ":" + clock.getSecond());
-    messagePanel.setCentered(true);
-    messagePanel.setForeground(Color.blue);
-    messagePanel.setFont(new Font("Courie", Font.BOLD, 16));
+    public DisplayClock() {
+	// Create an analog clock for the current time
+	StillClock clock = new StillClock();
 
-    // Add the clock and message panel to the frame
-    add(clock);
-    add(messagePanel, BorderLayout.SOUTH);
-  }
+	// Display hour, minute, and seconds in the message panel
+	MessagePanel messagePanel = new MessagePanel(
+		clock.getHour() + ":" + clock.getMinute() + ":" + clock.getSecond());
+	messagePanel.setCentered(true);
+	messagePanel.setForeground(Color.blue);
+	messagePanel.setFont(new Font("Courie", Font.BOLD, 16));
 
-  public static void main(String[] args) {
-    DisplayClock frame = new DisplayClock();
-    frame.setTitle("DisplayClock");
-    frame.setLocationRelativeTo(null); // Center the frame
-    frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-    frame.setSize(300, 350);
-    frame.setVisible(true);
-  }
+	// Add the clock and message panel to the frame
+	add(clock);
+	add(messagePanel, BorderLayout.SOUTH);
+    }
+
+    public static void main(String[] args) {
+	DisplayClock frame = new DisplayClock();
+	frame.setTitle("DisplayClock");
+	frame.setLocationRelativeTo(null); // Center the frame
+	frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+	frame.setSize(300, 350);
+	frame.setVisible(true);
+    }
 }

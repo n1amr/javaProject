@@ -1,4 +1,4 @@
-import java.util.*;
+import java.util.Scanner;
 
 public class Secure_Password_System {
     public static void main(String[] args) {

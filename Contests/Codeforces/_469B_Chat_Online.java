@@ -1,4 +1,4 @@
-import java.util.*;
+import java.util.Scanner;
 
 public class _469B_Chat_Online {
     public static void main(String[] args) {

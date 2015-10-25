@@ -1,4 +1,4 @@
-import java.util.*;
+import java.util.Scanner;
 
 public class _450B_Jzzhu_and_Sequences {
     public static void main(String[] args) {

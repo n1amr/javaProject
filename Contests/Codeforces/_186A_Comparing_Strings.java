@@ -1,4 +1,4 @@
-import java.util.*;
+import java.util.Scanner;
 
 public class _186A_Comparing_Strings {
     public static void main(String[] args) {
@@ -6,15 +6,13 @@ public class _186A_Comparing_Strings {
 	String a = in.next();
 	String b = in.next();
 	if (a.length() >= b.length())
-	    for (int i = 0; i < a.length() - b.length() + 1; i++) {
+	    for (int i = 0; i < a.length() - b.length() + 1; i++)
 		if (isGenome(a.substring(i, i + b.length()), b)) {
 		    System.out.println("YES");
-		    if (a.startsWith("vcmuxuwggfqbxqgmtwxmbpn")) {
+		    if (a.startsWith("vcmuxuwggfqbxqgmtwxmbpn"))
 			System.out.println(a.substring(i, i + b.length()));
-		    }
 		    return;
 		}
-	    }
 	System.out.println("NO");
     }
 

@@ -1,4 +1,6 @@
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Scanner;
 
 public class _431B_Shower_Line {
     static int[][] g;
@@ -45,9 +47,8 @@ public class _431B_Shower_Line {
 	int max = 0;
 	Integer[] a = new Integer[] { 0, 1, 2, 3, 4 };
 	ArrayList<Integer[]> ss = permutations(a);
-	for (Integer[] v : ss) {
+	for (Integer[] v : ss)
 	    max = Math.max(max, calcG(v));
-	}
 	System.out.println(max);
     }
 

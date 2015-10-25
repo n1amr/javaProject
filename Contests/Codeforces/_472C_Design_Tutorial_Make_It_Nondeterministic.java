@@ -1,4 +1,4 @@
-import java.util.*;
+import java.util.Scanner;
 
 public class _472C_Design_Tutorial_Make_It_Nondeterministic {
     public static void main(String[] args) {
@@ -18,8 +18,7 @@ public class _472C_Design_Tutorial_Make_It_Nondeterministic {
 	    String first = f[p[i]];
 	    String last = s[p[i]];
 	    String selected = first;
-	    if ((selected.compareTo(lastOne) < 0)
-		    || (last.compareTo(first) < 0 && last.compareTo(lastOne) > 0))
+	    if (selected.compareTo(lastOne) < 0 || last.compareTo(first) < 0 && last.compareTo(lastOne) > 0)
 		selected = last;
 	    if (lastOne.compareTo(selected) > 0) {
 		System.out.println("NO");

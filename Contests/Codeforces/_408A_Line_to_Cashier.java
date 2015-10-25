@@ -1,4 +1,4 @@
-import java.util.*;
+import java.util.Scanner;
 
 public class _408A_Line_to_Cashier {
     public static void main(String[] args) {

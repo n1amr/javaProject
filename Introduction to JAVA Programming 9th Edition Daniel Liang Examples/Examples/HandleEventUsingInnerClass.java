@@ -1,40 +1,48 @@
-package Introduction.to.JAVA.Programming.Daniel.Liang.Examples;
-import javax.swing.*;
-import java.awt.event.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JPanel;
 
 public class HandleEventUsingInnerClass extends JFrame {
-  public HandleEventUsingInnerClass() {
-    // Create two buttons
-    JButton jbtOK = new JButton("OK");
-    JButton jbtCancel = new JButton("Cancel");
+    /**
+     *
+     */
+    private static final long serialVersionUID = 1L;
 
-    // Create a panel to hold buttons
-    JPanel panel = new JPanel();
-    panel.add(jbtOK);
-    panel.add(jbtCancel);
+    public HandleEventUsingInnerClass() {
+	// Create two buttons
+	JButton jbtOK = new JButton("OK");
+	JButton jbtCancel = new JButton("Cancel");
 
-    add(panel); // Add panel to the frame
+	// Create a panel to hold buttons
+	JPanel panel = new JPanel();
+	panel.add(jbtOK);
+	panel.add(jbtCancel);
 
-    // Register listeners
-    ListenerClass listener = new ListenerClass();
-    jbtOK.addActionListener(listener);
-    jbtCancel.addActionListener(listener);
-  }
+	add(panel); // Add panel to the frame
 
-  public static void main(String[] args) {
-    JFrame frame = new HandleEventUsingInnerClass();
-    frame.setTitle("Handle Event");
-    frame.setSize(200, 150);
-    frame.setLocation(200, 100);
-    frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-    frame.setVisible(true);
-  }
-
-  private class ListenerClass implements ActionListener {
-    @Override
-    public void actionPerformed(ActionEvent e) {
-      System.out.println("The " + e.getActionCommand() + " button "
-          + "is clicked at\n  " + new java.util.Date(e.getWhen()));
+	// Register listeners
+	ListenerClass listener = new ListenerClass();
+	jbtOK.addActionListener(listener);
+	jbtCancel.addActionListener(listener);
     }
-  }
+
+    public static void main(String[] args) {
+	JFrame frame = new HandleEventUsingInnerClass();
+	frame.setTitle("Handle Event");
+	frame.setSize(200, 150);
+	frame.setLocation(200, 100);
+	frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+	frame.setVisible(true);
+    }
+
+    private class ListenerClass implements ActionListener {
+	@Override
+	public void actionPerformed(ActionEvent e) {
+	    System.out.println(
+		    "The " + e.getActionCommand() + " button " + "is clicked at\n  " + new java.util.Date(e.getWhen()));
+	}
+    }
 }

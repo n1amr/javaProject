@@ -1,71 +1,76 @@
-package Introduction.to.JAVA.Programming.Daniel.Liang.Examples;
-import javax.swing.*;
-import javax.swing.table.*;
 import java.awt.BorderLayout;
 
+import javax.swing.JApplet;
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+import javax.swing.JTable;
+import javax.swing.JTextField;
+import javax.swing.RowFilter;
+import javax.swing.table.TableModel;
+import javax.swing.table.TableRowSorter;
+
 public class TestTableSortFilter extends JApplet {
-  // Create table column names
-  private String[] columnNames =
-    {"Country", "Capital", "Population in Millions", "Democracy"};
+    /**
+     *
+     */
+    private static final long serialVersionUID = 1L;
 
-  // Create table data
-  private Object[][] data = {
-    {"USA", "Washington DC", 280, true},
-    {"Canada", "Ottawa", 32, true},
-    {"United Kingdom", "London", 60, true},
-    {"Germany", "Berlin", 83, true},
-    {"France", "Paris", 60, true},
-    {"Norway", "Oslo", 4.5, true},
-    {"India", "New Delhi", 1046, true}
-  };
+    // Create table column names
+    private String[] columnNames = { "Country", "Capital", "Population in Millions", "Democracy" };
 
-  // Create a table
-  private JTable jTable1 = new JTable(data, columnNames);
+    // Create table data
+    private Object[][] data = { { "USA", "Washington DC", 280, true }, { "Canada", "Ottawa", 32, true },
+	    { "United Kingdom", "London", 60, true }, { "Germany", "Berlin", 83, true },
+	    { "France", "Paris", 60, true }, { "Norway", "Oslo", 4.5, true }, { "India", "New Delhi", 1046, true } };
 
-  // Create a TableRowSorter
-  private TableRowSorter<TableModel> sorter =
-      new TableRowSorter<TableModel>(jTable1.getModel());
+    // Create a table
+    private JTable jTable1 = new JTable(data, columnNames);
 
-  private JTextField jtfFilter = new JTextField();
-  private JButton btFilter = new JButton("Filter");
+    // Create a TableRowSorter
+    private TableRowSorter<TableModel> sorter = new TableRowSorter<TableModel>(jTable1.getModel());
 
-  public TestTableSortFilter() {
-    // Enable auto sorter
-    jTable1.setRowSorter(sorter);
+    private JTextField jtfFilter = new JTextField();
+    private JButton btFilter = new JButton("Filter");
 
-    JPanel panel = new JPanel(new java.awt.BorderLayout());
-    panel.add(new JLabel("Specify a word to match:"),
-      BorderLayout.WEST);
-    panel.add(jtfFilter, BorderLayout.CENTER);
-    panel.add(btFilter, BorderLayout.EAST);
+    public TestTableSortFilter() {
+	// Enable auto sorter
+	jTable1.setRowSorter(sorter);
 
-    add(panel, BorderLayout.SOUTH);
-    add(new JScrollPane(jTable1), BorderLayout.CENTER);
+	JPanel panel = new JPanel(new java.awt.BorderLayout());
+	panel.add(new JLabel("Specify a word to match:"), BorderLayout.WEST);
+	panel.add(jtfFilter, BorderLayout.CENTER);
+	panel.add(btFilter, BorderLayout.EAST);
 
-    btFilter.addActionListener(new java.awt.event.ActionListener() {
-      @Override
-      public void actionPerformed(java.awt.event.ActionEvent e) {
-        String text = jtfFilter.getText();
-        if (text.trim().length() == 0)
-          sorter.setRowFilter(null);
-        else
-          sorter.setRowFilter(RowFilter.regexFilter(text));
-      }
-    });
-  }
+	add(panel, BorderLayout.SOUTH);
+	add(new JScrollPane(jTable1), BorderLayout.CENTER);
 
-  //Main method
-  public static void main(String[] args) {
-    TestTableSortFilter applet = new TestTableSortFilter();
-    JFrame frame = new JFrame();
-    //EXIT_ON_CLOSE == 3
-    frame.setDefaultCloseOperation(3);
-    frame.setTitle("TestTableSortFilterSortFilter");
-    frame.getContentPane().add(applet, java.awt.BorderLayout.CENTER);
-    applet.init();
-    applet.start();
-    frame.setSize(400,320);
-    frame.setLocationRelativeTo(null);
-    frame.setVisible(true);
-  }
+	btFilter.addActionListener(new java.awt.event.ActionListener() {
+	    @Override
+	    public void actionPerformed(java.awt.event.ActionEvent e) {
+		String text = jtfFilter.getText();
+		if (text.trim().length() == 0)
+		    sorter.setRowFilter(null);
+		else
+		    sorter.setRowFilter(RowFilter.regexFilter(text));
+	    }
+	});
+    }
+
+    // Main method
+    public static void main(String[] args) {
+	TestTableSortFilter applet = new TestTableSortFilter();
+	JFrame frame = new JFrame();
+	// EXIT_ON_CLOSE == 3
+	frame.setDefaultCloseOperation(3);
+	frame.setTitle("TestTableSortFilterSortFilter");
+	frame.getContentPane().add(applet, java.awt.BorderLayout.CENTER);
+	applet.init();
+	applet.start();
+	frame.setSize(400, 320);
+	frame.setLocationRelativeTo(null);
+	frame.setVisible(true);
+    }
 }

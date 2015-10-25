@@ -1,5 +1,5 @@
 import java.io.FileNotFoundException;
-import java.util.*;
+import java.util.Scanner;
 
 public class _10A_Power_Consumption_Calculation {
     public static void main(String[] args) throws FileNotFoundException {

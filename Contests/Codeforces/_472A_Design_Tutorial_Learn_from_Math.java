@@ -1,4 +1,4 @@
-import java.util.*;
+import java.util.Scanner;
 
 public class _472A_Design_Tutorial_Learn_from_Math {
 

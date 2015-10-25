@@ -1,4 +1,4 @@
-import java.util.*;
+import java.util.Scanner;
 
 public class _437A_The_Child_and_Homework {
     public static void main(String[] args) {
@@ -24,7 +24,7 @@ public class _437A_The_Child_and_Homework {
 	boolean r = true;
 	for (int i = 0; i < 4; i++)
 	    if (i != n)
-		r = r && (a[n] * 2 <= a[i]);
+		r = r && a[n] * 2 <= a[i];
 	return r;
     }
 
@@ -39,7 +39,7 @@ public class _437A_The_Child_and_Homework {
 	boolean r = true;
 	for (int i = 0; i < 4; i++)
 	    if (i != n)
-		r = r && (a[n] >= a[i] * 2);
+		r = r && a[n] >= a[i] * 2;
 	return r;
     }
 }

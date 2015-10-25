@@ -1,9 +1,10 @@
-import java.io.*;
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.io.PrintWriter;
 
 public class _264A_Escape_from_Stones {
     public static void main(String[] args) throws Exception {
-	String s = new BufferedReader(new InputStreamReader(System.in))
-		.readLine();
+	String s = new BufferedReader(new InputStreamReader(System.in)).readLine();
 	int i = 0, j = s.length(), k = 0, Q[] = new int[j];
 	while (i < j)
 	    if ('l' != s.charAt(k++))

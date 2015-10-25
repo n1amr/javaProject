@@ -1,4 +1,4 @@
-import java.util.*;
+import java.util.Scanner;
 
 public class _8A_Train_and_Peter {
     public static void main(String[] args) {

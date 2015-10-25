@@ -1,4 +1,4 @@
-import java.util.*;
+import java.util.Scanner;
 
 public class _454B_Little_Pony_and_Sort_by_Shift {
     public static void main(String[] args) {

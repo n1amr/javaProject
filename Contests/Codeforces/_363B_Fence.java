@@ -6,16 +6,14 @@ public class _363B_Fence {
 	int n = in.nextInt();
 	int k = in.nextInt();
 	int[] a = new int[n];
-	for (int i = 0; i < n; i++) {
+	for (int i = 0; i < n; i++)
 	    a[i] = in.nextInt();
-	}
 	int index = 0;
 	int sum = 0;
 	int minSum = 0;
 
-	for (int i = 0; i < k; i++) {
+	for (int i = 0; i < k; i++)
 	    sum += a[i];
-	}
 	minSum = sum;
 	for (int i = 0; i + k < a.length; i++) {
 

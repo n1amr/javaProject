@@ -10,12 +10,10 @@ public class Functions {
     public String getHTTPResponse(HttpURLConnection con) {
 	StringBuffer response = new StringBuffer();
 	try {
-	    BufferedReader in = new BufferedReader(new InputStreamReader(
-		    con.getInputStream()));
+	    BufferedReader in = new BufferedReader(new InputStreamReader(con.getInputStream()));
 	    String inputLine;
-	    while ((inputLine = in.readLine()) != null) {
+	    while ((inputLine = in.readLine()) != null)
 		response.append(inputLine);
-	    }
 	    in.close();
 	} catch (Exception e) {
 	    e.printStackTrace();
@@ -53,7 +51,8 @@ public class Functions {
 	a[j] = t;
     }
 
-    static boolean isSorted(Comparable[] a) { // .GetSearchResultsFromGoogle whether the array
+    static boolean isSorted(Comparable[] a) { // .GetSearchResultsFromGoogle
+					      // whether the array
 					      // entries are in order.
 	for (int i = 1; i < a.length; i++)
 	    if (isLess(a[i], a[i - 1]))
@@ -65,11 +64,10 @@ public class Functions {
 	int N = a.length;
 	double[][] c = new double[N][N];
 	for (int i = 0; i < N; i++)
-	    for (int j = 0; j < N; j++) { // Compute dot product of row i and
-					  // column j.
+	    for (int j = 0; j < N; j++)
+		// column j.
 		for (int k = 0; k < N; k++)
 		    c[i][j] += a[i][k] * b[k][j];
-	    }
 	return c;
     }
 
@@ -77,9 +75,8 @@ public class Functions {
 	for (int i = 1; i < list.length; i++) {
 	    int currentElement = list[i];
 	    int k;
-	    for (k = i; k > 0 && list[k - 1] > currentElement; k--) {
+	    for (k = i; k > 0 && list[k - 1] > currentElement; k--)
 		list[k] = list[k - 1];
-	    }
 	    list[k] = currentElement;
 	}
     }
@@ -88,9 +85,8 @@ public class Functions {
 	for (int i = 1; i < list.length; i++) {
 	    T currentElement = list[i];
 	    int k;
-	    for (k = i; k > 0 && list[k - 1].compareTo(currentElement) > 0; k--) {
+	    for (k = i; k > 0 && list[k - 1].compareTo(currentElement) > 0; k--)
 		list[k] = list[k - 1];
-	    }
 	    list[k] = currentElement;
 	}
     }
@@ -98,12 +94,11 @@ public class Functions {
     static void selectionSort(int[] list) {
 	for (int i = 0; i < list.length; i++) {
 	    int min = list[i], minIndex = i;
-	    for (int j = i + 1; j < list.length; j++) {
+	    for (int j = i + 1; j < list.length; j++)
 		if (min > list[j]) {
 		    min = list[j];
 		    minIndex = j;
 		}
-	    }
 
 	    if (minIndex != i) {
 		list[minIndex] = list[i];
@@ -126,9 +121,8 @@ public class Functions {
 	    for (int i = h; i < a.length; i++) {
 		int currentElement = a[i];
 		int j;
-		for (j = i; j >= h && a[j - h] > currentElement; j -= h) {
+		for (j = i; j >= h && a[j - h] > currentElement; j -= h)
 		    a[j] = a[j - h];
-		}
 		a[j] = currentElement;
 	    }
 	    h /= 3;
@@ -139,13 +133,12 @@ public class Functions {
 	// stably merge a[lo .. mid] with a[mid+1 ..hi] using aux[lo .. hi]
 	private static void merge(int[] a, int[] aux, int lo, int mid, int hi) {
 	    // copy to aux[]
-	    for (int k = lo; k <= hi; k++) {
+	    for (int k = lo; k <= hi; k++)
 		aux[k] = a[k];
-	    }
 
 	    // merge back to a[]
 	    int i = lo, j = mid + 1;
-	    for (int k = lo; k <= hi; k++) {
+	    for (int k = lo; k <= hi; k++)
 		if (i > mid)
 		    a[k] = aux[j++]; // this copying is unnecessary
 		else if (j > hi)
@@ -154,7 +147,6 @@ public class Functions {
 		    a[k] = aux[j++];
 		else
 		    a[k] = aux[i++];
-	    }
 	}
 
 	// mergesort a[lo..hi] using auxiliary array aux[lo..hi]
@@ -176,16 +168,14 @@ public class Functions {
 
     static class GenericMergeSort {
 	// stably merge a[lo .. mid] with a[mid+1 ..hi] using aux[lo .. hi]
-	private static <T extends Comparable<T>> void merge(T[] a, T[] aux,
-		int lo, int mid, int hi) {
+	private static <T extends Comparable<T>> void merge(T[] a, T[] aux, int lo, int mid, int hi) {
 	    // copy to aux[]
-	    for (int k = lo; k <= hi; k++) {
+	    for (int k = lo; k <= hi; k++)
 		aux[k] = a[k];
-	    }
 
 	    // merge back to a[]
 	    int i = lo, j = mid + 1;
-	    for (int k = lo; k <= hi; k++) {
+	    for (int k = lo; k <= hi; k++)
 		if (i > mid)
 		    a[k] = aux[j++]; // this copying is unnecessary
 		else if (j > hi)
@@ -194,12 +184,10 @@ public class Functions {
 		    a[k] = aux[j++];
 		else
 		    a[k] = aux[i++];
-	    }
 	}
 
 	// mergesort a[lo..hi] using auxiliary array aux[lo..hi]
-	private static <T extends Comparable<T>> void sort(T[] a, T[] aux,
-		int lo, int hi) {
+	private static <T extends Comparable<T>> void sort(T[] a, T[] aux, int lo, int hi) {
 	    if (hi <= lo)
 		return;
 	    int mid = lo + (hi - lo) / 2;
@@ -345,9 +333,8 @@ public class Functions {
     static int[] countLetters(String s) {
 	int[] c = new int[26];
 	s = s.toLowerCase();
-	for (int i = 0; i < s.length(); i++) {
+	for (int i = 0; i < s.length(); i++)
 	    c[s.charAt(i) - 'a']++;
-	}
 	return c;
     }
 
@@ -356,10 +343,9 @@ public class Functions {
     }
 
     static int digitalRoot(int n) {
-	while (n > 9) {
+	while (n > 9)
 	    n -= 9;
-	}
-	return (n);
+	return n;
     }
 
     static int gcd(int a, int b) {
@@ -370,15 +356,14 @@ public class Functions {
 
     static int lcm(int a, int b) {
 	int temp = gcd(a, b);
-	return (temp != 0) ? (a * b / temp) : 0;
+	return temp != 0 ? a * b / temp : 0;
     }
 
     static int sumOfDigits(int num) {
 	int sum = 0;
 	String n = Integer.toString(num);
-	for (int i = 0; i < n.length(); i++) {
+	for (int i = 0; i < n.length(); i++)
 	    sum += n.charAt(i) - '0';
-	}
 	return sum;
     }
 
@@ -412,9 +397,8 @@ public class Functions {
     static long fibsave(int n) {
 	if (n < fibsave.size())
 	    return fibsave.get(n);
-	for (int i = fibsave.size(); i <= n; i++) {
+	for (int i = fibsave.size(); i <= n; i++)
 	    fibsave.add(fibsave.get(i - 1) + fibsave.get(i - 2));
-	}
 	return fibsave.get(n);
     }
 
@@ -424,22 +408,20 @@ public class Functions {
     static BigInteger bigFibSave(int n) {
 	if (n < bigFibSave.size())
 	    return bigFibSave.get(n);
-	for (int i = bigFibSave.size(); i <= n; i++) {
+	for (int i = bigFibSave.size(); i <= n; i++)
 	    bigFibSave.add(bigFibSave.get(i - 1).add(bigFibSave.get(i - 2)));
-	}
 	return bigFibSave.get(n);
     }
 
     static boolean isLeapYear(int year) {
-	return (year % 4 == 0 && year % 100 != 0) || (year % 400 == 0);
+	return year % 4 == 0 && year % 100 != 0 || year % 400 == 0;
     }
 
     static boolean isItInt(double num) {
 	return num == (long) num;
     }
 
-    static ArrayList<Boolean> primeFlags = new ArrayList<>(Arrays.asList(false,
-	    false));
+    static ArrayList<Boolean> primeFlags = new ArrayList<>(Arrays.asList(false, false));
 
     /*
      * Invoke isPrime() for the largest number before testing smaller numbers to
@@ -472,9 +454,8 @@ public class Functions {
 	    permute(list, n + 1);
 	    java.util.Collections.swap(list, n, i);
 	}
-	if (n == list.size() - 1) {
+	if (n == list.size() - 1)
 	    System.out.println(java.util.Arrays.toString(list.toArray()));
-	}
     }
 
     static <E> ArrayList<E[]> permutations(E[] arr) {
@@ -515,9 +496,8 @@ public class Functions {
 	final ArrayList<Character[]> perms = permutations(c);
 	final ArrayList<String> resultList = new ArrayList<String>(perms.size());
 
-	for (Character[] p : perms) {
+	for (Character[] p : perms)
 	    resultList.add(Arrays.toString(p));
-	}
 	return resultList;
     }
 

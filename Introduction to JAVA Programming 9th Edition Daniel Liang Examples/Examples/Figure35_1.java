@@ -1,74 +1,80 @@
-package Introduction.to.JAVA.Programming.Daniel.Liang.Examples;
+
 // Figure35_1.java: Figures 24.1
-import java.awt.*;
-import javax.swing.*;
+import java.awt.GridLayout;
+
+import javax.swing.ButtonGroup;
+import javax.swing.ImageIcon;
+import javax.swing.JApplet;
+import javax.swing.JButton;
+import javax.swing.JCheckBoxMenuItem;
+import javax.swing.JFrame;
+import javax.swing.JMenu;
+import javax.swing.JMenuBar;
+import javax.swing.JMenuItem;
+import javax.swing.JRadioButtonMenuItem;
+import javax.swing.JToolBar;
 
 public class Figure35_1 extends JApplet {
 
-  public static void main(String[] args) {
-    JToolBar toolBar = new JToolBar();
-    toolBar.setLayout(new GridLayout());
-    toolBar.add(new JButton("ABC"));
-    toolBar.add(new JButton("DEF"));
+    /**
+     *
+     */
+    private static final long serialVersionUID = 1L;
 
-    JFrame frame = new JFrame("My Menus");
+    public static void main(String[] args) {
+	JToolBar toolBar = new JToolBar();
+	toolBar.setLayout(new GridLayout());
+	toolBar.add(new JButton("ABC"));
+	toolBar.add(new JButton("DEF"));
 
-//    frame.getContentPane().add(toolBar, BorderLayout.SOUTH);
+	JFrame frame = new JFrame("My Menus");
 
-    frame.setSize(300, 200);
-    frame.setVisible(true);
-    JMenuBar jmb = new JMenuBar();
-    frame.setJMenuBar(jmb);  // Attach a menu bar to a frame
+	// frame.getContentPane().add(toolBar, BorderLayout.SOUTH);
 
-    JMenu fileMenu = new JMenu("File");
-    JMenu helpMenu = new JMenu("Help");
-    jmb.add(fileMenu);
-    jmb.add(helpMenu);
+	frame.setSize(300, 200);
+	frame.setVisible(true);
+	JMenuBar jmb = new JMenuBar();
+	frame.setJMenuBar(jmb); // Attach a menu bar to a frame
 
-    JMenuItem jmiNew, jmiOpen;
-fileMenu.add(jmiNew = new JMenuItem("New"));
-fileMenu.add(jmiOpen = new JMenuItem("Open"));
-jmiNew.setIcon(new ImageIcon("image/new.gif"));
-jmiOpen.setIcon(new ImageIcon("image/open.gif"));
-helpMenu.setMnemonic('H');
-fileMenu.setMnemonic('F');
-jmiNew.setMnemonic('N');
-jmiOpen.setMnemonic('O');
-//    fileMenu.add(new JMenuItem("New"));
-//fileMenu.add(new JMenuItem("Open"));
-fileMenu.addSeparator();
-fileMenu.add(new JMenuItem("Print"));
-fileMenu.addSeparator();
-fileMenu.add(new JMenuItem("Exit"));
+	JMenu fileMenu = new JMenu("File");
+	JMenu helpMenu = new JMenu("Help");
+	jmb.add(fileMenu);
+	jmb.add(helpMenu);
 
-    JMenu softwareHelpSubMenu = new JMenu("Software");
-JMenu hardwareHelpSubMenu = new JMenu("Hardware");
-helpMenu.add(softwareHelpSubMenu);
-helpMenu.add(hardwareHelpSubMenu);
-softwareHelpSubMenu.add(new JMenuItem("Unix"));
-softwareHelpSubMenu.add(new JMenuItem("NT"));
-softwareHelpSubMenu.add(new JMenuItem("Win95"));
+	JMenuItem jmiNew, jmiOpen;
+	fileMenu.add(jmiNew = new JMenuItem("New"));
+	fileMenu.add(jmiOpen = new JMenuItem("Open"));
+	jmiNew.setIcon(new ImageIcon("image/new.gif"));
+	jmiOpen.setIcon(new ImageIcon("image/open.gif"));
+	helpMenu.setMnemonic('H');
+	fileMenu.setMnemonic('F');
+	jmiNew.setMnemonic('N');
+	jmiOpen.setMnemonic('O');
+	// fileMenu.add(new JMenuItem("New"));
+	// fileMenu.add(new JMenuItem("Open"));
+	fileMenu.addSeparator();
+	fileMenu.add(new JMenuItem("Print"));
+	fileMenu.addSeparator();
+	fileMenu.add(new JMenuItem("Exit"));
 
-helpMenu.add(new JCheckBoxMenuItem("Check it"));
+	JMenu softwareHelpSubMenu = new JMenu("Software");
+	JMenu hardwareHelpSubMenu = new JMenu("Hardware");
+	helpMenu.add(softwareHelpSubMenu);
+	helpMenu.add(hardwareHelpSubMenu);
+	softwareHelpSubMenu.add(new JMenuItem("Unix"));
+	softwareHelpSubMenu.add(new JMenuItem("NT"));
+	softwareHelpSubMenu.add(new JMenuItem("Win95"));
 
-    JMenu colorHelpSubMenu = new JMenu("Color");
-    helpMenu.add(colorHelpSubMenu);
+	helpMenu.add(new JCheckBoxMenuItem("Check it"));
 
-    JRadioButtonMenuItem jrbmiBlue, jrbmiYellow, jrbmiRed;
-    colorHelpSubMenu.add(jrbmiBlue =
-      new JRadioButtonMenuItem("Blue"));
-    colorHelpSubMenu.add(jrbmiYellow =
-      new JRadioButtonMenuItem("Yellow"));
-    colorHelpSubMenu.add(jrbmiRed =
-      new JRadioButtonMenuItem("Red"));
+	JMenu colorHelpSubMenu = new JMenu("Color");
+	helpMenu.add(colorHelpSubMenu);
 
-    ButtonGroup btg = new ButtonGroup();
-//    btg.add(jrbmiBlue);
-//    btg.add(jrbmiYellow);
-//    btg.add(jrbmiRed);
+	colorHelpSubMenu.add(new JRadioButtonMenuItem("Blue"));
+	colorHelpSubMenu.add(new JRadioButtonMenuItem("Yellow"));
+	colorHelpSubMenu.add(new JRadioButtonMenuItem("Red"));
 
+	new ButtonGroup();
 
-
-
-  }
+    }
 }

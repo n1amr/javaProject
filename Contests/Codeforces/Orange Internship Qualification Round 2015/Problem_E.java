@@ -12,7 +12,7 @@ public class Problem_E {
 	    for (int k = 0; k < n; k++) {
 		long cur = in.nextLong();
 		if (max > cur)
-		    ans += (max - cur);
+		    ans += max - cur;
 		max = cur;
 	    }
 	    System.out.println(ans);

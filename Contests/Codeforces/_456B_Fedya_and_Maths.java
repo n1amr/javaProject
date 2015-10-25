@@ -6,6 +6,6 @@ public class _456B_Fedya_and_Maths {
 	if (s.length() > 1)
 	    s = s.substring(s.length() - 2);
 	int x = Integer.valueOf(s);
-	System.out.println((x % 4 == 0) ? 4 : 0);
+	System.out.println(x % 4 == 0 ? 4 : 0);
     }
 }

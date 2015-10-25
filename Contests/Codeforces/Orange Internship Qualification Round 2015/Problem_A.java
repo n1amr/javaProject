@@ -35,9 +35,8 @@ public class Problem_A {
 
 	    cur = inc.get(times[0]);
 	    for (int i = 1; i < times.length; i++) {
-		if (cur > 0) {
+		if (cur > 0)
 		    c += times[i] - times[i - 1];
-		}
 		cur += inc.get(times[i]);
 	    }
 

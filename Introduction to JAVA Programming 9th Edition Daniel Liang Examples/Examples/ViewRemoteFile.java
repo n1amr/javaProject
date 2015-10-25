@@ -1,93 +1,105 @@
-package Introduction.to.JAVA.Programming.Daniel.Liang.Examples;
-import java.awt.*;
-import java.awt.event.*;
-import java.io.*;
-import java.net.*;
-import javax.swing.*;
+import java.awt.BorderLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.io.IOException;
+import java.net.MalformedURLException;
+import java.net.URL;
+
+import javax.swing.JApplet;
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+import javax.swing.JTextArea;
+import javax.swing.JTextField;
 
 public class ViewRemoteFile extends JApplet {
-  // Button to view the file
-  private JButton jbtView = new JButton("View");
+    /**
+     *
+     */
+    private static final long serialVersionUID = 1L;
 
-  // Text field to receive file name
-  private JTextField jtfURL = new JTextField(12);
+    // Button to view the file
+    private JButton jbtView = new JButton("View");
 
-  // Text area to store file
-  private JTextArea jtaFile = new JTextArea();
+    // Text field to receive file name
+    private JTextField jtfURL = new JTextField(12);
 
-  // Label to display status
-  private JLabel jlblStatus = new JLabel();
+    // Text area to store file
+    private JTextArea jtaFile = new JTextArea();
 
-  /** Initialize the applet */
-  public void init() {
-    // Create a panel to hold a label, a text field, and a button
-    JPanel p1 = new JPanel();
-    p1.setLayout(new BorderLayout());
-    p1.add(new JLabel("Filename"), BorderLayout.WEST);
-    p1.add(jtfURL, BorderLayout.CENTER);
-    p1.add(jbtView, BorderLayout.EAST);
+    // Label to display status
+    private JLabel jlblStatus = new JLabel();
 
-    // Place text area and panel p to the applet
-    setLayout(new BorderLayout());
-    add(new JScrollPane(jtaFile), BorderLayout.CENTER);
-    add(p1, BorderLayout.NORTH);
-    add(jlblStatus, BorderLayout.SOUTH);
+    /** Initialize the applet */
+    @Override
+    public void init() {
+	// Create a panel to hold a label, a text field, and a button
+	JPanel p1 = new JPanel();
+	p1.setLayout(new BorderLayout());
+	p1.add(new JLabel("Filename"), BorderLayout.WEST);
+	p1.add(jtfURL, BorderLayout.CENTER);
+	p1.add(jbtView, BorderLayout.EAST);
 
-    // Register listener to handle the "View" button
-    jbtView.addActionListener(new ActionListener() {
-      @Override
-      public void actionPerformed(ActionEvent e) {
-        showFile();
-      }
-    });
-  }
+	// Place text area and panel p to the applet
+	setLayout(new BorderLayout());
+	add(new JScrollPane(jtaFile), BorderLayout.CENTER);
+	add(p1, BorderLayout.NORTH);
+	add(jlblStatus, BorderLayout.SOUTH);
 
-  private void showFile() {
+	// Register listener to handle the "View" button
+	jbtView.addActionListener(new ActionListener() {
+	    @Override
+	    public void actionPerformed(ActionEvent e) {
+		showFile();
+	    }
+	});
+    }
+
+    private void showFile() {
 	java.util.Scanner input = null; // Use Scanner for getting text input
-    URL url = null;
+	URL url = null;
 
-    try {
-      // Obtain URL from the text field
-      url = new URL(jtfURL.getText().trim());
+	try {
+	    // Obtain URL from the text field
+	    url = new URL(jtfURL.getText().trim());
 
-      // Create a Scanner for input stream
-      input = new java.util.Scanner(url.openStream());
+	    // Create a Scanner for input stream
+	    input = new java.util.Scanner(url.openStream());
 
-      // Read a line and append the line to the text area
-      while (input.hasNext()) {
-        jtaFile.append(input.nextLine() + "\n");
-      }
+	    // Read a line and append the line to the text area
+	    while (input.hasNext())
+		jtaFile.append(input.nextLine() + "\n");
 
-      jlblStatus.setText("File loaded successfully");
+	    jlblStatus.setText("File loaded successfully");
+	} catch (MalformedURLException ex) {
+	    jlblStatus.setText("URL " + url + " not found.");
+	} catch (IOException e) {
+	    jlblStatus.setText(e.getMessage());
+	} finally {
+	    if (input != null)
+		input.close();
+	}
     }
-    catch (MalformedURLException ex) {
-	  jlblStatus.setText("URL " + url + " not found.");
+
+    /** Main method */
+    public static void main(String[] args) {
+	// Create a frame
+	JFrame frame = new JFrame("View File From a Web Server");
+
+	// Create an instance of ViewRemoteFile
+	ViewRemoteFile applet = new ViewRemoteFile();
+
+	// Add the applet instance to the frame
+	frame.add(applet, BorderLayout.CENTER);
+
+	// Invoke init() and start()
+	applet.init();
+	applet.start();
+
+	// Display the frame
+	frame.setSize(300, 300);
+	frame.setVisible(true);
     }
-    catch (IOException e) {
-      jlblStatus.setText(e.getMessage());
-    }
-    finally {
-      if (input != null) input.close();
-    }
-  }
-
-  /** Main method */
-  public static void main(String[] args) {
-    // Create a frame
-    JFrame frame = new JFrame("View File From a Web Server");
-
-    // Create an instance of ViewRemoteFile
-    ViewRemoteFile applet = new ViewRemoteFile();
-
-    // Add the applet instance to the frame
-    frame.add(applet, BorderLayout.CENTER);
-
-    // Invoke init() and start()
-    applet.init();
-    applet.start();
-
-    // Display the frame
-    frame.setSize(300, 300);
-    frame.setVisible(true);
-  }
 }

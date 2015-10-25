@@ -1,233 +1,229 @@
-package Introduction.to.JAVA.Programming.Daniel.Liang.Examples;
-import java.awt.*;
-import java.awt.event.*;
-import javax.swing.*;
-import javax.swing.table.*;
-import java.io.*;
+import java.awt.BorderLayout;
+import java.awt.FlowLayout;
+import java.awt.GridLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 import java.util.Vector;
 
+import javax.swing.JApplet;
+import javax.swing.JButton;
+import javax.swing.JCheckBox;
+import javax.swing.JComboBox;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+import javax.swing.JTable;
+import javax.swing.ListSelectionModel;
+import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableColumn;
+import javax.swing.table.TableColumnModel;
+
 public class ModifyTable extends JApplet {
-  // Create table column names
-  private String[] columnNames =
-    {"Country", "Capital", "Population in Millions", "Democracy"};
+    /**
+     *
+     */
+    private static final long serialVersionUID = 1L;
 
-  // Create table data
-  private Object[][] rowData = {
-    {"USA", "Washington DC", 280, true},
-    {"Canada", "Ottawa", 32, true},
-    {"United Kingdom", "London", 60, true},
-    {"Germany", "Berlin", 83, true},
-    {"France", "Paris", 60, true},
-    {"Norway", "Oslo", 4.5, true},
-    {"India", "New Delhi", 1046, true}
-  };
+    // Create table column names
+    private String[] columnNames = { "Country", "Capital", "Population in Millions", "Democracy" };
 
-  // Create a table model
-  private DefaultTableModel tableModel = new DefaultTableModel(
-    rowData, columnNames);
+    // Create table data
+    private Object[][] rowData = { { "USA", "Washington DC", 280, true }, { "Canada", "Ottawa", 32, true },
+	    { "United Kingdom", "London", 60, true }, { "Germany", "Berlin", 83, true },
+	    { "France", "Paris", 60, true }, { "Norway", "Oslo", 4.5, true }, { "India", "New Delhi", 1046, true } };
 
-  // Create a table
-  private JTable jTable1 = new JTable(tableModel);
+    // Create a table model
+    private DefaultTableModel tableModel = new DefaultTableModel(rowData, columnNames);
 
-  // Create buttons
-  private JButton jbtAddRow = new JButton("Add New Row");
-  private JButton jbtAddColumn = new JButton("Add New Column");
-  private JButton jbtDeleteRow = new JButton("Delete Selected Row");
-  private JButton jbtDeleteColumn = new JButton(
-    "Delete Selected Column");
-  private JButton jbtSave = new JButton("Save");
-  private JButton jbtClear = new JButton("Clear");
-  private JButton jbtRestore = new JButton("Restore");
+    // Create a table
+    private JTable jTable1 = new JTable(tableModel);
 
-  // Create a combo box for selection modes
-  private JComboBox jcboSelectionMode =
-    new JComboBox(new String[] {"SINGLE_SELECTION",
-      "SINGLE_INTERVAL_SELECTION", "MULTIPLE_INTERVAL_SELECTION"});
+    // Create buttons
+    private JButton jbtAddRow = new JButton("Add New Row");
+    private JButton jbtAddColumn = new JButton("Add New Column");
+    private JButton jbtDeleteRow = new JButton("Delete Selected Row");
+    private JButton jbtDeleteColumn = new JButton("Delete Selected Column");
+    private JButton jbtSave = new JButton("Save");
+    private JButton jbtClear = new JButton("Clear");
+    private JButton jbtRestore = new JButton("Restore");
 
-  // Create check boxes
-  private JCheckBox jchkRowSelectionAllowed =
-    new JCheckBox("RowSelectionAllowed", true);
-  private JCheckBox jchkColumnSelectionAllowed =
-    new JCheckBox("ColumnSelectionAllowed", false);
+    // Create a combo box for selection modes
+    private JComboBox jcboSelectionMode = new JComboBox(
+	    new String[] { "SINGLE_SELECTION", "SINGLE_INTERVAL_SELECTION", "MULTIPLE_INTERVAL_SELECTION" });
 
-  public ModifyTable() {
-    JPanel panel1 = new JPanel();
-    panel1.setLayout(new GridLayout(2, 2));
-    panel1.add(jbtAddRow);
-    panel1.add(jbtAddColumn);
-    panel1.add(jbtDeleteRow);
-    panel1.add(jbtDeleteColumn);
+    // Create check boxes
+    private JCheckBox jchkRowSelectionAllowed = new JCheckBox("RowSelectionAllowed", true);
+    private JCheckBox jchkColumnSelectionAllowed = new JCheckBox("ColumnSelectionAllowed", false);
 
-    JPanel panel2 = new JPanel();
-    panel2.add(jbtSave);
-    panel2.add(jbtClear);
-    panel2.add(jbtRestore);
+    public ModifyTable() {
+	JPanel panel1 = new JPanel();
+	panel1.setLayout(new GridLayout(2, 2));
+	panel1.add(jbtAddRow);
+	panel1.add(jbtAddColumn);
+	panel1.add(jbtDeleteRow);
+	panel1.add(jbtDeleteColumn);
 
-    JPanel panel3 = new JPanel();
-    panel3.setLayout(new BorderLayout(5, 0));
-    panel3.add(new JLabel("Selection Mode"), BorderLayout.WEST);
-    panel3.add(jcboSelectionMode, BorderLayout.CENTER);
+	JPanel panel2 = new JPanel();
+	panel2.add(jbtSave);
+	panel2.add(jbtClear);
+	panel2.add(jbtRestore);
 
-    JPanel panel4 = new JPanel();
-    panel4.setLayout(new FlowLayout(FlowLayout.LEFT));
-    panel4.add(jchkRowSelectionAllowed);
-    panel4.add(jchkColumnSelectionAllowed);
+	JPanel panel3 = new JPanel();
+	panel3.setLayout(new BorderLayout(5, 0));
+	panel3.add(new JLabel("Selection Mode"), BorderLayout.WEST);
+	panel3.add(jcboSelectionMode, BorderLayout.CENTER);
 
-    JPanel panel5 = new JPanel();
-    panel5.setLayout(new GridLayout(2, 1));
-    panel5.add(panel3);
-    panel5.add(panel4);
+	JPanel panel4 = new JPanel();
+	panel4.setLayout(new FlowLayout(FlowLayout.LEFT));
+	panel4.add(jchkRowSelectionAllowed);
+	panel4.add(jchkColumnSelectionAllowed);
 
-    JPanel panel6 = new JPanel();
-    panel6.setLayout(new BorderLayout());
-    panel6.add(panel1, BorderLayout.SOUTH);
-    panel6.add(panel2, BorderLayout.CENTER);
+	JPanel panel5 = new JPanel();
+	panel5.setLayout(new GridLayout(2, 1));
+	panel5.add(panel3);
+	panel5.add(panel4);
 
-    add(panel5, BorderLayout.NORTH);
-    add(new JScrollPane(jTable1),
-      BorderLayout.CENTER);
-    add(panel6, BorderLayout.SOUTH);
+	JPanel panel6 = new JPanel();
+	panel6.setLayout(new BorderLayout());
+	panel6.add(panel1, BorderLayout.SOUTH);
+	panel6.add(panel2, BorderLayout.CENTER);
 
-    // Initialize table selection mode
-    jTable1.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
+	add(panel5, BorderLayout.NORTH);
+	add(new JScrollPane(jTable1), BorderLayout.CENTER);
+	add(panel6, BorderLayout.SOUTH);
 
-    jbtAddRow.addActionListener(new ActionListener() {
-      @Override
-      public void actionPerformed(ActionEvent e) {
-        if (jTable1.getSelectedRow() >= 0)
-          tableModel.insertRow(jTable1.getSelectedRow(),
-            new java.util.Vector<String>());
-        else
-          tableModel.addRow(new java.util.Vector<String>());
-      }
-    });
+	// Initialize table selection mode
+	jTable1.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
 
-    jbtAddColumn.addActionListener(new ActionListener() {
-      @Override
-      public void actionPerformed(ActionEvent e) {
-        String name = JOptionPane.showInputDialog("New Column Name");
-        tableModel.addColumn(name, new java.util.Vector());
-      }
-    });
+	jbtAddRow.addActionListener(new ActionListener() {
+	    @Override
+	    public void actionPerformed(ActionEvent e) {
+		if (jTable1.getSelectedRow() >= 0)
+		    tableModel.insertRow(jTable1.getSelectedRow(), new java.util.Vector<String>());
+		else
+		    tableModel.addRow(new java.util.Vector<String>());
+	    }
+	});
 
-    jbtDeleteRow.addActionListener(new ActionListener() {
-      @Override
-      public void actionPerformed(ActionEvent e) {
-        if (jTable1.getSelectedRow() >= 0)
-          tableModel.removeRow(jTable1.getSelectedRow());
-      }
-    });
+	jbtAddColumn.addActionListener(new ActionListener() {
+	    @Override
+	    public void actionPerformed(ActionEvent e) {
+		String name = JOptionPane.showInputDialog("New Column Name");
+		tableModel.addColumn(name, new java.util.Vector());
+	    }
+	});
 
-    jbtDeleteColumn.addActionListener(new ActionListener() {
-      @Override
-      public void actionPerformed(ActionEvent e) {
-        if (jTable1.getSelectedColumn() >= 0) {
-          TableColumnModel columnModel = jTable1.getColumnModel();
-          TableColumn tableColumn =
-              columnModel.getColumn(jTable1.getSelectedColumn());
-          columnModel.removeColumn(tableColumn);
-        }
-      }
-    });
+	jbtDeleteRow.addActionListener(new ActionListener() {
+	    @Override
+	    public void actionPerformed(ActionEvent e) {
+		if (jTable1.getSelectedRow() >= 0)
+		    tableModel.removeRow(jTable1.getSelectedRow());
+	    }
+	});
 
-    jbtSave.addActionListener(new ActionListener() {
-      @Override
-      public void actionPerformed(ActionEvent e) {
-        try {
-          ObjectOutputStream out = new ObjectOutputStream(
-            new FileOutputStream("tablemodel.dat"));
-          out.writeObject(tableModel.getDataVector());
-          out.writeObject(getColumnNames());
-          out.close();
-        }
-        catch (Exception ex) {
-          ex.printStackTrace();
-        }
-      }
-    });
+	jbtDeleteColumn.addActionListener(new ActionListener() {
+	    @Override
+	    public void actionPerformed(ActionEvent e) {
+		if (jTable1.getSelectedColumn() >= 0) {
+		    TableColumnModel columnModel = jTable1.getColumnModel();
+		    TableColumn tableColumn = columnModel.getColumn(jTable1.getSelectedColumn());
+		    columnModel.removeColumn(tableColumn);
+		}
+	    }
+	});
 
-    jbtClear.addActionListener(new ActionListener() {
-      @Override
-      public void actionPerformed(ActionEvent e) {
-        tableModel.setRowCount(0);
-      }
-    });
+	jbtSave.addActionListener(new ActionListener() {
+	    @Override
+	    public void actionPerformed(ActionEvent e) {
+		try {
+		    ObjectOutputStream out = new ObjectOutputStream(new FileOutputStream("tablemodel.dat"));
+		    out.writeObject(tableModel.getDataVector());
+		    out.writeObject(getColumnNames());
+		    out.close();
+		} catch (Exception ex) {
+		    ex.printStackTrace();
+		}
+	    }
+	});
 
-    jbtRestore.addActionListener(new ActionListener() {
-      @Override
-      public void actionPerformed(ActionEvent e) {
-        try {
-          ObjectInputStream in = new ObjectInputStream(
-            new FileInputStream("tablemodel.dat"));
-          Vector<String> rowData = (Vector<String>)in.readObject();
-          Vector<String> columnNames = 
-            (Vector<String>)in.readObject();
-          tableModel.setDataVector(rowData, columnNames);
-          in.close();
-        }
-        catch (Exception ex) {
-          ex.printStackTrace();
-        }
-      }
-    });
+	jbtClear.addActionListener(new ActionListener() {
+	    @Override
+	    public void actionPerformed(ActionEvent e) {
+		tableModel.setRowCount(0);
+	    }
+	});
 
-    jchkRowSelectionAllowed.addActionListener(new ActionListener() {
-      @Override
-      public void actionPerformed(ActionEvent e) {
-        jTable1.setRowSelectionAllowed(
-          jchkRowSelectionAllowed.isSelected());
-      }
-    });
+	jbtRestore.addActionListener(new ActionListener() {
+	    @Override
+	    public void actionPerformed(ActionEvent e) {
+		try {
+		    ObjectInputStream in = new ObjectInputStream(new FileInputStream("tablemodel.dat"));
+		    Vector<String> rowData = (Vector<String>) in.readObject();
+		    Vector<String> columnNames = (Vector<String>) in.readObject();
+		    tableModel.setDataVector(rowData, columnNames);
+		    in.close();
+		} catch (Exception ex) {
+		    ex.printStackTrace();
+		}
+	    }
+	});
 
-    jchkColumnSelectionAllowed.addActionListener(
-        new ActionListener() {
-      @Override
-      public void actionPerformed(ActionEvent e) {
-        jTable1.setColumnSelectionAllowed(
-          jchkColumnSelectionAllowed.isSelected());
-      }
-    });
+	jchkRowSelectionAllowed.addActionListener(new ActionListener() {
+	    @Override
+	    public void actionPerformed(ActionEvent e) {
+		jTable1.setRowSelectionAllowed(jchkRowSelectionAllowed.isSelected());
+	    }
+	});
 
-    jcboSelectionMode.addActionListener(new ActionListener() {
-      @Override
-      public void actionPerformed(ActionEvent e) {
-        String selectedItem = 
-          (String)jcboSelectionMode.getSelectedItem();
+	jchkColumnSelectionAllowed.addActionListener(new ActionListener() {
+	    @Override
+	    public void actionPerformed(ActionEvent e) {
+		jTable1.setColumnSelectionAllowed(jchkColumnSelectionAllowed.isSelected());
+	    }
+	});
 
-        if (selectedItem.equals("SINGLE_SELECTION"))
-          jTable1.setSelectionMode(
-            ListSelectionModel.SINGLE_SELECTION);
-        else if (selectedItem.equals("SINGLE_INTERVAL_SELECTION"))
-          jTable1.setSelectionMode(
-            ListSelectionModel.SINGLE_INTERVAL_SELECTION);
-        else if (selectedItem.equals("MULTIPLE_INTERVAL_SELECTION"))
-          jTable1.setSelectionMode(
-            ListSelectionModel.MULTIPLE_INTERVAL_SELECTION);
-      }
-    });
-  }
+	jcboSelectionMode.addActionListener(new ActionListener() {
+	    @Override
+	    public void actionPerformed(ActionEvent e) {
+		String selectedItem = (String) jcboSelectionMode.getSelectedItem();
 
-  private Vector<String> getColumnNames() {
-    Vector<String> columnNames = new Vector<String>();
+		if (selectedItem.equals("SINGLE_SELECTION"))
+		    jTable1.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
+		else if (selectedItem.equals("SINGLE_INTERVAL_SELECTION"))
+		    jTable1.setSelectionMode(ListSelectionModel.SINGLE_INTERVAL_SELECTION);
+		else if (selectedItem.equals("MULTIPLE_INTERVAL_SELECTION"))
+		    jTable1.setSelectionMode(ListSelectionModel.MULTIPLE_INTERVAL_SELECTION);
+	    }
+	});
+    }
 
-    for (int i = 0; i < jTable1.getColumnCount(); i++)
-      columnNames.add(jTable1.getColumnName(i));
+    private Vector<String> getColumnNames() {
+	Vector<String> columnNames = new Vector<String>();
 
-    return columnNames;
-  }
+	for (int i = 0; i < jTable1.getColumnCount(); i++)
+	    columnNames.add(jTable1.getColumnName(i));
 
-  //Main method
-  public static void main(String[] args) {
-    ModifyTable applet = new ModifyTable();
-    JFrame frame = new JFrame();
-    //EXIT_ON_CLOSE == 3
-    frame.setDefaultCloseOperation(3);
-    frame.setTitle("ModifyTable");
-    frame.getContentPane().add(applet, java.awt.BorderLayout.CENTER);
-    applet.init();
-    applet.start();
-    frame.setSize(400,320);
-    frame.setLocationRelativeTo(null);
-    frame.setVisible(true);
-  }
+	return columnNames;
+    }
+
+    // Main method
+    public static void main(String[] args) {
+	ModifyTable applet = new ModifyTable();
+	JFrame frame = new JFrame();
+	// EXIT_ON_CLOSE == 3
+	frame.setDefaultCloseOperation(3);
+	frame.setTitle("ModifyTable");
+	frame.getContentPane().add(applet, java.awt.BorderLayout.CENTER);
+	applet.init();
+	applet.start();
+	frame.setSize(400, 320);
+	frame.setLocationRelativeTo(null);
+	frame.setVisible(true);
+    }
 }

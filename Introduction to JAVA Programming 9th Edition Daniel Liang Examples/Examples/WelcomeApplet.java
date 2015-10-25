@@ -1,10 +1,18 @@
-package Introduction.to.JAVA.Programming.Daniel.Liang.Examples;
+
 // WelcomeApplet.java: Applet for displaying a message
-import javax.swing.*;
+import javax.swing.JApplet;
+import javax.swing.JLabel;
+import javax.swing.SwingConstants;
 
 public class WelcomeApplet extends JApplet {
-  /** Initialize the applet */
-  public void init() {
-    add(new JLabel("Welcome to Java", JLabel.CENTER));
-  }
+    /**
+     *
+     */
+    private static final long serialVersionUID = 1L;
+
+    /** Initialize the applet */
+    @Override
+    public void init() {
+	add(new JLabel("Welcome to Java", SwingConstants.CENTER));
+    }
 }

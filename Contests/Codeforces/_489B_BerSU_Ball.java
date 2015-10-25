@@ -1,4 +1,5 @@
-import java.util.*;
+import java.util.Arrays;
+import java.util.Scanner;
 
 public class _489B_BerSU_Ball {
     public static void main(String[] args) {

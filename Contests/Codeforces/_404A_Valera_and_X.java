@@ -19,16 +19,13 @@ public class _404A_Valera_and_X {
 	char c1 = a[0][0], c2 = a[1][0];
 	if (c1 == c2)
 	    return false;
-	for (int i = 0; i < n; i++) {
-	    for (int j = 0; j < n; j++) {
-		if (i == j || i == (n - 1 - j)) {
+	for (int i = 0; i < n; i++)
+	    for (int j = 0; j < n; j++)
+		if (i == j || i == n - 1 - j) {
 		    if (a[i][j] != c1)
 			return false;
-		} else if (a[i][j] != c2) {
+		} else if (a[i][j] != c2)
 		    return false;
-		}
-	    }
-	}
 	return true;
     }
 }

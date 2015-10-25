@@ -1,4 +1,6 @@
-import java.util.*;
+import java.util.Scanner;
+import java.util.Set;
+import java.util.TreeSet;
 
 public class _514B_Han_Solo_and_Lazer_Gun {
     public static void main(String[] args) {
@@ -12,8 +14,7 @@ public class _514B_Han_Solo_and_Lazer_Gun {
 	    x = in.nextInt();
 	    y = in.nextInt();
 	    slope = 1.0 * (y - y0) / (x - x0);
-	    slope = slope == Double.NEGATIVE_INFINITY ? Double.POSITIVE_INFINITY
-		    : slope;
+	    slope = slope == Double.NEGATIVE_INFINITY ? Double.POSITIVE_INFINITY : slope;
 	    slope = slope == -0.0 ? 0.0 : slope;
 	    s.add(slope);
 	}

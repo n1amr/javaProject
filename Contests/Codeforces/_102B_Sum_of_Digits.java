@@ -1,4 +1,4 @@
-import java.util.*;
+import java.util.Scanner;
 
 public class _102B_Sum_of_Digits {
     public static void main(String[] args) {

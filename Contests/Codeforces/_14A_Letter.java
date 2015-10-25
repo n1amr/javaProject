@@ -1,4 +1,4 @@
-import java.util.*;
+import java.util.Scanner;
 
 public class _14A_Letter {
     public static void main(String[] args) {

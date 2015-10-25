@@ -1,4 +1,3 @@
-import java.util.Arrays;
 import java.util.Scanner;
 
 public class _471C_MUH_and_House_of_Cards {
@@ -11,12 +10,10 @@ public class _471C_MUH_and_House_of_Cards {
 	int r = 0;
 	// System.out.println(Arrays.toString(standard));
 
-	for (int i = 1; i <= x; i++) {
-	    if ((n - standard[i]) % 3 == 0 && n >= standard[i]) {
+	for (int i = 1; i <= x; i++)
+	    if ((n - standard[i]) % 3 == 0 && n >= standard[i])
 		r++;
 		// System.out.println(i);
-	    }
-	}
 	System.out.println(r);
     }
 

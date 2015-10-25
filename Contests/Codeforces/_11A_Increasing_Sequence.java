@@ -1,4 +1,4 @@
-import java.util.*;
+import java.util.Scanner;
 
 public class _11A_Increasing_Sequence {
     public static void main(String[] args) {

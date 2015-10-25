@@ -75,12 +75,10 @@ public class HttpURLConnectionExample {
     public String getHTTPResponse(HttpURLConnection con) {
 	StringBuffer response = new StringBuffer();
 	try {
-	    BufferedReader in = new BufferedReader(new InputStreamReader(
-		    con.getInputStream()));
+	    BufferedReader in = new BufferedReader(new InputStreamReader(con.getInputStream()));
 	    String inputLine;
-	    while ((inputLine = in.readLine()) != null) {
+	    while ((inputLine = in.readLine()) != null)
 		response.append(inputLine);
-	    }
 	    in.close();
 	} catch (Exception e) {
 	    e.printStackTrace();

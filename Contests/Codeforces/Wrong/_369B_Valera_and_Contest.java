@@ -1,5 +1,9 @@
-import java.io.*;
-import java.util.*;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.util.Arrays;
+import java.util.Scanner;
 
 public class _369B_Valera_and_Contest {
     public static void main(String[] args) throws IOException {
@@ -12,8 +16,6 @@ public class _369B_Valera_and_Contest {
 	int Sall = in.nextInt();
 	int Sk = in.nextInt();
 	int sall = Sall;
-	int sk = Sk;
-
 	int[] a = new int[n];
 	Arrays.fill(a, (sall + n - 1) / n);
 	// sk -= a[0] * k;
@@ -54,8 +56,7 @@ public class _369B_Valera_and_Contest {
 	System.out.println(isCorrect(a, n, k, l, r, Sk, Sall));
     }
 
-    private static boolean isCorrect(int[] a, int n, int k, int l, int r,
-	    int sk, int sall) {
+    private static boolean isCorrect(int[] a, int n, int k, int l, int r, int sk, int sall) {
 	Arrays.sort(a);
 	for (int i = 0; i < a.length / 2; i++) {
 	    int swap_temp = a[i];

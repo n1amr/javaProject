@@ -1,9 +1,15 @@
-package Introduction.to.JAVA.Programming.Daniel.Liang.Examples;
-import java.awt.*;
-import javax.swing.*;
+import java.awt.Graphics;
+
+import javax.swing.JApplet;
 
 public class DrawCircle extends JApplet {
-  public void paint(Graphics g) {
-    g.drawOval(10, 10, 100, 100); 
-  }
+    /**
+     *
+     */
+    private static final long serialVersionUID = 1L;
+
+    @Override
+    public void paint(Graphics g) {
+	g.drawOval(10, 10, 100, 100);
+    }
 }

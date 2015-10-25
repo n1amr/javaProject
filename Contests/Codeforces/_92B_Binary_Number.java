@@ -1,4 +1,4 @@
-import java.util.*;
+import java.util.Scanner;
 
 public class _92B_Binary_Number {
     public static void main(String[] args) {

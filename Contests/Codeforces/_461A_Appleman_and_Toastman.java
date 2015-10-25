@@ -1,6 +1,4 @@
-import java.math.BigInteger;
 import java.util.Arrays;
-import java.util.Comparator;
 import java.util.Scanner;
 
 public class _461A_Appleman_and_Toastman {
@@ -13,10 +11,9 @@ public class _461A_Appleman_and_Toastman {
 
 	Arrays.sort(arr);
 
-	long t = (long) (-(arr[arr.length - 1]));
-	for (int i = 0; i < arr.length; i++) {
-	    t += (long) (arr[i] * (i + 2));
-	}
+	long t = -arr[arr.length - 1];
+	for (int i = 0; i < arr.length; i++)
+	    t += arr[i] * (i + 2);
 	System.out.println(t);
     }
 }

@@ -1,4 +1,4 @@
-import java.util.*;
+import java.util.Scanner;
 
 public class _482A_Diverse_Permutation {
     public static void main(String[] args) {

@@ -1,30 +1,34 @@
-package Introduction.to.JAVA.Programming.Daniel.Liang.Examples;
 import java.rmi.*;
 import java.rmi.server.*;
 import java.sql.*;
 
-public class Student3TierImpl extends UnicastRemoteObject
-    implements StudentServerInterface {
-  // Use prepared statement for querying DB
-  private PreparedStatement pstmt;
+public class Student3TierImpl extends UnicastRemoteObject implements StudentServerInterface {
+    /**
+     *
+     */
+    private static final long serialVersionUID = 1L;
+    // Use prepared statement for querying DB
+    private PreparedStatement pstmt;
 
-  /** Constructs Student3TierImpl object and exports it on
-   * default port.
-   */
-  public Student3TierImpl() throws RemoteException {
-    initializeDB();
-  }
+    /**
+     * Constructs Student3TierImpl object and exports it on default port.
+     */
+    public Student3TierImpl() throws RemoteException {
+	initializeDB();
+    }
 
-  /** Constructs Student3TierImpl object and exports it on
-   * specified port.
-   * @param port The port for exporting
-   */
-  public Student3TierImpl(int port) throws RemoteException {
-    super(port);
-    initializeDB();
-  }
+    /**
+     * Constructs Student3TierImpl object and exports it on specified port.
+     *
+     * @param port
+     *            The port for exporting
+     */
+    public Student3TierImpl(int port) throws RemoteException {
+	super(port);
+	initializeDB();
+    }
 
-  /** Load JDBC driver, establish connection and 
+  /** Load JDBC driver, establish connection and
    *  create statement */
   protected void initializeDB() {
     try {
@@ -51,29 +55,27 @@ public class Student3TierImpl extends UnicastRemoteObject
     }
   }
 
-  /** Return the score for specified the name
-   * Return -1 if score is not found.
-   */
-  public double findScore(String name) throws RemoteException {
-    double score = -1;
-    try {
-      // Set the specified name in the prepared statement
-      pstmt.setString(1, name);
+    /**
+     * Return the score for specified the name Return -1 if score is not found.
+     */
+    public double findScore(String name) throws RemoteException {
+	double score = -1;
+	try {
+	    // Set the specified name in the prepared statement
+	    pstmt.setString(1, name);
 
-      // Execute the prepared statement
-      ResultSet rs = pstmt.executeQuery();
+	    // Execute the prepared statement
+	    ResultSet rs = pstmt.executeQuery();
 
-      // Retrieve the score
-      if (rs.next()) {
-        if (rs.getBoolean(3))
-          score = rs.getDouble(2);
-      }
+	    // Retrieve the score
+	    if (rs.next())
+		if (rs.getBoolean(3))
+		    score = rs.getDouble(2);
+	} catch (SQLException ex) {
+	    System.out.println(ex);
+	}
+
+	System.out.println(name + "\'s score is " + score);
+	return score;
     }
-    catch (SQLException ex) {
-      System.out.println(ex);
-    }
-
-    System.out.println(name + "\'s score is " + score);
-    return score;
-  }
 }

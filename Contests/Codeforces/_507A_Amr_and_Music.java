@@ -1,5 +1,6 @@
-import java.io.*;
-import java.util.*;
+import java.io.IOException;
+import java.util.Arrays;
+import java.util.Scanner;
 
 public class _507A_Amr_and_Music {
     public static void main(String[] args) throws IOException {

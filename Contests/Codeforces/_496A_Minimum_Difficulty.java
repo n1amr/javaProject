@@ -1,4 +1,4 @@
-import java.util.*;
+import java.util.Scanner;
 
 public class _496A_Minimum_Difficulty {
     public static void main(String[] args) {

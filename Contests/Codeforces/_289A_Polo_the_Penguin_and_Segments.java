@@ -1,4 +1,4 @@
-import java.util.*;
+import java.util.Scanner;
 
 public class _289A_Polo_the_Penguin_and_Segments {
     public static void main(String[] args) {

@@ -1,11 +1,13 @@
-import java.io.*;
-import java.util.*;
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
+import java.io.PrintWriter;
+import java.util.Scanner;
 
 public class _515B_Drazil_and_His_Happy_Friends {
-    public static Scanner in = new Scanner(new BufferedReader(
-	    new InputStreamReader(System.in)));
-    public static PrintWriter out = new PrintWriter(new BufferedWriter(
-	    new OutputStreamWriter(System.out)));
+    public static Scanner in = new Scanner(new BufferedReader(new InputStreamReader(System.in)));
+    public static PrintWriter out = new PrintWriter(new BufferedWriter(new OutputStreamWriter(System.out)));
 
     public static void main(String[] args) {
 	int n = in.nextInt();

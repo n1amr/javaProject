@@ -1,4 +1,4 @@
-import java.util.*;
+import java.util.Scanner;
 
 public class _433A_Kitahara_Haruki_s_Gift {
     public static void main(String[] args) {

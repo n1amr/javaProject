@@ -1,22 +1,29 @@
-package Introduction.to.JAVA.Programming.Daniel.Liang.Examples;
-import javax.swing.*;
+import javax.swing.JApplet;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.SwingUtilities;
 
 public class EventDispatcherThreadDemo extends JApplet {
-  public EventDispatcherThreadDemo() {
-    add(new JLabel("Hi, it runs from an event dispatcher thread"));
-  }
+    /**
+     *
+     */
+    private static final long serialVersionUID = 1L;
 
-  /** Main method */
-  public static void main(String[] args) {
-    SwingUtilities.invokeLater(new Runnable() {
-      public void run() {
-        JFrame frame = new JFrame("EventDispatcherThreadDemo");
-        frame.add(new EventDispatcherThreadDemo());
-        frame.setLocationRelativeTo(null); // Center the frame
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setSize(200, 200);
-        frame.setVisible(true);
-      }
-    });
-  }
+    public EventDispatcherThreadDemo() {
+	add(new JLabel("Hi, it runs from an event dispatcher thread"));
+    }
+
+    /** Main method */
+    public static void main(String[] args) {
+	SwingUtilities.invokeLater(new Runnable() {
+	    public void run() {
+		JFrame frame = new JFrame("EventDispatcherThreadDemo");
+		frame.add(new EventDispatcherThreadDemo());
+		frame.setLocationRelativeTo(null); // Center the frame
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.setSize(200, 200);
+		frame.setVisible(true);
+	    }
+	});
+    }
 }

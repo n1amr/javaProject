@@ -1,4 +1,4 @@
-import java.util.*;
+import java.util.Scanner;
 
 public class _152A_Marks {
     public static void main(String[] args) {

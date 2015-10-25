@@ -39,7 +39,8 @@ public class JSONParseTest {
 // "cacheUrl":"http://www.google.com/search?q\u003dcache:U1GC2GYOToIJ:stackoverflow.com",
 // "title":"Stack Overflow",
 // "titleNoFormatting":"Stack Overflow",
-// "content":"A language-independent collaboratively edited question and answer site for \nprogrammers."
+// "content":"A language-independent collaboratively edited question and answer
+// site for \nprogrammers."
 // },
 // {
 // "GsearchResultClass":"GwebSearch",
@@ -59,7 +60,8 @@ public class JSONParseTest {
 // "cacheUrl":"http://www.google.com/search?q\u003dcache:6S_0sErDKfQJ:stackoverflow.com",
 // "title":"Newest Questions - Stack Overflow",
 // "titleNoFormatting":"Newest Questions - Stack Overflow",
-// "content":"I tried to resist myself not to seek help for this apparently simple ..."
+// "content":"I tried to resist myself not to seek help for this apparently
+// simple ..."
 // },
 // {
 // "GsearchResultClass":"GwebSearch",
@@ -67,9 +69,13 @@ public class JSONParseTest {
 // "url":"http://michael.richter.name/blogs/why-i-no-longer-contribute-to-stackoverflow",
 // "visibleUrl":"michael.richter.name",
 // "cacheUrl":"http://www.google.com/search?q\u003dcache:6TtXvyGddR4J:michael.richter.name",
-// "title":"Why I no longer contribute to \u003cb\u003eStackOverflow\u003c/b\u003e — Michael T. Richter",
-// "titleNoFormatting":"Why I no longer contribute to StackOverflow — Michael T. Richter",
-// "content":"I was active in the \u003cb\u003eStackOverflow\u003c/b\u003e (and the broader Stack Exchange) community \nfor a while. I no longer am. Here\u0026#39;s why."
+// "title":"Why I no longer contribute to
+// \u003cb\u003eStackOverflow\u003c/b\u003e — Michael T. Richter",
+// "titleNoFormatting":"Why I no longer contribute to StackOverflow — Michael T.
+// Richter",
+// "content":"I was active in the \u003cb\u003eStackOverflow\u003c/b\u003e (and
+// the broader Stack Exchange) community \nfor a while. I no longer am.
+// Here\u0026#39;s why."
 // }
 // ],
 // "cursor":{

@@ -1,48 +1,53 @@
-package Introduction.to.JAVA.Programming.Daniel.Liang.Examples;
-import javax.swing.*;
-import javax.swing.event.*;
 import java.awt.BorderLayout;
 
+import javax.swing.JApplet;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JSpinner;
+import javax.swing.event.ChangeListener;
+
 public class SimpleSpinner extends JApplet {
-  // Create a JSpinner
-  private JSpinner spinner = new JSpinner();
+    /**
+     *
+     */
+    private static final long serialVersionUID = 1L;
 
-  // Create a JLabel
-  private JLabel label = new JLabel("", JLabel.CENTER);
+    // Create a JSpinner
+    private JSpinner spinner = new JSpinner();
 
-  public SimpleSpinner() {
-    // Add spinner and label to the UI
-    add(spinner, BorderLayout.NORTH);
-    add(label, BorderLayout.CENTER);
+    // Create a JLabel
+    private JLabel label = new JLabel("", JLabel.CENTER);
 
-    // Register and create a listener
-    spinner.addChangeListener(new ChangeListener() {
-      @Override 
-      public void stateChanged(javax.swing.event.ChangeEvent e) {
-        label.setText("Previous value: " + spinner.getPreviousValue()
-          + " Current value: " + spinner.getValue()
-          + " Next value: " + spinner.getNextValue());
-      }
-    });
-  }
+    public SimpleSpinner() {
+	// Add spinner and label to the UI
+	add(spinner, BorderLayout.NORTH);
+	add(label, BorderLayout.CENTER);
 
-  public static void main(String[] args) {
-    javax.swing.JFrame frame = new javax.swing.JFrame(
-        "SimpleSpinner");
+	// Register and create a listener
+	spinner.addChangeListener(new ChangeListener() {
+	    @Override
+	    public void stateChanged(javax.swing.event.ChangeEvent e) {
+		label.setText("Previous value: " + spinner.getPreviousValue() + " Current value: " + spinner.getValue()
+			+ " Next value: " + spinner.getNextValue());
+	    }
+	});
+    }
 
-    SimpleSpinner applet = new SimpleSpinner();
+    public static void main(String[] args) {
+	javax.swing.JFrame frame = new javax.swing.JFrame("SimpleSpinner");
 
-    // Add the applet instance to the frame
-    frame.getContentPane().add(applet, java.awt.BorderLayout.CENTER);
-    frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+	SimpleSpinner applet = new SimpleSpinner();
 
-    // Invoke init and start
-    applet.init();
-    applet.start();
+	// Add the applet instance to the frame
+	frame.getContentPane().add(applet, java.awt.BorderLayout.CENTER);
+	frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-    // Display the frame
-    frame.setSize(300, 300);
-    frame.setVisible(true);
-  }
+	// Invoke init and start
+	applet.init();
+	applet.start();
+
+	// Display the frame
+	frame.setSize(300, 300);
+	frame.setVisible(true);
+    }
 }
-

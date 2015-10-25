@@ -1,47 +1,55 @@
-package Introduction.to.JAVA.Programming.Daniel.Liang.Examples;
-import javax.swing.*;
-import java.awt.event.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JPanel;
 
 public class HandleEvent extends JFrame {
-  public HandleEvent() {
-    // Create two buttons 
-    JButton jbtOK = new JButton("OK");
-    JButton jbtCancel = new JButton("Cancel");
+    /**
+     *
+     */
+    private static final long serialVersionUID = 1L;
 
-    // Create a panel to hold buttons
-    JPanel panel = new JPanel();
-    panel.add(jbtOK);
-    panel.add(jbtCancel);
+    public HandleEvent() {
+	// Create two buttons
+	JButton jbtOK = new JButton("OK");
+	JButton jbtCancel = new JButton("Cancel");
 
-    add(panel); // Add panel to the frame
+	// Create a panel to hold buttons
+	JPanel panel = new JPanel();
+	panel.add(jbtOK);
+	panel.add(jbtCancel);
 
-    // Register listeners
-    OKListenerClass listener1 = new OKListenerClass();
-    CancelListenerClass listener2 = new CancelListenerClass();
-    jbtOK.addActionListener(listener1);
-    jbtCancel.addActionListener(listener2);
-  }
-  
-  public static void main(String[] args) {
-    JFrame frame = new HandleEvent();
-    frame.setTitle("Handle Event");
-    frame.setSize(200, 150);
-    frame.setLocation(200, 100);
-    frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-    frame.setVisible(true);
-  }
+	add(panel); // Add panel to the frame
+
+	// Register listeners
+	OKListenerClass listener1 = new OKListenerClass();
+	CancelListenerClass listener2 = new CancelListenerClass();
+	jbtOK.addActionListener(listener1);
+	jbtCancel.addActionListener(listener2);
+    }
+
+    public static void main(String[] args) {
+	JFrame frame = new HandleEvent();
+	frame.setTitle("Handle Event");
+	frame.setSize(200, 150);
+	frame.setLocation(200, 100);
+	frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+	frame.setVisible(true);
+    }
 }
 
 class OKListenerClass implements ActionListener {
-  @Override 
-  public void actionPerformed(ActionEvent e) {
-    System.out.println("OK button clicked");
-  }
+    @Override
+    public void actionPerformed(ActionEvent e) {
+	System.out.println("OK button clicked");
+    }
 }
 
 class CancelListenerClass implements ActionListener {
-  @Override 
-  public void actionPerformed(ActionEvent e) {
-    System.out.println("Cancel button clicked");
-  }
+    @Override
+    public void actionPerformed(ActionEvent e) {
+	System.out.println("Cancel button clicked");
+    }
 }

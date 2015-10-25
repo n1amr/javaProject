@@ -1,4 +1,4 @@
-import java.util.*;
+import java.util.Scanner;
 
 public class _466A_Cheap_Travel {
     public static void main(String[] args) {
@@ -11,6 +11,6 @@ public class _466A_Cheap_Travel {
 	if (a * m <= b)
 	    System.out.println(n * a);
 	else
-	    System.out.println((n / m) * b + Math.min((n % m) * a, b));
+	    System.out.println(n / m * b + Math.min(n % m * a, b));
     }
 }

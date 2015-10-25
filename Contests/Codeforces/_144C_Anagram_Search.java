@@ -1,4 +1,4 @@
-import java.util.*;
+import java.util.Scanner;
 
 public class _144C_Anagram_Search {
     static int ns;

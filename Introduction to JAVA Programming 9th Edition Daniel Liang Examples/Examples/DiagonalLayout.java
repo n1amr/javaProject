@@ -1,100 +1,106 @@
-package Introduction.to.JAVA.Programming.Daniel.Liang.Examples;
-import java.awt.*;
+import java.awt.Component;
+import java.awt.Container;
+import java.awt.Dimension;
+import java.awt.Insets;
+import java.awt.LayoutManager;
 
-public class DiagonalLayout implements LayoutManager,
-    java.io.Serializable {
-  /** Vertical gap between the components */
-  private int gap = 10;
+public class DiagonalLayout implements LayoutManager, java.io.Serializable {
+    /**
+     *
+     */
+    private static final long serialVersionUID = 1L;
 
-  /** True if components are placed along the major diagonal */
-  private boolean majorDiagonal = true;
+    /** Vertical gap between the components */
+    private int gap = 10;
 
-  /*True if the last component is stretched to fill the space */
-  private boolean lastFill = false;
+    /** True if components are placed along the major diagonal */
+    private boolean majorDiagonal = true;
 
-  /** Constructor */
-  public DiagonalLayout() {
-  }
+    /* True if the last component is stretched to fill the space */
+    private boolean lastFill = false;
 
-  public void addLayoutComponent(String name, Component comp) {
-    // No need to implement it for DiaganolLayout
-  }
-
-  public void removeLayoutComponent(Component comp) {
-    // No need to implement it for DiaganolLayout
-  }
-
-  public Dimension preferredLayoutSize(Container parent) {
-    return minimumLayoutSize(parent);
-  }
-
-  public Dimension minimumLayoutSize(Container parent) {
-    return new Dimension(0, 0);
-  }
-
-  public void layoutContainer(Container parent) {
-    int numberOfComponents = parent.getComponentCount();
-
-    Insets insets = parent.getInsets();
-    int w = parent.getSize().width - insets.left - insets.right;
-    int h = parent.getSize().height - insets.bottom - insets.top;
-
-    if (majorDiagonal) {
-      int x = 10, y = 10;
-
-      for (int j = 0; j < numberOfComponents; j++) {
-        Component c = parent.getComponent(j);
-        Dimension d = c.getPreferredSize();
-
-        if (c.isVisible())
-          if (lastFill && (j == numberOfComponents - 1))
-            c.setBounds(x, y, w - x, h - y);
-          else
-            c.setBounds(x, y, d.width, d.height);
-        x += d.height + gap;
-        y += d.height + gap;
-      }
+    /** Constructor */
+    public DiagonalLayout() {
     }
-    else { // It is subdiagonal
-      int x = w - 10, y = 10;
 
-      for (int j = 0; j < numberOfComponents; j++) {
-        Component c = parent.getComponent(j);
-        Dimension d = c.getPreferredSize();
-
-        if (c.isVisible())
-          if (lastFill & (j == numberOfComponents - 1))
-            c.setBounds(0, y, x, h - y);
-          else
-            c.setBounds(x - d.width, y, d.width, d.height);
-
-        x -= (d.height + gap);
-        y += d.height + gap;
-      }
+    public void addLayoutComponent(String name, Component comp) {
+	// No need to implement it for DiaganolLayout
     }
-  }
 
-  public int getGap() {
-    return gap;
-  }
+    public void removeLayoutComponent(Component comp) {
+	// No need to implement it for DiaganolLayout
+    }
 
-  public void setGap(int gap) {
-    this.gap = gap;
-  }
+    public Dimension preferredLayoutSize(Container parent) {
+	return minimumLayoutSize(parent);
+    }
 
-  public void setMajorDiagonal(boolean newMajorDiagonal) {
-    majorDiagonal = newMajorDiagonal;
-  }
+    public Dimension minimumLayoutSize(Container parent) {
+	return new Dimension(0, 0);
+    }
 
-  public boolean isMajorDiagonal() {
-    return majorDiagonal;
-  }
+    public void layoutContainer(Container parent) {
+	int numberOfComponents = parent.getComponentCount();
 
-  public void setLastFill(boolean newLastFill) {
-    lastFill = newLastFill;
-  }
+	Insets insets = parent.getInsets();
+	int w = parent.getSize().width - insets.left - insets.right;
+	int h = parent.getSize().height - insets.bottom - insets.top;
 
-  public boolean isLastFill() {
-    return lastFill;
-  }
+	if (majorDiagonal) {
+	    int x = 10, y = 10;
+
+	    for (int j = 0; j < numberOfComponents; j++) {
+		Component c = parent.getComponent(j);
+		Dimension d = c.getPreferredSize();
+
+		if (c.isVisible())
+		    if (lastFill && j == numberOfComponents - 1)
+			c.setBounds(x, y, w - x, h - y);
+		    else
+			c.setBounds(x, y, d.width, d.height);
+		x += d.height + gap;
+		y += d.height + gap;
+	    }
+	} else { // It is subdiagonal
+	    int x = w - 10, y = 10;
+
+	    for (int j = 0; j < numberOfComponents; j++) {
+		Component c = parent.getComponent(j);
+		Dimension d = c.getPreferredSize();
+
+		if (c.isVisible())
+		    if (lastFill & j == numberOfComponents - 1)
+			c.setBounds(0, y, x, h - y);
+		    else
+			c.setBounds(x - d.width, y, d.width, d.height);
+
+		x -= d.height + gap;
+		y += d.height + gap;
+	    }
+	}
+    }
+
+    public int getGap() {
+	return gap;
+    }
+
+    public void setGap(int gap) {
+	this.gap = gap;
+    }
+
+    public void setMajorDiagonal(boolean newMajorDiagonal) {
+	majorDiagonal = newMajorDiagonal;
+    }
+
+    public boolean isMajorDiagonal() {
+	return majorDiagonal;
+    }
+
+    public void setLastFill(boolean newLastFill) {
+	lastFill = newLastFill;
+    }
+
+    public boolean isLastFill() {
+	return lastFill;
+    }
 }

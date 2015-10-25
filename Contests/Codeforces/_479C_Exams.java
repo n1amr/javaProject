@@ -1,5 +1,7 @@
 import java.awt.Point;
-import java.util.*;
+import java.util.Arrays;
+import java.util.Comparator;
+import java.util.Scanner;
 
 public class _479C_Exams {
     public static void main(String[] args) {

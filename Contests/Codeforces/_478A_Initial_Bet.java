@@ -1,4 +1,4 @@
-import java.util.*;
+import java.util.Scanner;
 
 public class _478A_Initial_Bet {
     public static void main(String[] args) {

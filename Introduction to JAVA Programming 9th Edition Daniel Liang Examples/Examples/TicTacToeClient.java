@@ -1,289 +1,297 @@
-package Introduction.to.JAVA.Programming.Daniel.Liang.Examples;
-import java.awt.*;
-import java.awt.event.*;
-import javax.swing.*;
+import java.awt.BorderLayout;
+import java.awt.Color;
+import java.awt.Font;
+import java.awt.Graphics;
+import java.awt.GridLayout;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+import java.io.DataInputStream;
+import java.io.DataOutputStream;
+import java.io.IOException;
+import java.net.Socket;
+
+import javax.swing.JApplet;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.SwingConstants;
 import javax.swing.border.LineBorder;
-import java.io.*;
-import java.net.*;
 
-public class TicTacToeClient extends JApplet
-    implements Runnable, TicTacToeConstants {
-  // Indicate whether the player has the turn
-  private boolean myTurn = false;
+public class TicTacToeClient extends JApplet implements Runnable, TicTacToeConstants {
+    /**
+     *
+     */
+    private static final long serialVersionUID = 1L;
 
-  // Indicate the token for the player
-  private char myToken = ' ';
+    // Indicate whether the player has the turn
+    private boolean myTurn = false;
 
-  // Indicate the token for the other player
-  private char otherToken = ' ';
+    // Indicate the token for the player
+    private char myToken = ' ';
 
-  // Create and initialize cells
-  private Cell[][] cell =  new Cell[3][3];
+    // Indicate the token for the other player
+    private char otherToken = ' ';
 
-  // Create and initialize a title label
-  private JLabel jlblTitle = new JLabel();
+    // Create and initialize cells
+    private Cell[][] cell = new Cell[3][3];
 
-  // Create and initialize a status label
-  private JLabel jlblStatus = new JLabel();
+    // Create and initialize a title label
+    private JLabel jlblTitle = new JLabel();
 
-  // Indicate selected row and column by the current move
-  private int rowSelected;
-  private int columnSelected;
+    // Create and initialize a status label
+    private JLabel jlblStatus = new JLabel();
 
-  // Input and output streams from/to server
-  private DataInputStream fromServer;
-  private DataOutputStream toServer;
+    // Indicate selected row and column by the current move
+    private int rowSelected;
+    private int columnSelected;
 
-  // Continue to play?
-  private boolean continueToPlay = true;
+    // Input and output streams from/to server
+    private DataInputStream fromServer;
+    private DataOutputStream toServer;
 
-  // Wait for the player to mark a cell
-  private boolean waiting = true;
+    // Continue to play?
+    private boolean continueToPlay = true;
 
-  // Indicate if it runs as application
-  private boolean isStandAlone = false;
+    // Wait for the player to mark a cell
+    private boolean waiting = true;
 
-  // Host name or ip
-  private String host = "localhost";
+    // Indicate if it runs as application
+    private boolean isStandAlone = false;
 
-  /** Initialize UI */
-  public void init() {
-    // Panel p to hold cells
-    JPanel p = new JPanel();
-    p.setLayout(new GridLayout(3, 3, 0, 0));
-    for (int i = 0; i < 3; i++)
-      for (int j = 0; j < 3; j++)
-        p.add(cell[i][j] = new Cell(i, j));
+    // Host name or ip
+    private String host = "localhost";
 
-    // Set properties for labels and borders for labels and panel
-    p.setBorder(new LineBorder(Color.black, 1));
-    jlblTitle.setHorizontalAlignment(JLabel.CENTER);
-    jlblTitle.setFont(new Font("SansSerif", Font.BOLD, 16));
-    jlblTitle.setBorder(new LineBorder(Color.black, 1));
-    jlblStatus.setBorder(new LineBorder(Color.black, 1));
+    /** Initialize UI */
+    @Override
+    public void init() {
+	// Panel p to hold cells
+	JPanel p = new JPanel();
+	p.setLayout(new GridLayout(3, 3, 0, 0));
+	for (int i = 0; i < 3; i++)
+	    for (int j = 0; j < 3; j++)
+		p.add(cell[i][j] = new Cell(i, j));
 
-    // Place the panel and the labels to the applet
-    add(jlblTitle, BorderLayout.NORTH);
-    add(p, BorderLayout.CENTER);
-    add(jlblStatus, BorderLayout.SOUTH);
+	// Set properties for labels and borders for labels and panel
+	p.setBorder(new LineBorder(Color.black, 1));
+	jlblTitle.setHorizontalAlignment(SwingConstants.CENTER);
+	jlblTitle.setFont(new Font("SansSerif", Font.BOLD, 16));
+	jlblTitle.setBorder(new LineBorder(Color.black, 1));
+	jlblStatus.setBorder(new LineBorder(Color.black, 1));
 
-    // Connect to the server
-    connectToServer();
-  }
+	// Place the panel and the labels to the applet
+	add(jlblTitle, BorderLayout.NORTH);
+	add(p, BorderLayout.CENTER);
+	add(jlblStatus, BorderLayout.SOUTH);
 
-  private void connectToServer() {
-    try {
-      // Create a socket to connect to the server
-      Socket socket;
-      if (isStandAlone)
-        socket = new Socket(host, 8000);
-      else
-        socket = new Socket(getCodeBase().getHost(), 8000);
-
-      // Create an input stream to receive data from the server
-      fromServer = new DataInputStream(socket.getInputStream());
-
-      // Create an output stream to send data to the server
-      toServer = new DataOutputStream(socket.getOutputStream());
-    }
-    catch (Exception ex) {
-      System.err.println(ex);
+	// Connect to the server
+	connectToServer();
     }
 
-    // Control the game on a separate thread
-    Thread thread = new Thread(this);
-    thread.start();
-  }
+    private void connectToServer() {
+	try {
+	    // Create a socket to connect to the server
+	    Socket socket;
+	    if (isStandAlone)
+		socket = new Socket(host, 8000);
+	    else
+		socket = new Socket(getCodeBase().getHost(), 8000);
 
-  public void run() {
-    try {
-      // Get notification from the server
-      int player = fromServer.readInt();
+	    // Create an input stream to receive data from the server
+	    fromServer = new DataInputStream(socket.getInputStream());
 
-      // Am I player 1 or 2?
-      if (player == PLAYER1) {
-        myToken = 'X';
-        otherToken = 'O';
-        jlblTitle.setText("Player 1 with token 'X'");
-        jlblStatus.setText("Waiting for player 2 to join");
+	    // Create an output stream to send data to the server
+	    toServer = new DataOutputStream(socket.getOutputStream());
+	} catch (Exception ex) {
+	    System.err.println(ex);
+	}
 
-        // Receive startup notification from the server
-        fromServer.readInt(); // Whatever read is ignored
-
-        // The other player has joined
-        jlblStatus.setText("Player 2 has joined. I start first");
-
-        // It is my turn
-        myTurn = true;
-      }
-      else if (player == PLAYER2) {
-        myToken = 'O';
-        otherToken = 'X';
-        jlblTitle.setText("Player 2 with token 'O'");
-        jlblStatus.setText("Waiting for player 1 to move");
-      }
-
-      // Continue to play
-      while (continueToPlay) {
-        if (player == PLAYER1) {
-          waitForPlayerAction(); // Wait for player 1 to move
-          sendMove(); // Send the move to the server
-          receiveInfoFromServer(); // Receive info from the server
-        }
-        else if (player == PLAYER2) {
-          receiveInfoFromServer(); // Receive info from the server
-          waitForPlayerAction(); // Wait for player 2 to move
-          sendMove(); // Send player 2's move to the server
-        }
-      }
-    }
-    catch (Exception ex) {
-    }
-  }
-
-  /** Wait for the player to mark a cell */
-  private void waitForPlayerAction() throws InterruptedException {
-    while (waiting) {
-      Thread.sleep(100);
+	// Control the game on a separate thread
+	Thread thread = new Thread(this);
+	thread.start();
     }
 
-    waiting = true;
-  }
+    public void run() {
+	try {
+	    // Get notification from the server
+	    int player = fromServer.readInt();
 
-  /** Send this player's move to the server */
-  private void sendMove() throws IOException {
-    toServer.writeInt(rowSelected); // Send the selected row
-    toServer.writeInt(columnSelected); // Send the selected column
-  }
+	    // Am I player 1 or 2?
+	    if (player == PLAYER1) {
+		myToken = 'X';
+		otherToken = 'O';
+		jlblTitle.setText("Player 1 with token 'X'");
+		jlblStatus.setText("Waiting for player 2 to join");
 
-  /** Receive info from the server */
-  private void receiveInfoFromServer() throws IOException {
-    // Receive game status
-    int status = fromServer.readInt();
+		// Receive startup notification from the server
+		fromServer.readInt(); // Whatever read is ignored
 
-    if (status == PLAYER1_WON) {
-      // Player 1 won, stop playing
-      continueToPlay = false;
-      if (myToken == 'X') {
-        jlblStatus.setText("I won! (X)");
-      }
-      else if (myToken == 'O') {
-        jlblStatus.setText("Player 1 (X) has won!");
-        receiveMove();
-      }
-    }
-    else if (status == PLAYER2_WON) {
-      // Player 2 won, stop playing
-      continueToPlay = false;
-      if (myToken == 'O') {
-        jlblStatus.setText("I won! (O)");
-      }
-      else if (myToken == 'X') {
-        jlblStatus.setText("Player 2 (O) has won!");
-        receiveMove();
-      }
-    }
-    else if (status == DRAW) {
-      // No winner, game is over
-      continueToPlay = false;
-      jlblStatus.setText("Game is over, no winner!");
+		// The other player has joined
+		jlblStatus.setText("Player 2 has joined. I start first");
 
-      if (myToken == 'O') {
-        receiveMove();
-      }
-    }
-    else {
-      receiveMove();
-      jlblStatus.setText("My turn");
-      myTurn = true; // It is my turn
-    }
-  }
+		// It is my turn
+		myTurn = true;
+	    } else if (player == PLAYER2) {
+		myToken = 'O';
+		otherToken = 'X';
+		jlblTitle.setText("Player 2 with token 'O'");
+		jlblStatus.setText("Waiting for player 1 to move");
+	    }
 
-  private void receiveMove() throws IOException {
-    // Get the other player's move
-    int row = fromServer.readInt();
-    int column = fromServer.readInt();
-    cell[row][column].setToken(otherToken);
-  }
-
-  // An inner class for a cell
-  public class Cell extends JPanel {
-    // Indicate the row and column of this cell in the board
-    private int row;
-    private int column;
-
-    // Token used for this cell
-    private char token = ' ';
-
-    public Cell(int row, int column) {
-      this.row = row;
-      this.column = column;
-      setBorder(new LineBorder(Color.black, 1)); // Set cell's border
-      addMouseListener(new ClickListener());  // Register listener
+	    // Continue to play
+	    while (continueToPlay)
+		if (player == PLAYER1) {
+		    waitForPlayerAction(); // Wait for player 1 to move
+		    sendMove(); // Send the move to the server
+		    receiveInfoFromServer(); // Receive info from the server
+		} else if (player == PLAYER2) {
+		    receiveInfoFromServer(); // Receive info from the server
+		    waitForPlayerAction(); // Wait for player 2 to move
+		    sendMove(); // Send player 2's move to the server
+		}
+	} catch (Exception ex) {
+	}
     }
 
-    /** Return token */
-    public char getToken() {
-      return token;
+    /** Wait for the player to mark a cell */
+    private void waitForPlayerAction() throws InterruptedException {
+	while (waiting)
+	    Thread.sleep(100);
+
+	waiting = true;
     }
 
-    /** Set a new token */
-    public void setToken(char c) {
-      token = c;
-      repaint();
+    /** Send this player's move to the server */
+    private void sendMove() throws IOException {
+	toServer.writeInt(rowSelected); // Send the selected row
+	toServer.writeInt(columnSelected); // Send the selected column
     }
 
-    @Override /** Paint the cell */
-    protected void paintComponent(Graphics g) {
-      super.paintComponent(g);
+    /** Receive info from the server */
+    private void receiveInfoFromServer() throws IOException {
+	// Receive game status
+	int status = fromServer.readInt();
 
-      if (token == 'X') {
-        g.drawLine(10, 10, getWidth() - 10, getHeight() - 10);
-        g.drawLine(getWidth() - 10, 10, 10, getHeight() - 10);
-      }
-      else if (token == 'O') {
-        g.drawOval(10, 10, getWidth() - 20, getHeight() - 20);
-      }
+	if (status == PLAYER1_WON) {
+	    // Player 1 won, stop playing
+	    continueToPlay = false;
+	    if (myToken == 'X')
+		jlblStatus.setText("I won! (X)");
+	    else if (myToken == 'O') {
+		jlblStatus.setText("Player 1 (X) has won!");
+		receiveMove();
+	    }
+	} else if (status == PLAYER2_WON) {
+	    // Player 2 won, stop playing
+	    continueToPlay = false;
+	    if (myToken == 'O')
+		jlblStatus.setText("I won! (O)");
+	    else if (myToken == 'X') {
+		jlblStatus.setText("Player 2 (O) has won!");
+		receiveMove();
+	    }
+	} else if (status == DRAW) {
+	    // No winner, game is over
+	    continueToPlay = false;
+	    jlblStatus.setText("Game is over, no winner!");
+
+	    if (myToken == 'O')
+		receiveMove();
+	} else {
+	    receiveMove();
+	    jlblStatus.setText("My turn");
+	    myTurn = true; // It is my turn
+	}
     }
 
-    /** Handle mouse click on a cell */
-    private class ClickListener extends MouseAdapter {
-      public void mouseClicked(MouseEvent e) {
-        // If cell is not occupied and the player has the turn
-        if ((token == ' ') && myTurn) {
-          setToken(myToken);  // Set the player's token in the cell
-          myTurn = false;
-          rowSelected = row;
-          columnSelected = column;
-          jlblStatus.setText("Waiting for the other player to move");
-          waiting = false; // Just completed a successful move
-        }
-      }
+    private void receiveMove() throws IOException {
+	// Get the other player's move
+	int row = fromServer.readInt();
+	int column = fromServer.readInt();
+	cell[row][column].setToken(otherToken);
     }
-  }
 
-  /** This main method enables the applet to run as an application */
-  public static void main(String[] args) {
-    // Create a frame
-    JFrame frame = new JFrame("Tic Tac Toe Client");
+    // An inner class for a cell
+    public class Cell extends JPanel {
+	/**
+	 *
+	 */
+	private static final long serialVersionUID = 1L;
+	// Indicate the row and column of this cell in the board
+	private int row;
+	private int column;
 
-    // Create an instance of the applet
-    TicTacToeClient applet = new TicTacToeClient();
-    applet.isStandAlone = true;
+	// Token used for this cell
+	private char token = ' ';
 
-    // Get host
-    if (args.length == 1) applet.host = args[0];
+	public Cell(int row, int column) {
+	    this.row = row;
+	    this.column = column;
+	    setBorder(new LineBorder(Color.black, 1)); // Set cell's border
+	    addMouseListener(new ClickListener()); // Register listener
+	}
 
-    // Add the applet instance to the frame
-    frame.getContentPane().add(applet, BorderLayout.CENTER);
+	/** Return token */
+	public char getToken() {
+	    return token;
+	}
 
-    // Invoke init() and start()
-    applet.init();
-    applet.start();
+	/** Set a new token */
+	public void setToken(char c) {
+	    token = c;
+	    repaint();
+	}
 
-    // Display the frame
-    frame.setSize(320, 300);
-    frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-    frame.setVisible(true);
-  }
+	@Override /** Paint the cell */
+	protected void paintComponent(Graphics g) {
+	    super.paintComponent(g);
+
+	    if (token == 'X') {
+		g.drawLine(10, 10, getWidth() - 10, getHeight() - 10);
+		g.drawLine(getWidth() - 10, 10, 10, getHeight() - 10);
+	    } else if (token == 'O')
+		g.drawOval(10, 10, getWidth() - 20, getHeight() - 20);
+	}
+
+	/** Handle mouse click on a cell */
+	private class ClickListener extends MouseAdapter {
+	    @Override
+	    public void mouseClicked(MouseEvent e) {
+		// If cell is not occupied and the player has the turn
+		if (token == ' ' && myTurn) {
+		    setToken(myToken); // Set the player's token in the cell
+		    myTurn = false;
+		    rowSelected = row;
+		    columnSelected = column;
+		    jlblStatus.setText("Waiting for the other player to move");
+		    waiting = false; // Just completed a successful move
+		}
+	    }
+	}
+    }
+
+    /** This main method enables the applet to run as an application */
+    public static void main(String[] args) {
+	// Create a frame
+	JFrame frame = new JFrame("Tic Tac Toe Client");
+
+	// Create an instance of the applet
+	TicTacToeClient applet = new TicTacToeClient();
+	applet.isStandAlone = true;
+
+	// Get host
+	if (args.length == 1)
+	    applet.host = args[0];
+
+	// Add the applet instance to the frame
+	frame.getContentPane().add(applet, BorderLayout.CENTER);
+
+	// Invoke init() and start()
+	applet.init();
+	applet.start();
+
+	// Display the frame
+	frame.setSize(320, 300);
+	frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+	frame.setVisible(true);
+    }
 }

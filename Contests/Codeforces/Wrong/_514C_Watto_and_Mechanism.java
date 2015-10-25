@@ -1,11 +1,16 @@
-import java.io.*;
-import java.util.*;
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
+import java.io.PrintWriter;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.Scanner;
 
 public class _514C_Watto_and_Mechanism {
-    public static Scanner in = new Scanner(new BufferedReader(
-	    new InputStreamReader(System.in)));
-    public static PrintWriter out = new PrintWriter(new BufferedWriter(
-	    new OutputStreamWriter(System.out)));
+    public static Scanner in = new Scanner(new BufferedReader(new InputStreamReader(System.in)));
+    public static PrintWriter out = new PrintWriter(new BufferedWriter(new OutputStreamWriter(System.out)));
 
     public static void main(String[] args) {
 	HashMap<Integer, String> inputs = new HashMap<Integer, String>();
@@ -26,18 +31,12 @@ public class _514C_Watto_and_Mechanism {
 	    if (firstHalves.containsKey(s1))
 		firstHalves.get(s1).add(input);
 	    else
-		firstHalves
-			.put(s1,
-				new ArrayList<String>(Collections
-					.singletonList(input)));
+		firstHalves.put(s1, new ArrayList<String>(Collections.singletonList(input)));
 
 	    if (lastHalves.containsKey(s2))
 		lastHalves.get(s2).add(input);
 	    else
-		lastHalves
-			.put(s2,
-				new ArrayList<String>(Collections
-					.singletonList(input)));
+		lastHalves.put(s2, new ArrayList<String>(Collections.singletonList(input)));
 	}
 
 	for (int i = 0; i < m; i++) {
@@ -48,8 +47,7 @@ public class _514C_Watto_and_Mechanism {
     }
 
     private static void calc(String query, HashMap<Integer, String> inputs,
-	    HashMap<String, ArrayList<String>> firstHalves,
-	    HashMap<String, ArrayList<String>> lastHalves) {
+	    HashMap<String, ArrayList<String>> firstHalves, HashMap<String, ArrayList<String>> lastHalves) {
 	int len = query.length();
 	String q1 = query.substring(0, len / 2);
 	String q2 = query.substring(len / 2, len);

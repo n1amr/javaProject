@@ -1,4 +1,5 @@
-import java.util.*;
+import java.util.HashMap;
+import java.util.Scanner;
 
 public class _519D_A_and_B_and_Interesting_Substrings {
     public static void main(String[] args) {

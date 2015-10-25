@@ -1,4 +1,4 @@
-import java.util.*;
+import java.util.Scanner;
 
 public class _291B_Command_Line_Arguments {
     public static void main(String[] args) {

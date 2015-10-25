@@ -1,4 +1,4 @@
-import java.util.*;
+import java.util.Scanner;
 
 public class _510B_Fox_And_Two_Dots {
     static int n, m;
@@ -14,25 +14,20 @@ public class _510B_Fox_And_Two_Dots {
 	    String s = in.next();
 	    grid[i] = s.toCharArray();
 	}
-	for (int i = 0; i < n; i++) {
-	    for (int j = 0; j < m; j++) {
+	for (int i = 0; i < n; i++)
+	    for (int j = 0; j < m; j++)
 		if (findPath(grid, i, j, i, j, 1)) {
 		    System.out.println("Yes");
 		    return;
 		}
-	    }
-	}
 	System.out.println("No");
     }
 
-    private static boolean findPath(char[][] grid, int i, int j, int x, int y,
-	    int l) {
+    private static boolean findPath(char[][] grid, int i, int j, int x, int y, int l) {
 	isVisisted[i][j] = true;
 	if (i >= n || j >= m || i < 0 || j < 0)
 	    return false;
-	if ((l > 3)
-		&& ((i == x && j == y)
-			|| (i == x && (j + 1 == y || j - 1 == y)) || (j == y && (i + 1 == x || i - 1 == x))))
+	if (l > 3 && (i == x && j == y || i == x && (j + 1 == y || j - 1 == y) || j == y && (i + 1 == x || i - 1 == x)))
 	    return true;
 
 	if (i + 1 < n && grid[i][j] == grid[i + 1][j] && !isVisisted[i + 1][j]) {

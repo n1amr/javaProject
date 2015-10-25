@@ -1,4 +1,4 @@
-import java.util.*;
+import java.util.Scanner;
 
 public class _476A_Dreamoon_and_Stairs {
     public static void main(String[] args) {

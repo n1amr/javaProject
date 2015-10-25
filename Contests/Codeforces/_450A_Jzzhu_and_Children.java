@@ -1,4 +1,4 @@
-import java.util.*;
+import java.util.Scanner;
 
 public class _450A_Jzzhu_and_Children {
     public static void main(String[] args) {
@@ -6,9 +6,8 @@ public class _450A_Jzzhu_and_Children {
 	int n = in.nextInt();
 	int m = in.nextInt();
 	int[] a = new int[n];
-	for (int i = 0; i < n; i++) {
+	for (int i = 0; i < n; i++)
 	    a[i] = in.nextInt();
-	}
 	int max = 0;
 	int index = 0;
 	int c;

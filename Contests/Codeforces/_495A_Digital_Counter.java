@@ -1,4 +1,4 @@
-import java.util.*;
+import java.util.Scanner;
 
 public class _495A_Digital_Counter {
     public static void main(String[] args) {

@@ -13,13 +13,11 @@ public class GetSearchResultsFromGoogleJSON {
 	String charset = "UTF-8";
 
 	URL url = new URL(google + URLEncoder.encode(search, charset));
-	Scanner in = new Scanner(new InputStreamReader(url.openStream(),
-		charset));
+	Scanner in = new Scanner(new InputStreamReader(url.openStream(), charset));
 
 	String r = "";
-	while (in.hasNextLine()) {
+	while (in.hasNextLine())
 	    r += in.nextLine() + "\n";
-	}
 	System.err.println(r);
 
 	JSONObject mainObject = new JSONObject(r);

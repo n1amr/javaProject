@@ -20,9 +20,8 @@ public class Console {
 	    name = s.substring(0, i).trim();
 	    value = evaluate(s.substring(i + 1).trim());
 
-	} else {
+	} else
 	    value = evaluate(s.trim());
-	}
 	if (name.length() == 0)
 	    name = "ans";
 	value.setName(name);
@@ -33,7 +32,7 @@ public class Console {
     }
 
     private static boolean isPartOfName(char c) {
-	return (Character.isDigit(c) || Character.isAlphabetic(c) || c == '_');
+	return Character.isDigit(c) || Character.isAlphabetic(c) || c == '_';
     }
 
     private static Mat evaluate(String s) {

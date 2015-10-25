@@ -1,4 +1,4 @@
-import java.util.*;
+import java.util.Scanner;
 
 public class _509A_Maximum_in_Table {
     public static void main(String[] args) {

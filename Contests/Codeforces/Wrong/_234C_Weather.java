@@ -1,5 +1,10 @@
-import java.io.*;
-import java.util.*;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.util.Arrays;
+import java.util.Scanner;
 
 public class _234C_Weather {
     public static void main(String[] args) throws IOException {
@@ -64,8 +69,7 @@ public class _234C_Weather {
 	    System.out.println(nn);
 	    System.out.println(Arrays.toString(a));
 	}
-	PrintWriter out = new PrintWriter(new FileOutputStream(new File(
-		"output.txt")));
+	PrintWriter out = new PrintWriter(new FileOutputStream(new File("output.txt")));
 	out.println(ans);
 	out.close();
     }

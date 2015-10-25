@@ -1,4 +1,4 @@
-import java.util.*;
+import java.util.Scanner;
 
 public class _478B_Random_Teams {
     public static void main(String[] args) {

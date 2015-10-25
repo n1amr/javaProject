@@ -1,4 +1,4 @@
-import java.util.*;
+import java.util.Scanner;
 
 public class _514A_Chewba_ca_and_Number {
     public static void main(String[] args) {

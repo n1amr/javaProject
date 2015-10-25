@@ -1,4 +1,4 @@
-import java.util.*;
+import java.util.Scanner;
 
 public class _483A_Counterexample {
     public static void main(String[] args) {

@@ -1,4 +1,4 @@
-import java.util.*;
+import java.util.Scanner;
 
 public class _332A_Down_the_Hatch_ {
     public static void main(String[] args) {

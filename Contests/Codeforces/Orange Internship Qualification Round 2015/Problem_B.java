@@ -19,7 +19,7 @@ public class Problem_B {
     private static String toLetters(long n) {
 	StringBuilder builder = new StringBuilder();
 	while (n > 0) {
-	    builder.insert(0, (char) (((n - 1) % 26) + 'A'));
+	    builder.insert(0, (char) ((n - 1) % 26 + 'A'));
 	    n = (n - 1) / 26;
 	}
 	return builder.toString();

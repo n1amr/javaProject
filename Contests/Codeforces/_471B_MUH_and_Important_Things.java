@@ -1,4 +1,5 @@
-import java.util.*;
+import java.util.Arrays;
+import java.util.Scanner;
 
 public class _471B_MUH_and_Important_Things {
     static class Pair implements Comparable<Pair> {

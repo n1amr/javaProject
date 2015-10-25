@@ -1,4 +1,4 @@
-import java.util.*;
+import java.util.Scanner;
 
 public class _510C_Fox_And_Names {
     static boolean taken[];
@@ -15,15 +15,14 @@ public class _510C_Fox_And_Names {
 	Scanner in = new Scanner(System.in);
 	int n = in.nextInt();
 	String[] name = new String[n];
-	for (int i = 0; i < n; i++) {
+	for (int i = 0; i < n; i++)
 	    name[i] = in.next();
-	}
 	taken = new boolean[26];
 	StringBuilder order = new StringBuilder();
 	StringBuilder prefix = new StringBuilder();
 	for (int i = 0; i < n; i++) {
 	    String cur = name[i];
-	    String past = (i == 0) ? name[0] : name[i - 1];
+	    String past = i == 0 ? name[0] : name[i - 1];
 	    char c;
 	    int p = prefix.length();
 	    if (i != 0) {
@@ -36,14 +35,12 @@ public class _510C_Fox_And_Names {
 			break;
 		}
 
-		if (ex) {
+		if (ex)
 		    if (past.length() > p) {
 			take(past.charAt(p));
 			order.append(past.charAt(p));
 		    }
-		}
-		while (prefix.length() > 0
-			&& cur.charAt(p - 1) != past.charAt(p - 1)) {
+		while (prefix.length() > 0 && cur.charAt(p - 1) != past.charAt(p - 1)) {
 		    prefix.delete(p - 1, p);
 		    p--;
 		}
@@ -53,10 +50,9 @@ public class _510C_Fox_And_Names {
 	    order.append(c);
 
 	}
-	for (char c = 'a'; c <= 'z'; c++) {
+	for (char c = 'a'; c <= 'z'; c++)
 	    if (!isTaken(c))
 		order.append(c);
-	}
 	if (order.length() == 26)
 	    System.out.println(order);
 	else

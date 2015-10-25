@@ -1,77 +1,84 @@
-package Introduction.to.JAVA.Programming.Daniel.Liang.Examples;
-import java.awt.*;
-import javax.swing.*;
-import javax.swing.tree.*;
-import java.util.*;
+import java.awt.BorderLayout;
+import java.awt.GridLayout;
+import java.util.Enumeration;
+
+import javax.swing.JApplet;
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+import javax.swing.JSplitPane;
+import javax.swing.JTextArea;
+import javax.swing.JTree;
+import javax.swing.tree.DefaultMutableTreeNode;
+import javax.swing.tree.DefaultTreeModel;
 
 public class TreeNodeDemo extends JApplet {
-  public TreeNodeDemo() {
-    // Create the first tree
-    DefaultMutableTreeNode root, europe, northAmerica, us;
+    /**
+     *
+     */
+    private static final long serialVersionUID = 1L;
 
-    europe = new DefaultMutableTreeNode("Europe");
-    europe.add(new DefaultMutableTreeNode("UK"));
-    europe.add(new DefaultMutableTreeNode("Germany"));
-    europe.add(new DefaultMutableTreeNode("France"));
-    europe.add(new DefaultMutableTreeNode("Norway"));
+    public TreeNodeDemo() {
+	// Create the first tree
+	DefaultMutableTreeNode root, europe, northAmerica, us;
 
-    northAmerica = new DefaultMutableTreeNode("North America");
-    us = new DefaultMutableTreeNode("US");
-    us.add(new DefaultMutableTreeNode("California"));
-    us.add(new DefaultMutableTreeNode("Texas"));
-    us.add(new DefaultMutableTreeNode("New York"));
-    us.add(new DefaultMutableTreeNode("Florida"));
-    us.add(new DefaultMutableTreeNode("Illinois"));
-    northAmerica.add(us);
-    northAmerica.add(new DefaultMutableTreeNode("Canada"));
+	europe = new DefaultMutableTreeNode("Europe");
+	europe.add(new DefaultMutableTreeNode("UK"));
+	europe.add(new DefaultMutableTreeNode("Germany"));
+	europe.add(new DefaultMutableTreeNode("France"));
+	europe.add(new DefaultMutableTreeNode("Norway"));
 
-    root = new DefaultMutableTreeNode("World");
-    root.add(europe);
-    root.add(northAmerica);
+	northAmerica = new DefaultMutableTreeNode("North America");
+	us = new DefaultMutableTreeNode("US");
+	us.add(new DefaultMutableTreeNode("California"));
+	us.add(new DefaultMutableTreeNode("Texas"));
+	us.add(new DefaultMutableTreeNode("New York"));
+	us.add(new DefaultMutableTreeNode("Florida"));
+	us.add(new DefaultMutableTreeNode("Illinois"));
+	northAmerica.add(us);
+	northAmerica.add(new DefaultMutableTreeNode("Canada"));
 
-    JPanel panel = new JPanel();
-    panel.setLayout(new GridLayout(1, 2));
-    panel.add(new JScrollPane(new JTree(root)));
-    panel.add(new JScrollPane(new JTree(new DefaultTreeModel(root))));
+	root = new DefaultMutableTreeNode("World");
+	root.add(europe);
+	root.add(northAmerica);
 
-    JTextArea jtaMessage = new JTextArea();
-    jtaMessage.setWrapStyleWord(true);
-    jtaMessage.setLineWrap(true);
-    add(new JSplitPane(JSplitPane.VERTICAL_SPLIT,
-      panel, new JScrollPane(jtaMessage)), BorderLayout.CENTER);
+	JPanel panel = new JPanel();
+	panel.setLayout(new GridLayout(1, 2));
+	panel.add(new JScrollPane(new JTree(root)));
+	panel.add(new JScrollPane(new JTree(new DefaultTreeModel(root))));
 
-    // Get tree information
-    jtaMessage.append("Depth of the node US is " + us.getDepth());
-    jtaMessage.append("\nLevel of the node US is " + us.getLevel());
-    jtaMessage.append("\nFirst child of the root is " +
-      root.getFirstChild());
-    jtaMessage.append("\nFirst leaf of the root is " +
-      root.getFirstLeaf());
-    jtaMessage.append("\nNumber of the children of the root is " +
-      root.getChildCount());
-    jtaMessage.append("\nNumber of leaves in the tree is " +
-      root.getLeafCount());
-    String breadthFirstSearchResult = "";
+	JTextArea jtaMessage = new JTextArea();
+	jtaMessage.setWrapStyleWord(true);
+	jtaMessage.setLineWrap(true);
+	add(new JSplitPane(JSplitPane.VERTICAL_SPLIT, panel, new JScrollPane(jtaMessage)), BorderLayout.CENTER);
 
-    // Breadth-first traversal
-    Enumeration bf = root.breadthFirstEnumeration();
-    while (bf.hasMoreElements())
-      breadthFirstSearchResult += bf.nextElement().toString() + " ";
-    jtaMessage.append("\nBreath-first traversal from the root is "
-      + breadthFirstSearchResult);
-  }
+	// Get tree information
+	jtaMessage.append("Depth of the node US is " + us.getDepth());
+	jtaMessage.append("\nLevel of the node US is " + us.getLevel());
+	jtaMessage.append("\nFirst child of the root is " + root.getFirstChild());
+	jtaMessage.append("\nFirst leaf of the root is " + root.getFirstLeaf());
+	jtaMessage.append("\nNumber of the children of the root is " + root.getChildCount());
+	jtaMessage.append("\nNumber of leaves in the tree is " + root.getLeafCount());
+	String breadthFirstSearchResult = "";
 
-  public static void main(String[] args) {
-    TreeNodeDemo applet = new TreeNodeDemo();
-    JFrame frame = new JFrame();
-    //EXIT_ON_CLOSE == 3
-    frame.setDefaultCloseOperation(3);
-    frame.setTitle("TreeNodeDemo");
-    frame.getContentPane().add(applet, BorderLayout.CENTER);
-    applet.init();
-    applet.start();
-    frame.setSize(400,320);
-    frame.setLocationRelativeTo(null);
-    frame.setVisible(true);
-  }
+	// Breadth-first traversal
+	Enumeration bf = root.breadthFirstEnumeration();
+	while (bf.hasMoreElements())
+	    breadthFirstSearchResult += bf.nextElement().toString() + " ";
+	jtaMessage.append("\nBreath-first traversal from the root is " + breadthFirstSearchResult);
+    }
+
+    public static void main(String[] args) {
+	TreeNodeDemo applet = new TreeNodeDemo();
+	JFrame frame = new JFrame();
+	// EXIT_ON_CLOSE == 3
+	frame.setDefaultCloseOperation(3);
+	frame.setTitle("TreeNodeDemo");
+	frame.getContentPane().add(applet, BorderLayout.CENTER);
+	applet.init();
+	applet.start();
+	frame.setSize(400, 320);
+	frame.setLocationRelativeTo(null);
+	frame.setVisible(true);
+    }
 }
