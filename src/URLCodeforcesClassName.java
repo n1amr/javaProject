@@ -1,5 +1,8 @@
-import java.io.*;
-import java.util.*;
+import java.awt.Toolkit;
+import java.awt.datatransfer.DataFlavor;
+import java.io.File;
+import java.io.PrintWriter;
+import java.util.Scanner;
 
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
@@ -10,11 +13,7 @@ public class URLCodeforcesClassName {
     public static void main(String[] args) throws Exception {
 	String projectPath = "D:\\Lab\\Java\\javaProject\\";
 
-	// String url = (String)
-	// Toolkit.getDefaultToolkit().getSystemClipboard()
-	// .getData(DataFlavor.stringFlavor);
-	// String url = "http://codeforces.com/problemset/problem/581/F";
-	String url = "http://codeforces.com/contests/582,583";
+	String url = (String) Toolkit.getDefaultToolkit().getSystemClipboard().getData(DataFlavor.stringFlavor);
 
 	String[] segments = url.split("/");
 	String problemNumber = url.replaceAll((".*/(\\d+)/.*"), "$1") + segments[segments.length - 1];
@@ -22,15 +21,10 @@ public class URLCodeforcesClassName {
 	System.out.println("Connecting...");
 	Document doc = Jsoup.connect(url).get();
 	Elements body = doc.getElementsByTag("body");
-	Elements element = doc.getElementsByAttributeValue("id", "body");
-	Element e = element.get(3);
+	Elements element = doc.getElementsByAttributeValue("class", "title");
+	Element e = element.get(0);
 
-	// >
-	// div:nth-child(1)");
-	System.out.println(element);
-	if (2 * 5 != 0)
-	    return;
-	String problemName = element.text();
+	String problemName = e.text();
 	problemName = problemName.substring(problemName.indexOf(' ') + 1);
 	String problemCompleteName = problemNumber + " - " + problemName;
 	System.out.println(problemCompleteName);
