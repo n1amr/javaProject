@@ -1,7 +1,7 @@
 import java.io.*;
 import java.util.*;
 
-public class CodeJam {
+public class CodeJam2016D {
   public static Scanner in;
   public static PrintWriter out;
 
@@ -15,10 +15,10 @@ public class CodeJam {
       solve();
     }
     out.close();
-    System.out.println("Done");
+    System.err.println("Done");
   }
 
   static void solve() {
-    out.println("hello");
+    out.println(in.nextLine());
   }
 }
