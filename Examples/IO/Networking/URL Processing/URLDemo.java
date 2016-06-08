@@ -5,7 +5,7 @@ public class URLDemo {
 	public static void main(String[] args) {
 		try {
 			URL url = new URL(
-					"https://www.youtube.com/watch?v=FflcA85zcOM&feature=youtu.be");
+							"https://www.youtube.com/watch?v=FflcA85zcOM&feature=youtu.be");
 			System.out.println("URL is " + url.toString());
 			System.out.println("protocol is " + url.getProtocol());
 			System.out.println("authority is " + url.getAuthority());

@@ -12,16 +12,16 @@ public class ClientSocket {
 
 		// Connecting
 		System.out.println("CLIENT: Connecting to " + SERVER_NAME + " on port "
-				+ PORT);
+						+ PORT);
 		Socket clientSocket = new Socket(SERVER_NAME, PORT);
 		System.out.println("CLIENT: Just connected to "
-				+ clientSocket.getRemoteSocketAddress());
+						+ clientSocket.getRemoteSocketAddress());
 
 		// Receiving
 		OutputStream outToServer = clientSocket.getOutputStream();
 		DataOutputStream mDataOutputStream = new DataOutputStream(outToServer);
 		mDataOutputStream.writeUTF("CLIENT: Hello from "
-				+ clientSocket.getLocalSocketAddress());
+						+ clientSocket.getLocalSocketAddress());
 
 		// Sending
 		InputStream inFromServer = clientSocket.getInputStream();

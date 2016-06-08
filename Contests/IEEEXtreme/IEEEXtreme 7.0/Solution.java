@@ -16,7 +16,7 @@ public class Solution {
 		int count = 0;
 		for (String i : arrHEX) {
 			if (i.equals("+") || i.equals("-") || i.equals("&")
-					|| i.equals("|") || i.equals("X"))
+							|| i.equals("|") || i.equals("X"))
 				arr[count] = i;
 			else
 				arr[count] = Integer.toString(Integer.parseInt(i, 16));
@@ -24,7 +24,7 @@ public class Solution {
 		}
 		for (String i : arr)
 			if (i.equals("+") || i.equals("-") || i.equals("&")
-					|| i.equals("|") || i.equals("X")) {
+							|| i.equals("|") || i.equals("X")) {
 				f(operations, i);
 				if (!valid)
 					break;

@@ -18,23 +18,23 @@ public class GreetingServer extends Thread {
 					try {
 						//Connecting
 						System.out
-								.println("SERVER: Waiting for client on port "
-										+ serverSocket.getLocalPort() + "...");
+										.println("SERVER: Waiting for client on port "
+														+ serverSocket.getLocalPort() + "...");
 						Socket server = serverSocket.accept();
 						System.out.println("SERVER: Just connected to "
-								+ server.getRemoteSocketAddress());
-						
+										+ server.getRemoteSocketAddress());
+
 						//Receiving
 						DataInputStream in = new DataInputStream(server
-								.getInputStream());
+										.getInputStream());
 						System.out.println("SERVER: " + in.readUTF());
-						
+
 						//Sending
 						DataOutputStream out = new DataOutputStream(server
-								.getOutputStream());
+										.getOutputStream());
 						out.writeUTF("SERVER: Thank you for connecting to "
-								+ server.getLocalSocketAddress() + "\nGoodbye!");
-						
+										+ server.getLocalSocketAddress() + "\nGoodbye!");
+
 						server.close();
 					} catch (SocketTimeoutException s) {
 						System.out.println("SERVER: Socket timed out!");

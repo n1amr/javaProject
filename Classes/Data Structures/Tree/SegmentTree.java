@@ -1,7 +1,7 @@
 public class SegmentTree {
 	final static int MAX = 5;
 	int[] interval = new int[(int) Math.pow(2,
-			Math.ceil(Math.log(MAX) / Math.log(2)) + 1)];
+					Math.ceil(Math.log(MAX) / Math.log(2)) + 1)];
 	int S = 0;
 	int E = MAX;
 
@@ -14,7 +14,7 @@ public class SegmentTree {
 		if (s == e)
 			return interval[p] = 1;
 		return interval[p] = build(s, (s + e) / 2, 2 * p)
-				+ build((s + e) / 2 + 1, e, 2 * p + 1);
+						+ build((s + e) / 2 + 1, e, 2 * p + 1);
 	}
 
 	// insert num and return its order (kth in order)
@@ -36,7 +36,7 @@ public class SegmentTree {
 	}
 
 	public int remove(int num, int s, int e, int p) { // return position of
-														// deleted val
+		// deleted val
 		// in O(logn)
 		interval[p]--;
 		if (s == e)

@@ -43,7 +43,7 @@ public class HandleEvent extends JFrame {
 			if (e.getSource() instanceof JButton) {
 
 				System.out.println("actionPerformed: "
-						+ ((JButton) e.getSource()).getText());
+								+ ((JButton) e.getSource()).getText());
 			}
 			if (jbtnOK == e.getSource()) {
 				Calendar time = new GregorianCalendar();
@@ -106,7 +106,7 @@ public class HandleEvent extends JFrame {
 		@Override
 		public void itemStateChanged(ItemEvent e) {
 			System.out.println("itemStateChanged: Check box state is "
-					+ ((JCheckBox) e.getSource()).isSelected());
+							+ ((JCheckBox) e.getSource()).isSelected());
 		}
 	}
 }

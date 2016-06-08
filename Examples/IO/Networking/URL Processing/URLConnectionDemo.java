@@ -14,10 +14,10 @@ public class URLConnectionDemo {
 				System.out.println("Please enter an HTTP URL.");
 				return;
 			}
-			
+
 			//Reading
 			BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(
-					httpURLConnection.getInputStream()));
+							httpURLConnection.getInputStream()));
 			String urlString = "";
 			String current;
 			while ((current = bufferedReader.readLine()) != null) {

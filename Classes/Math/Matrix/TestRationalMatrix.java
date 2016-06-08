@@ -1,5 +1,5 @@
 public class TestRationalMatrix {
-    public static void main(String[] args) {
+	public static void main(String[] args) {
 		// Create two Rational arrays m1 and m2
 		Rational[][] m1 = new Rational[3][3];
 		Rational[][] m2 = new Rational[3][3];

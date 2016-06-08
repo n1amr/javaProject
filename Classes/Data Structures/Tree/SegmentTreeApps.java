@@ -51,7 +51,7 @@ public class SegmentTreeApps extends SegmentTree {
 			int bestPosLen = 1;
 
 			if (height[i] != 0) // special handling for the smallest entry, 0 in
-								// this case
+			// this case
 			{
 				from = 0;
 				to = height[i] - 1;
@@ -130,9 +130,9 @@ public class SegmentTreeApps extends SegmentTree {
 
 		// Update the function
 		tree[p].isMixed = (tree[2 * p].isMixed != 0
-				|| tree[2 * p + 1].isMixed != 0 || tree[2 * p].maxFreq != tree[2 * p + 1].maxFreq) ? 1
-				: 0;
+						|| tree[2 * p + 1].isMixed != 0 || tree[2 * p].maxFreq != tree[2 * p + 1].maxFreq) ? 1
+						: 0;
 		tree[p].maxFreq = Math
-				.max(tree[2 * p].maxFreq, tree[2 * p + 1].maxFreq);
+						.max(tree[2 * p].maxFreq, tree[2 * p + 1].maxFreq);
 	}
 }

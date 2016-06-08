@@ -9,9 +9,9 @@ import javax.xml.bind.annotation.XmlType;
 
 /**
  * <p>Java class for getAddressResponse complex type.
- * 
+ * <p>
  * <p>The following schema fragment specifies the expected content contained within this class.
- * 
+ * <p>
  * <pre>
  * &lt;complexType name="getAddressResponse">
  *   &lt;complexContent>
@@ -23,40 +23,34 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;/complexContent>
  * &lt;/complexType>
  * </pre>
- * 
- * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "getAddressResponse", propOrder = {
-    "_return"
+				"_return"
 })
 public class GetAddressResponse {
 
-    @XmlElement(name = "return")
-    protected Address _return;
+	@XmlElement(name = "return")
+	protected Address _return;
 
-    /**
-     * Gets the value of the return property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link Address }
-     *     
-     */
-    public Address getReturn() {
-        return _return;
-    }
+	/**
+	 * Gets the value of the return property.
+	 *
+	 * @return possible object is
+	 * {@link Address }
+	 */
+	public Address getReturn() {
+		return _return;
+	}
 
-    /**
-     * Sets the value of the return property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Address }
-     *     
-     */
-    public void setReturn(Address value) {
-        this._return = value;
-    }
+	/**
+	 * Sets the value of the return property.
+	 *
+	 * @param value allowed object is
+	 *              {@link Address }
+	 */
+	public void setReturn(Address value) {
+		this._return = value;
+	}
 
 }

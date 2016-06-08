@@ -10,7 +10,9 @@ public class AnimationDemoUsingTimer extends JFrame {
 		add(new MovingMessagePanel("message 2 moving?"));
 	}
 
-	/** Main method */
+	/**
+	 * Main method
+	 */
 	public static void main(String[] args) {
 		AnimationDemoUsingTimer frame = new AnimationDemoUsingTimer();
 		frame.setTitle("AnimationDemo");

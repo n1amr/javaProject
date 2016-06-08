@@ -8,48 +8,50 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 
 public class DisplayImagePlayAudio extends JApplet {
-    /**
-     *
-     */
-    private static final long serialVersionUID = 1L;
-    private AudioClip audioClip;
+	/**
+	 *
+	 */
+	private static final long serialVersionUID = 1L;
+	private AudioClip audioClip;
 
-    public DisplayImagePlayAudio() {
-	URL urlForImage = getClass().getResource("image/denmark.gif");
-	add(new JLabel(new ImageIcon(urlForImage)));
+	public DisplayImagePlayAudio() {
+		URL urlForImage = getClass().getResource("image/denmark.gif");
+		add(new JLabel(new ImageIcon(urlForImage)));
 
-	URL urlForAudio = getClass().getResource("audio/denmark.mid");
-	audioClip = Applet.newAudioClip(urlForAudio);
-	audioClip.loop();
-    }
+		URL urlForAudio = getClass().getResource("audio/denmark.mid");
+		audioClip = Applet.newAudioClip(urlForAudio);
+		audioClip.loop();
+	}
 
-    @Override
-    public void start() {
-	if (audioClip != null)
-	    audioClip.loop();
-    }
+	@Override
+	public void start() {
+		if (audioClip != null)
+			audioClip.loop();
+	}
 
-    @Override
-    public void stop() {
-	if (audioClip != null)
-	    audioClip.stop();
-    }
+	@Override
+	public void stop() {
+		if (audioClip != null)
+			audioClip.stop();
+	}
 
-    /** Main method */
-    public static void main(String[] args) {
-	// Create a frame
-	JFrame frame = new JFrame("DisplayImagePlayAudio");
+	/**
+	 * Main method
+	 */
+	public static void main(String[] args) {
+		// Create a frame
+		JFrame frame = new JFrame("DisplayImagePlayAudio");
 
-	// Create an instance of the applet
-	DisplayImagePlayAudio applet = new DisplayImagePlayAudio();
-	applet.init();
+		// Create an instance of the applet
+		DisplayImagePlayAudio applet = new DisplayImagePlayAudio();
+		applet.init();
 
-	// Add the applet instance to the frame
-	frame.add(applet, java.awt.BorderLayout.CENTER);
-	frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		// Add the applet instance to the frame
+		frame.add(applet, java.awt.BorderLayout.CENTER);
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-	// Display the frame
-	frame.setSize(200, 500);
-	frame.setVisible(true);
-    }
+		// Display the frame
+		frame.setSize(200, 500);
+		frame.setVisible(true);
+	}
 }

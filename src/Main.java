@@ -6,6 +6,6 @@ public class Main {
 		System.out.printf("%8s", "hello");
 		System.out.println(System.in.available());
 
-		Scanner scanner = new Scanner(System.in);
+//		Scanner scanner = new Scanner(System.in);
 	}
 }

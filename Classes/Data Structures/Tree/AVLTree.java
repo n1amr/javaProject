@@ -6,7 +6,7 @@ public class AVLTree<E extends Comparable<E>> {
 
 	public static void main(String[] args) {
 		Integer[] elements = (Integer[]) Arrays.asList(3, 5, 9, 1, 0, 2, 6, 10,
-				7, 4, 8).toArray();
+						7, 4, 8).toArray();
 		AVLTree<Integer> bst = new AVLTree<>(elements);
 		for (Integer r : elements) {
 			Node<Integer> c = bst.get(r);
@@ -215,17 +215,17 @@ public class AVLTree<E extends Comparable<E>> {
 			Node<E> parentOfA = A == root ? null : path.get(i - 1);
 
 			switch (balanceFactor(A)) {
-			case -2:
-				if (balanceFactor(A.left) <= 0)
-					balanceLL(A, parentOfA);
-				else
-					balanceLR(A, parentOfA);
-				break;
-			case +2:
-				if (balanceFactor(A.right) >= 0)
-					balanceRR(A, parentOfA);
-				else
-					balanceRL(A, parentOfA);
+				case -2:
+					if (balanceFactor(A.left) <= 0)
+						balanceLL(A, parentOfA);
+					else
+						balanceLR(A, parentOfA);
+					break;
+				case +2:
+					if (balanceFactor(A.right) >= 0)
+						balanceRR(A, parentOfA);
+					else
+						balanceRL(A, parentOfA);
 			}
 		}
 	}

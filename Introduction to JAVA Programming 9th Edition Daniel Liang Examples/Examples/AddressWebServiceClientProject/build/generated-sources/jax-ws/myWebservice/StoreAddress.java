@@ -8,9 +8,9 @@ import javax.xml.bind.annotation.XmlType;
 
 /**
  * <p>Java class for storeAddress complex type.
- * 
+ * <p>
  * <p>The following schema fragment specifies the expected content contained within this class.
- * 
+ * <p>
  * <pre>
  * &lt;complexType name="storeAddress">
  *   &lt;complexContent>
@@ -22,39 +22,33 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;/complexContent>
  * &lt;/complexType>
  * </pre>
- * 
- * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "storeAddress", propOrder = {
-    "arg0"
+				"arg0"
 })
 public class StoreAddress {
 
-    protected Address arg0;
+	protected Address arg0;
 
-    /**
-     * Gets the value of the arg0 property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link Address }
-     *     
-     */
-    public Address getArg0() {
-        return arg0;
-    }
+	/**
+	 * Gets the value of the arg0 property.
+	 *
+	 * @return possible object is
+	 * {@link Address }
+	 */
+	public Address getArg0() {
+		return arg0;
+	}
 
-    /**
-     * Sets the value of the arg0 property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Address }
-     *     
-     */
-    public void setArg0(Address value) {
-        this.arg0 = value;
-    }
+	/**
+	 * Sets the value of the arg0 property.
+	 *
+	 * @param value allowed object is
+	 *              {@link Address }
+	 */
+	public void setArg0(Address value) {
+		this.arg0 = value;
+	}
 
 }

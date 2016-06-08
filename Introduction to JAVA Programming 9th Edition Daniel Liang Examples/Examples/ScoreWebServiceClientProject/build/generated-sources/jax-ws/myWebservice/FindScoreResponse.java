@@ -9,9 +9,9 @@ import javax.xml.bind.annotation.XmlType;
 
 /**
  * <p>Java class for findScoreResponse complex type.
- * 
+ * <p>
  * <p>The following schema fragment specifies the expected content contained within this class.
- * 
+ * <p>
  * <pre>
  * &lt;complexType name="findScoreResponse">
  *   &lt;complexContent>
@@ -23,32 +23,28 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;/complexContent>
  * &lt;/complexType>
  * </pre>
- * 
- * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "findScoreResponse", propOrder = {
-    "_return"
+				"_return"
 })
 public class FindScoreResponse {
 
-    @XmlElement(name = "return")
-    protected double _return;
+	@XmlElement(name = "return")
+	protected double _return;
 
-    /**
-     * Gets the value of the return property.
-     * 
-     */
-    public double getReturn() {
-        return _return;
-    }
+	/**
+	 * Gets the value of the return property.
+	 */
+	public double getReturn() {
+		return _return;
+	}
 
-    /**
-     * Sets the value of the return property.
-     * 
-     */
-    public void setReturn(double value) {
-        this._return = value;
-    }
+	/**
+	 * Sets the value of the return property.
+	 */
+	public void setReturn(double value) {
+		this._return = value;
+	}
 
 }

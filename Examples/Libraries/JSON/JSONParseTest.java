@@ -5,25 +5,25 @@ import java.util.Scanner;
 import org.json.*;
 
 public class JSONParseTest {
-    public static void main(String[] args) throws Exception {
-	Scanner in = new Scanner(new File("g.JSON"));
+	public static void main(String[] args) throws Exception {
+		Scanner in = new Scanner(new File("g.JSON"));
 
-	String text = "";
-	while (in.hasNextLine())
-	    text += in.nextLine();
-	JSONObject obj = new JSONObject(text);
-	System.out.println(Arrays.toString(JSONObject.getNames(obj)));
+		String text = "";
+		while (in.hasNextLine())
+			text += in.nextLine();
+		JSONObject obj = new JSONObject(text);
+		System.out.println(Arrays.toString(JSONObject.getNames(obj)));
 
-	JSONObject responseData = obj.getJSONObject("responseData");
-	JSONArray results = responseData.getJSONArray("results");
-	for (int i = 0; i < results.length(); i++) {
-	    JSONObject arrayElement = (JSONObject) results.get(i);
-	    String url = arrayElement.getString("url");
-	    System.out.println(url);
+		JSONObject responseData = obj.getJSONObject("responseData");
+		JSONArray results = responseData.getJSONArray("results");
+		for (int i = 0; i < results.length(); i++) {
+			JSONObject arrayElement = (JSONObject) results.get(i);
+			String url = arrayElement.getString("url");
+			System.out.println(url);
 
+		}
+		in.close();
 	}
-	in.close();
-    }
 }
 
 // g.JSON
@@ -61,7 +61,7 @@ public class JSONParseTest {
 // "title":"Newest Questions - Stack Overflow",
 // "titleNoFormatting":"Newest Questions - Stack Overflow",
 // "content":"I tried to resist myself not to seek help for this apparently
-// simple ..."
+// simpleï¿½..."
 // },
 // {
 // "GsearchResultClass":"GwebSearch",
@@ -70,8 +70,8 @@ public class JSONParseTest {
 // "visibleUrl":"michael.richter.name",
 // "cacheUrl":"http://www.google.com/search?q\u003dcache:6TtXvyGddR4J:michael.richter.name",
 // "title":"Why I no longer contribute to
-// \u003cb\u003eStackOverflow\u003c/b\u003e — Michael T. Richter",
-// "titleNoFormatting":"Why I no longer contribute to StackOverflow — Michael T.
+// \u003cb\u003eStackOverflow\u003c/b\u003e ï¿½ Michael T. Richter",
+// "titleNoFormatting":"Why I no longer contribute to StackOverflow ï¿½ Michael T.
 // Richter",
 // "content":"I was active in the \u003cb\u003eStackOverflow\u003c/b\u003e (and
 // the broader Stack Exchange) community \nfor a while. I no longer am.

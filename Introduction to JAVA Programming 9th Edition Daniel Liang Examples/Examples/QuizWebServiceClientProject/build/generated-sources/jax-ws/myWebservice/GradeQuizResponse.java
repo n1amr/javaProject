@@ -11,9 +11,9 @@ import javax.xml.bind.annotation.XmlType;
 
 /**
  * <p>Java class for gradeQuizResponse complex type.
- * 
+ * <p>
  * <p>The following schema fragment specifies the expected content contained within this class.
- * 
+ * <p>
  * <pre>
  * &lt;complexType name="gradeQuizResponse">
  *   &lt;complexContent>
@@ -25,45 +25,41 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;/complexContent>
  * &lt;/complexType>
  * </pre>
- * 
- * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "gradeQuizResponse", propOrder = {
-    "_return"
+				"_return"
 })
 public class GradeQuizResponse {
 
-    @XmlElement(name = "return", type = Boolean.class)
-    protected List<Boolean> _return;
+	@XmlElement(name = "return", type = Boolean.class)
+	protected List<Boolean> _return;
 
-    /**
-     * Gets the value of the return property.
-     * 
-     * <p>
-     * This accessor method returns a reference to the live list,
-     * not a snapshot. Therefore any modification you make to the
-     * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the return property.
-     * 
-     * <p>
-     * For example, to add a new item, do as follows:
-     * <pre>
-     *    getReturn().add(newItem);
-     * </pre>
-     * 
-     * 
-     * <p>
-     * Objects of the following type(s) are allowed in the list
-     * {@link Boolean }
-     * 
-     * 
-     */
-    public List<Boolean> getReturn() {
-        if (_return == null) {
-            _return = new ArrayList<Boolean>();
-        }
-        return this._return;
-    }
+	/**
+	 * Gets the value of the return property.
+	 * <p>
+	 * <p>
+	 * This accessor method returns a reference to the live list,
+	 * not a snapshot. Therefore any modification you make to the
+	 * returned list will be present inside the JAXB object.
+	 * This is why there is not a <CODE>set</CODE> method for the return property.
+	 * <p>
+	 * <p>
+	 * For example, to add a new item, do as follows:
+	 * <pre>
+	 *    getReturn().add(newItem);
+	 * </pre>
+	 * <p>
+	 * <p>
+	 * <p>
+	 * Objects of the following type(s) are allowed in the list
+	 * {@link Boolean }
+	 */
+	public List<Boolean> getReturn() {
+		if (_return == null) {
+			_return = new ArrayList<Boolean>();
+		}
+		return this._return;
+	}
 
 }

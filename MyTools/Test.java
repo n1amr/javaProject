@@ -1,4 +1,4 @@
 
-public class .IterationMethod {
+public class.IterationMethod{
 
-}
+				}
