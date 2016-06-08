@@ -14,7 +14,7 @@ public class _551_A_GukiZ_and_Contest {
 		for (int i = 0; i < n; i++) {
 			int x = 1;
 			for (int j = 0; j < n; j++)
-				if(a[j] > a[i])
+				if (a[j] > a[i])
 					x++;
 			out.print(x + " ");
 		}

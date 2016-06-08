@@ -40,8 +40,8 @@ public class Student3TierImpl extends UnicastRemoteObject implements StudentServ
 			System.out.println("Driver registered");
 
 			// Establish connection
-	    /*Connection conn = DriverManager.getConnection
-        ("jdbc:oracle:thin:@drake.armstrong.edu:1521:orcl",
+			/*Connection conn = DriverManager.getConnection
+			  ("jdbc:oracle:thin:@drake.armstrong.edu:1521:orcl",
           "scott", "tiger");  */
 			Connection conn = DriverManager.getConnection
 			"jdbc:mysql://localhost/javabook", "scott", "tiger");
