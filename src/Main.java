@@ -1,11 +1,12 @@
-import java.io.IOException;
-import java.util.Scanner;
+import java.lang.*;
+import java.util.*;
 
 public class Main {
-	public static void main(String[] args) throws IOException {
-		System.out.printf("%8s", "hello");
-		System.out.println(System.in.available());
+	public static void main(String[] args) throws Exception {
+		System.out.printf("%s\n", "Welcome");
 
-//		Scanner scanner = new Scanner(System.in);
+		Scanner in = new Scanner(System.in);
+		while (in.hasNextLine())
+			System.out.println(in.nextLine());
 	}
 }
