@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="dataSourceStorageLocal">
+    <data-source name="Firefox - places.sqlite" uuid="ce0d8864-91cb-4266-bf8c-53f35c7df313">
+      <secret-storage>master_key</secret-storage>
+      <auth-required>false</auth-required>
+    </data-source>
+    <data-source name="Firefox - formhistory.sqlite" uuid="b9ff8e27-3902-4988-833a-0c3c8a163f30">
+      <secret-storage>master_key</secret-storage>
+      <auth-required>false</auth-required>
+    </data-source>
+  </component>
+</project>
