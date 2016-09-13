@@ -2,225 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="186e6dcc-c707-4408-aeaf-4f730c6b7a5e" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Contests/Templates/CodeforcesOld.java" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Contests/Codeforces/Orange Internship Qualification Round 2015/Problem_A.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Contests/Codeforces/Orange Internship Qualification Round 2015/Problem_B.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Contests/Codeforces/Orange Internship Qualification Round 2015/Problem_D.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Contests/Codeforces/Orange Internship Qualification Round 2015/Problem_E.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Contests/Codeforces/Orange Labs Egypt Internship 2016 - Warm up Contest/A.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Contests/Codeforces/Orange Labs Egypt Internship 2016 - Warm up Contest/B.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Contests/Codeforces/Orange Labs Egypt Internship 2016 - Warm up Contest/CD.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Contests/Codeforces/UseFileStreams.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Contests/Codeforces/Wrong/No_to_Palindromes.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Contests/Codeforces/Wrong/_232E_Quick_Tortoise.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Contests/Codeforces/Wrong/_234C_Weather.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Contests/Codeforces/Wrong/_369B_Valera_and_Contest.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Contests/Codeforces/Wrong/_446A_DZY_Loves_Sequences.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Contests/Codeforces/Wrong/_448B_Suffix_Structures.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Contests/Codeforces/Wrong/_466A_Cheap_Travel.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Contests/Codeforces/Wrong/_466B_Wonder_Room.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Contests/Codeforces/Wrong/_467D_Fedor_and_Essay.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Contests/Codeforces/Wrong/_471D_MUH_and_Cube_Walls.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Contests/Codeforces/Wrong/_510C_Fox_And_Names.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Contests/Codeforces/Wrong/_512C_Second_price_auction.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Contests/Codeforces/Wrong/_514C_Watto_and_Mechanism.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Contests/Codeforces/Wrong/_515D_Drazil_and_Tiles.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Contests/Codeforces/Wrong/_591B_Rebranding.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Contests/Codeforces/Wrong/_591C_Median_Smoothing.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Contests/Codeforces/_102B_Sum_of_Digits.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Contests/Codeforces/_10A_Power_Consumption_Calculation.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Contests/Codeforces/_115A_Party.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Contests/Codeforces/_118A_String_Task.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Contests/Codeforces/_11A_Increasing_Sequence.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Contests/Codeforces/_122B_Lucky_Substring.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Contests/Codeforces/_12A_Super_Agent.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Contests/Codeforces/_131A_cAPS_lOCK.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Contests/Codeforces/_131C_The_World_is_a_Theatre.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Contests/Codeforces/_133A_HQ9_.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Contests/Codeforces/_137B_Permutation.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Contests/Codeforces/_13A_Numbers.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Contests/Codeforces/_144C_Anagram_Search.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Contests/Codeforces/_145A_Lucky_Conversion.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Contests/Codeforces/_14A_Letter.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Contests/Codeforces/_152A_Marks.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Contests/Codeforces/_158A_Next_Round.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Contests/Codeforces/_158B_Taxi.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Contests/Codeforces/_186A_Comparing_Strings.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Contests/Codeforces/_192A_Funky_Numbers.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Contests/Codeforces/_217A_Ice_Skating.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Contests/Codeforces/_220A_Little_Elephant_and_Problem.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Contests/Codeforces/_236A_Boy_or_Girl.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Contests/Codeforces/_236B_Easy_Number_Challenge.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Contests/Codeforces/_253A_Boys_and_Girls.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Contests/Codeforces/_255B_Code_Parsing.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Contests/Codeforces/_260A_Adding_Digits.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Contests/Codeforces/_262A_Roma_and_Lucky_Numbers.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Contests/Codeforces/_264A_Escape_from_Stones.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Contests/Codeforces/_271B_Prime_Matrix.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Contests/Codeforces/_274A_k_Multiple_Free_Set.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Contests/Codeforces/_276C_Little_Girl_and_Maximum_Sum.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Contests/Codeforces/_277A_Learning_Languages.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Contests/Codeforces/_279B_Books.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Contests/Codeforces/_282A_Bit_.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Contests/Codeforces/_282B_Painting_Eggs.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Contests/Codeforces/_289A_Polo_the_Penguin_and_Segments.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Contests/Codeforces/_291B_Command_Line_Arguments.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Contests/Codeforces/_312A_Whose_sentence_is_it_.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Contests/Codeforces/_318B_Strings_of_Power.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Contests/Codeforces/_326A_Duff_and_Meat.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Contests/Codeforces/_326B_Duff_in_Love.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Contests/Codeforces/_326C_Duff_and_Weight_Lifting.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Contests/Codeforces/_332A_Down_the_Hatch_.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Contests/Codeforces/_350C_Bombs.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Contests/Codeforces/_352A_Jeff_and_Digits.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Contests/Codeforces/_352B_Jeff_and_Periods.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Contests/Codeforces/_355A_Vasya_and_Digital_Root.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Contests/Codeforces/_358A_Dima_and_Continuous_Line.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Contests/Codeforces/_363B_Fence.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Contests/Codeforces/_369A_Valera_and_Plates.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Contests/Codeforces/_371A_K_Periodic_Array.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Contests/Codeforces/_387B_George_and_Round.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Contests/Codeforces/_388A_Fox_and_Box_Accumulation.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Contests/Codeforces/_389B_Fox_and_Cross.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Contests/Codeforces/_404A_Valera_and_X.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Contests/Codeforces/_408A_Line_to_Cashier.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Contests/Codeforces/_414A_Mashmokh_and_Numbers.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Contests/Codeforces/_424A_Squats.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Contests/Codeforces/_431B_Shower_Line.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Contests/Codeforces/_432B_Football_Kit.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Contests/Codeforces/_433A_Kitahara_Haruki_s_Gift.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Contests/Codeforces/_437A_The_Child_and_Homework.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Contests/Codeforces/_437C_The_Child_and_Toy.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Contests/Codeforces/_439A_Devu_the_Singer_and_Churu_the_Joker.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Contests/Codeforces/_441A_Valera_and_Antique_Items.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Contests/Codeforces/_441B_Valera_and_Fruits.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Contests/Codeforces/_443A_Anton_and_Letters.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Contests/Codeforces/_447A_DZY_Loves_Hash.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Contests/Codeforces/_447B_DZY_Loves_Strings.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Contests/Codeforces/_448A_Rewards.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Contests/Codeforces/_448D_Multiplication_Table.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Contests/Codeforces/_450A_Jzzhu_and_Children.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Contests/Codeforces/_450B_Jzzhu_and_Sequences.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Contests/Codeforces/_451B_Sort_the_Array.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Contests/Codeforces/_452A_Eevee.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Contests/Codeforces/_453A_Little_Pony_and_Expected_Maximum.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Contests/Codeforces/_454A_Little_Pony_and_Crystal_Mine.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Contests/Codeforces/_454B_Little_Pony_and_Sort_by_Shift.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Contests/Codeforces/_455A_Boredom.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Contests/Codeforces/_456A_Laptops.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Contests/Codeforces/_456B_Fedya_and_Maths.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Contests/Codeforces/_459A_Pashmak_and_Garden.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Contests/Codeforces/_459B_Pashmak_and_Flowers.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Contests/Codeforces/_460A_Vasya_and_Socks.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Contests/Codeforces/_460B_Little_Dima_and_Equation.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Contests/Codeforces/_461A_Appleman_and_Toastman.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Contests/Codeforces/_462A_Appleman_and_Easy_Task.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Contests/Codeforces/_462B_Appleman_and_Card_Game.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Contests/Codeforces/_463A_Caisa_and_Sugar.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Contests/Codeforces/_463B_Caisa_and_Pylons.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Contests/Codeforces/_465A_inc_ARG.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Contests/Codeforces/_465B_Inbox_100500_.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Contests/Codeforces/_466A_Cheap_Travel.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Contests/Codeforces/_467A_George_and_Accommodation.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Contests/Codeforces/_467B_Fedor_and_New_Game.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Contests/Codeforces/_468A_24_Game.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Contests/Codeforces/_469A_I_Wanna_Be_the_Guy.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Contests/Codeforces/_469B_Chat_Online.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Contests/Codeforces/_471A_MUH_and_Sticks.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Contests/Codeforces/_471B_MUH_and_Important_Things.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Contests/Codeforces/_471C_MUH_and_House_of_Cards.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Contests/Codeforces/_472A_Design_Tutorial_Learn_from_Math.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Contests/Codeforces/_472B_Design_Tutorial_Learn_from_Life.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Contests/Codeforces/_472C_Design_Tutorial_Make_It_Nondeterministic.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Contests/Codeforces/_474A_Keyboard.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Contests/Codeforces/_474B_Worms.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Contests/Codeforces/_475A_Bayan_Bus.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Contests/Codeforces/_476A_Dreamoon_and_Stairs.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Contests/Codeforces/_478A_Initial_Bet.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Contests/Codeforces/_478B_Random_Teams.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Contests/Codeforces/_479A_Expression.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Contests/Codeforces/_479C_Exams.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Contests/Codeforces/_482A_Diverse_Permutation.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Contests/Codeforces/_483A_Counterexample.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Contests/Codeforces/_486A_Calculating_Function.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Contests/Codeforces/_489A_SwapSort.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Contests/Codeforces/_489B_BerSU_Ball.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Contests/Codeforces/_490A_Team_Olympiad.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Contests/Codeforces/_492A_Vanya_and_Cubes.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Contests/Codeforces/_492B_Vanya_and_Lanterns.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Contests/Codeforces/_492_B_Vanya_and_Lanterns.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Contests/Codeforces/_495A_Digital_Counter.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Contests/Codeforces/_496A_Minimum_Difficulty.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Contests/Codeforces/_499A_Watching_a_movie.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Contests/Codeforces/_499B_Lecture.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Contests/Codeforces/_4A_Watermelon.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Contests/Codeforces/_4B_Before_an_Exam.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Contests/Codeforces/_4C_Registration_System.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Contests/Codeforces/_500A_New_Year_Transportation.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Contests/Codeforces/_501A_Contest.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Contests/Codeforces/_507A_Amr_and_Music.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Contests/Codeforces/_508A_Pasha_and_Pixels.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Contests/Codeforces/_508B_Anton_and_currency_you_all_know.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Contests/Codeforces/_509A_Maximum_in_Table.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Contests/Codeforces/_510A_Fox_And_Snake.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Contests/Codeforces/_510B_Fox_And_Two_Dots.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Contests/Codeforces/_513A_Game.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Contests/Codeforces/_514A_Chewba_ca_and_Number.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Contests/Codeforces/_514B_Han_Solo_and_Lazer_Gun.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Contests/Codeforces/_515A_Drazil_and_Date.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Contests/Codeforces/_515B_Drazil_and_His_Happy_Friends.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Contests/Codeforces/_515C_Drazil_and_Factorial.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Contests/Codeforces/_518A_Vitaly_and_Strings.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Contests/Codeforces/_518B_Tanya_and_Invitation.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Contests/Codeforces/_518C_Anya_and_Smartphone.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Contests/Codeforces/_518D_Ilya_and_Escalator.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Contests/Codeforces/_5190_A_and_B_and_Chess.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Contests/Codeforces/_519B_A_and_B_and_Compilation_Errors.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Contests/Codeforces/_519C_A_and_B_and_Team_Training.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Contests/Codeforces/_519D_A_and_B_and_Interesting_Substrings.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Contests/Codeforces/_527_A_Playing_with_Paper.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Contests/Codeforces/_546A_Soldier_and_Bananas.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Contests/Codeforces/_551_A_GukiZ_and_Contest.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Contests/Codeforces/_556_A_Case_of_the_Zeros_and_Ones.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Contests/Codeforces/_560_A_Currency_System_in_Geraldion.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Contests/Codeforces/_567_A_Lineland_Mail.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Contests/Codeforces/_570_A_Elections.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Contests/Codeforces/_577_A_Multiplication_Table.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Contests/Codeforces/_579_A_Raising_Bacteria.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Contests/Codeforces/_580A_Kefa_and_First_Steps.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Contests/Codeforces/_581_A_Vasya_the_Hipster.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Contests/Codeforces/_583A_Asphalting_Roads.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Contests/Codeforces/_583B_Robot_s_Task.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Contests/Codeforces/_583C_GCD_Table.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Contests/Codeforces/_584A_Olesya_and_Rodion.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Contests/Codeforces/_584B_Kolya_and_Tanya.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Contests/Codeforces/_584C_Marina_and_Vasya.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Contests/Codeforces/_591A_Wizards_Duel.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Contests/Codeforces/_599_A_Patrick_and_Shopping.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Contests/Codeforces/_5A_Chat_Servers_Outgoing_Traffic.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Contests/Codeforces/_611_A_New_Year_and_Days.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Contests/Codeforces/_617_A_Elephant.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Contests/Codeforces/_621_A_Wet_Shark_and_Odd_and_Even.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Contests/Codeforces/_6A_Triangle.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Contests/Codeforces/_71A_Way_Too_Long_Words.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Contests/Codeforces/_78A_Haiku.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Contests/Codeforces/_8A_Train_and_Peter.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Contests/Codeforces/_92B_Binary_Number.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Contests/Codeforces/_94A_Restoring_Password.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Contests/Codeforces/generateInput.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Contests/Hackerrank/Big_File_System_Search.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Contests/Hackerrank/CookieParty.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Contests/Hackerrank/MissingPolygons.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Contests/Hackerrank/Secure_Password_System.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/Main.java" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources.ids" afterPath="$PROJECT_DIR$/.idea/dataSources.ids" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources.xml" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Contests/Bayan/Bayan.iml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Contests/Codejam/2015/2015.iml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Contests/Codejam/2016/2016.iml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Contests/Contests.iml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Contests/IEEEXtreme/IEEEXtreme.iml" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Contests/Templates/Codeforces.java" afterPath="$PROJECT_DIR$/Contests/Templates/Codeforces.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/input.txt" afterPath="$PROJECT_DIR$/input.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/output.txt" afterPath="$PROJECT_DIR$/output.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/_713_C_Sonya_and_Queries.java" afterPath="$PROJECT_DIR$/src/_713_C_Sonya_and_Queries.java" />
     </list>
     <ignored path="javaProject.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -250,55 +40,24 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Codeforces.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Contests/Templates/Codeforces.java">
+      <file leaf-file-name="_713_C_Sonya_and_Queries.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/_713_C_Sonya_and_Queries.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="946">
-              <caret line="43" column="0" selection-start-line="43" selection-start-column="0" selection-end-line="43" selection-end-column="0" />
+            <state relative-caret-position="22">
+              <caret line="46" column="3" selection-start-line="46" selection-start-column="3" selection-end-line="46" selection-end-column="3" />
               <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#1053#1054#0" expanded="true" />
-                <element signature="e#1093#1094#0" expanded="true" />
+                <element signature="e#1136#1137#0" expanded="true" />
+                <element signature="e#1174#1175#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="_713_C_Sonya_and_Queries.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/_713_C_Sonya_and_Queries.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="88">
-              <caret line="7" column="22" selection-start-line="7" selection-start-column="22" selection-end-line="7" selection-end-column="22" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="BorrowLoan.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Introduction to JAVA Programming 9th Edition Daniel Liang Examples/Examples/BorrowLoan.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="145">
-              <caret line="9" column="39" selection-start-line="9" selection-start-column="39" selection-end-line="9" selection-end-column="39" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="output.txt" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/output.txt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="22">
-              <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="input.txt" pinned="false" current-in-tab="false">
+      <file leaf-file-name="input.txt" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/input.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="22">
-              <caret line="1" column="5" selection-start-line="1" selection-start-column="5" selection-end-line="1" selection-end-column="5" />
+            <state relative-caret-position="462">
+              <caret line="21" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -356,11 +115,11 @@
         <option value="$PROJECT_DIR$/src/_711_A_Bus_to_Udayland.java" />
         <option value="$PROJECT_DIR$/src/__C_Sonya_and_Queries.java" />
         <option value="$PROJECT_DIR$/Contests/Codeforces/_350C_Bombs.java" />
-        <option value="$PROJECT_DIR$/input.txt" />
         <option value="$PROJECT_DIR$/output.txt" />
         <option value="$PROJECT_DIR$/src/Main.java" />
         <option value="$PROJECT_DIR$/src/Codeforces.java" />
         <option value="$PROJECT_DIR$/src/_713_C_Sonya_and_Queries.java" />
+        <option value="$PROJECT_DIR$/input.txt" />
       </list>
     </option>
   </component>
@@ -554,8 +313,8 @@
     <property name="SearchEverywhereHistoryKey" value="350_&#9;PSI&#9;JAVA://_350C_Bombs&#10;main.jva&#9;FILE&#9;file:///mnt/Storage/Lab/Java/javaProject/src/Main.java" />
     <property name="js-jscs-nodeInterpreter" value="/usr/bin/node" />
     <property name="project.structure.last.edited" value="Modules" />
-    <property name="project.structure.proportion" value="0.0" />
-    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
   </component>
   <component name="RecentsManager">
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
@@ -565,70 +324,10 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Codeforces">
-    <configuration default="false" name="MatchingSets" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Application._713_C_Sonya_and_Queries">
+    <configuration default="false" name="_713_C_Sonya_and_Queries" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <option name="MAIN_CLASS_NAME" value="MatchingSets" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="ENABLE_SWING_INSPECTOR" value="false" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <module name="javaProject" />
-      <envs />
-      <method />
-    </configuration>
-    <configuration default="false" name="_711_A_Bus_to_Udayland" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <option name="MAIN_CLASS_NAME" value="_711_A_Bus_to_Udayland" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="ENABLE_SWING_INSPECTOR" value="false" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <module name="javaProject" />
-      <envs />
-      <method />
-    </configuration>
-    <configuration default="false" name="__C_Sonya_and_Queries" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <option name="MAIN_CLASS_NAME" value="__C_Sonya_and_Queries" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="ENABLE_SWING_INSPECTOR" value="false" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <module name="javaProject" />
-      <envs />
-      <method />
-    </configuration>
-    <configuration default="false" name="Codeforces" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <option name="MAIN_CLASS_NAME" value="Codeforces" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="ENABLE_SWING_INSPECTOR" value="false" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <module name="Contests" />
-      <envs />
-      <method />
-    </configuration>
-    <configuration default="false" name="Codeforces" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <option name="MAIN_CLASS_NAME" value="Codeforces" />
+      <option name="MAIN_CLASS_NAME" value="_713_C_Sonya_and_Queries" />
       <option name="VM_PARAMETERS" value="" />
       <option name="PROGRAM_PARAMETERS" value="input.txt" />
       <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
@@ -637,7 +336,7 @@
       <option name="ENABLE_SWING_INSPECTOR" value="false" />
       <option name="ENV_VARIABLES" />
       <option name="PASS_PARENT_ENVS" value="true" />
-      <module name="Contests" />
+      <module name="javaProject" />
       <envs />
       <method />
     </configuration>
@@ -1005,20 +704,12 @@
     <configuration default="true" type="osgi.bnd.run" factoryName="Test Launcher (JUnit)">
       <method />
     </configuration>
-    <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="Application.MatchingSets" />
-      <item index="1" class="java.lang.String" itemvalue="Application._711_A_Bus_to_Udayland" />
-      <item index="2" class="java.lang.String" itemvalue="Application.__C_Sonya_and_Queries" />
-      <item index="3" class="java.lang.String" itemvalue="Application.Codeforces" />
-      <item index="4" class="java.lang.String" itemvalue="Application.Codeforces" />
+    <list size="1">
+      <item index="0" class="java.lang.String" itemvalue="Application._713_C_Sonya_and_Queries" />
     </list>
     <recent_temporary>
-      <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Application.Codeforces" />
-        <item index="1" class="java.lang.String" itemvalue="Application.Codeforces" />
-        <item index="2" class="java.lang.String" itemvalue="Application.__C_Sonya_and_Queries" />
-        <item index="3" class="java.lang.String" itemvalue="Application._711_A_Bus_to_Udayland" />
-        <item index="4" class="java.lang.String" itemvalue="Application.MatchingSets" />
+      <list size="1">
+        <item index="0" class="java.lang.String" itemvalue="Application._713_C_Sonya_and_Queries" />
       </list>
     </recent_temporary>
   </component>
@@ -1054,16 +745,16 @@
       <workItem from="1473782706766" duration="34000" />
       <workItem from="1473782765271" duration="37000" />
       <workItem from="1473782818952" duration="2000" />
-      <workItem from="1473782848034" duration="8536000" />
+      <workItem from="1473782848034" duration="10129000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="39648000" />
+    <option name="totallyTimeSpent" value="41241000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="49" y="24" width="1317" height="744" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -1072,10 +763,10 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3287037" sideWeight="0.50275373" order="10" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3296617" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3287037" sideWeight="0.49724627" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32352942" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32352942" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3289689" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22580644" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22580644" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32887492" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32662538" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -1130,7 +821,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="14" />
+      <option name="time" value="16" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -1303,14 +994,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/input.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="22">
-          <caret line="1" column="5" selection-start-line="1" selection-start-column="5" selection-end-line="1" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/output.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="22">
@@ -1357,8 +1040,19 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/_713_C_Sonya_and_Queries.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="88">
-          <caret line="7" column="22" selection-start-line="7" selection-start-column="22" selection-end-line="7" selection-end-column="22" />
+        <state relative-caret-position="22">
+          <caret line="46" column="3" selection-start-line="46" selection-start-column="3" selection-end-line="46" selection-end-column="3" />
+          <folding>
+            <element signature="e#1136#1137#0" expanded="true" />
+            <element signature="e#1174#1175#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/input.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="462">
+          <caret line="21" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -1416,7 +1110,7 @@
       </state>
       <state key="ModuleStructureConfigurable.UI">
         <settings>
-          <last-edited>Contests</last-edited>
+          <last-edited>javaProject</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>

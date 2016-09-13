@@ -2,11 +2,6 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/Contests/Codejam/2015/2015.iml" filepath="$PROJECT_DIR$/Contests/Codejam/2015/2015.iml" />
-      <module fileurl="file://$PROJECT_DIR$/Contests/Codejam/2016/2016.iml" filepath="$PROJECT_DIR$/Contests/Codejam/2016/2016.iml" />
-      <module fileurl="file://$PROJECT_DIR$/Contests/Bayan/Bayan.iml" filepath="$PROJECT_DIR$/Contests/Bayan/Bayan.iml" />
-      <module fileurl="file://$PROJECT_DIR$/Contests/Contests.iml" filepath="$PROJECT_DIR$/Contests/Contests.iml" />
-      <module fileurl="file://$PROJECT_DIR$/Contests/IEEEXtreme/IEEEXtreme.iml" filepath="$PROJECT_DIR$/Contests/IEEEXtreme/IEEEXtreme.iml" />
       <module fileurl="file://$PROJECT_DIR$/javaProject.iml" filepath="$PROJECT_DIR$/javaProject.iml" />
     </modules>
   </component>

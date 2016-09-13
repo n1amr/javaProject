@@ -1,5 +1,4 @@
 import java.io.*;
-import java.util.Arrays;
 import java.util.StringTokenizer;
 import java.util.TreeMap;
 
@@ -41,37 +40,35 @@ public class _713_C_Sonya_and_Queries {
 		public int nextInt() {
 			return Integer.parseInt(next());
 		}
+
+		public long nextLong() {
+			return Long.parseLong(next());
+		}
 	}
 
 	static class Solver {
 		void solve(int testNumber, Scanner in, PrintWriter out) {
 			int n = in.nextInt();
-			TreeMap<Long, Integer> d = new TreeMap<>();
+			TreeMap<String, Integer> d = new TreeMap<>();
 
 			for (int i = 0; i < n; i++) {
 				String op = in.next();
-				Long v = in.nextLong();
-				Long p = 0L;
-				while (v > 0) {
-					p <<= 1;
-					p += v % 2;
-					v /= 10;
-				}
-				while (p > 0) {
-					v <<= 1;
-					v += p % 2;
-					p >>= 1;
-				}
-				p = v;
+				String x = in.next();
+				StringBuilder sb = new StringBuilder();
+				for (int j = 0; j < 19 - x.length(); j++)
+					sb.append('0');
+				for (int j = 0; j < x.length(); j++)
+					sb.append(x.charAt(j) % 2 == 0 ? '0' : '1');
 
-				if (op.equals("?")) {
-					out.println(d.get(p));
-				} else {
-					int c = op.equals("+") ? 1 : -1;
-					if (d.containsKey(p))
-						c += d.get(p);
-					d.put(p, c);
-				}
+				String p = sb.toString();
+				int old = 0;
+				if (d.containsKey(p))
+					old = d.get(p);
+
+				if (op.equals("?"))
+					out.println(old);
+				else
+					d.put(p, old + (op.equals("+") ? 1 : -1));
 			}
 		}
 	}
