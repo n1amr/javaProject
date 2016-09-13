@@ -2,7 +2,7 @@ import java.io.*;
 import java.util.StringTokenizer;
 import java.util.TreeMap;
 
-public class _713_C_Sonya_and_Queries {
+public class _714_C_Sonya_and_Queries {
 	public static void main(String[] args) throws Exception {
 		InputStream inputStream =
 			(args.length <= 0) ?

@@ -44,6 +44,6 @@ Temporary Items
 *.class
 bin*
 .idea/workspace.xml
-input.txt
-output.txt
+input
+output
 
