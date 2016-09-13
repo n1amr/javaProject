@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <component name="dataSourceStorage">
-  <data-source name="Firefox - places.sqlite" uuid="ce0d8864-91cb-4266-bf8c-53f35c7df313">
-    <database-info product="" version="" jdbc-version="" driver-name="" driver-version=""/>
+  <data-source name="Sqlite (Xerial) - places.sqlite" uuid="f23805fb-a3f6-46d6-bf1f-863e7bece9ef">
+    <database-info product="SQLite" version="3.8.11" jdbc-version="2.1" driver-name="SQLiteJDBC" driver-version="native"/>
+    <case-sensitivity plain-identifiers="mixed" quoted-identifiers="mixed"/>
     <database-model serializer="dbm" rdbms="SQLITE" format-version="2.6">
       <schema id="1">
         <visible>1</visible>
@@ -23,7 +24,7 @@
       </column>
       <column id="15" parent="2" name="name">
         <mandatory>1</mandatory>
-        <data-type>VARCHAR(32)(0,-1)|12</data-type>
+        <data-type>VARCHAR(32) (0,-1)|12</data-type>
       </column>
       <index id="16" parent="2" name="sqlite_autoindex_moz_anno_attributes_1">
         <name-surrogate>1</name-surrogate>
@@ -46,7 +47,7 @@
         <data-type>INTEGER(0,-1)|4</data-type>
       </column>
       <column id="21" parent="3" name="mime_type">
-        <data-type>VARCHAR(32)(0,-1)|12</data-type>
+        <data-type>VARCHAR(32) (0,-1)|12</data-type>
         <default-expression>&apos;NULL&apos;</default-expression>
       </column>
       <column id="22" parent="3" name="content">
@@ -153,7 +154,7 @@ position</columns>
         <data-type>BLOB(0,-1)|12</data-type>
       </column>
       <column id="49" parent="5" name="mime_type">
-        <data-type>VARCHAR(32)(0,-1)|12</data-type>
+        <data-type>VARCHAR(32) (0,-1)|12</data-type>
       </column>
       <column id="50" parent="5" name="expiration">
         <data-type>LONG(0,-1)|12</data-type>
@@ -264,7 +265,7 @@ input</columns>
         <data-type>INTEGER(0,-1)|4</data-type>
       </column>
       <column id="78" parent="9" name="mime_type">
-        <data-type>VARCHAR(32)(0,-1)|12</data-type>
+        <data-type>VARCHAR(32) (0,-1)|12</data-type>
         <default-expression>&apos;NULL&apos;</default-expression>
       </column>
       <column id="79" parent="9" name="content">
@@ -427,72 +428,6 @@ post_data</columns>
       <column id="118" parent="13" name="stat">
         <data-type>(0,-1)|12</data-type>
       </column>
-    </database-model>
-  </data-source>
-  <data-source name="Firefox - formhistory.sqlite" uuid="b9ff8e27-3902-4988-833a-0c3c8a163f30">
-    <database-info product="SQLite" version="3.8.11" jdbc-version="2.1" driver-name="SQLiteJDBC" driver-version="native"/>
-    <case-sensitivity plain-identifiers="mixed" quoted-identifiers="mixed"/>
-    <database-model serializer="dbm" rdbms="SQLITE" format-version="2.6">
-      <schema id="1">
-        <visible>1</visible>
-      </schema>
-      <table id="2" parent="1" name="moz_deleted_formhistory"/>
-      <table id="3" parent="1" name="moz_formhistory"/>
-      <column id="4" parent="2" name="id">
-        <data-type>INTEGER(0,-1)|4</data-type>
-      </column>
-      <column id="5" parent="2" name="timeDeleted">
-        <data-type>INTEGER(0,-1)|4</data-type>
-      </column>
-      <column id="6" parent="2" name="guid">
-        <data-type>TEXT(0,-1)|12</data-type>
-      </column>
-      <key id="7" parent="2">
-        <columns>id</columns>
-        <primary>1</primary>
-      </key>
-      <column id="8" parent="3" name="id">
-        <data-type>INTEGER(0,-1)|4</data-type>
-      </column>
-      <column id="9" parent="3" name="fieldname">
-        <mandatory>1</mandatory>
-        <data-type>TEXT(0,-1)|12</data-type>
-      </column>
-      <column id="10" parent="3" name="value">
-        <mandatory>1</mandatory>
-        <data-type>TEXT(0,-1)|12</data-type>
-      </column>
-      <column id="11" parent="3" name="timesUsed">
-        <data-type>INTEGER(0,-1)|4</data-type>
-      </column>
-      <column id="12" parent="3" name="firstUsed">
-        <data-type>INTEGER(0,-1)|4</data-type>
-      </column>
-      <column id="13" parent="3" name="lastUsed">
-        <data-type>INTEGER(0,-1)|4</data-type>
-      </column>
-      <column id="14" parent="3" name="guid">
-        <data-type>TEXT(0,-1)|12</data-type>
-      </column>
-      <index id="15" parent="3" name="moz_formhistory_index">
-        <columns>fieldname</columns>
-        <desc-columns></desc-columns>
-        <unique>1</unique>
-      </index>
-      <index id="16" parent="3" name="moz_formhistory_lastused_index">
-        <columns>lastUsed</columns>
-        <desc-columns></desc-columns>
-        <unique>1</unique>
-      </index>
-      <index id="17" parent="3" name="moz_formhistory_guid_index">
-        <columns>guid</columns>
-        <desc-columns></desc-columns>
-        <unique>1</unique>
-      </index>
-      <key id="18" parent="3">
-        <columns>id</columns>
-        <primary>1</primary>
-      </key>
     </database-model>
   </data-source>
 </component>

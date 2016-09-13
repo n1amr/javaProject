@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="dataSourceStorageLocal">
-    <data-source name="Firefox - places.sqlite" uuid="ce0d8864-91cb-4266-bf8c-53f35c7df313">
-      <secret-storage>master_key</secret-storage>
-      <auth-required>false</auth-required>
-    </data-source>
-    <data-source name="Firefox - formhistory.sqlite" uuid="b9ff8e27-3902-4988-833a-0c3c8a163f30">
+    <data-source name="Sqlite (Xerial) - places.sqlite" uuid="f23805fb-a3f6-46d6-bf1f-863e7bece9ef">
+      <database-info product="SQLite" version="3.8.11" jdbc-version="2.1" driver-name="SQLiteJDBC" driver-version="native" />
+      <case-sensitivity plain-identifiers="mixed" quoted-identifiers="mixed" />
       <secret-storage>master_key</secret-storage>
       <auth-required>false</auth-required>
     </data-source>
