@@ -1,25 +1,20 @@
 import javax.net.ssl.HttpsURLConnection;
+import java.io.BufferedReader;
+import java.io.DataOutputStream;
+import java.io.InputStreamReader;
+import java.net.HttpURLConnection;
+import java.net.URL;
 
 public class HttpURLConnectionExample {
-
   private final String USER_AGENT = "Mozilla/5.0";
 
-  public static void main(String[] args) throws Exception {
-
-    HttpURLConnectionExample http = new HttpURLConnectionExample();
-
-    // System.out.println("Testing 1 - Send Http GET request");
-    // http.sendGet();
-
-    System.out.println("\nTesting 2 - Send Http POST request");
-    http.sendPost();
-  }
-
-  // HTTP GET request
-  private void sendGet() throws Exception {
-
-    String url = "http://www.google.com/search?q=mkyong";
-
+  /**
+   * HTTP GET request
+   *
+   * @throws Exception
+   * @param url
+   */
+  private void sendGet(String url) throws Exception {
     URL obj = new URL(url);
     HttpURLConnection con = (HttpURLConnection) obj.openConnection();
 
@@ -29,19 +24,21 @@ public class HttpURLConnectionExample {
     // add request header
     con.setRequestProperty("User-Agent", USER_AGENT);
 
+    System.out.println("Sending 'GET' request to URL : " + url);
     int responseCode = con.getResponseCode();
-    System.out.println("\nSending 'GET' request to URL : " + url);
     System.out.println("Response Code : " + responseCode);
 
     // print result
     System.out.println(getHTTPResponse(con));
-
   }
 
-  // HTTP POST request
-  private void sendPost() throws Exception {
-
-    String url = "https://selfsolve.apple.com/wcResults.do";
+  /**
+   * HTTP POST request
+   *
+   * @throws Exception
+   * @param url
+   */
+  private void sendPost(String url) throws Exception {
     URL obj = new URL(url);
     HttpsURLConnection con = (HttpsURLConnection) obj.openConnection();
 
@@ -59,17 +56,17 @@ public class HttpURLConnectionExample {
     wr.flush();
     wr.close();
 
-    int responseCode = con.getResponseCode();
-    System.out.println("\nSending 'POST' request to URL : " + url);
+
+    System.out.println("Sending 'POST' request to URL : " + url);
     System.out.println("Post parameters : " + urlParameters);
+    int responseCode = con.getResponseCode();
     System.out.println("Response Code : " + responseCode);
 
     // print result
     System.out.println(getHTTPResponse(con));
-
   }
 
-  public String getHTTPResponse(HttpURLConnection con) {
+  private static String getHTTPResponse(HttpURLConnection con) {
     StringBuffer response = new StringBuffer();
     try {
       BufferedReader in = new BufferedReader(new InputStreamReader(con.getInputStream()));
@@ -81,5 +78,17 @@ public class HttpURLConnectionExample {
       e.printStackTrace();
     }
     return response.toString();
+  }
+
+  public static void main(String[] args) throws Exception {
+    HttpURLConnectionExample http = new HttpURLConnectionExample();
+
+    System.out.println("Testing 1 - Send Http GET request");
+    http.sendGet("http://www.google.com/search?q=mkyong");
+
+    System.out.println();
+
+    System.out.println("Testing 2 - Send Http POST request");
+    http.sendPost("https://selfsolve.apple.com/wcResults.do");
   }
 }
