@@ -1,4 +1,3 @@
-import java.io.*;
 import java.util.Arrays;
 import java.util.StringTokenizer;
 
@@ -13,7 +12,16 @@ public class Codeforces {
 		Scanner in = new Scanner(inputStream);
 		PrintWriter out = new PrintWriter(outputStream);
 		Solver solver = new Solver();
-		solver.solve(1, in, out);
+		if (args.length == 0)
+			solver.solve(1, in, out);
+		else {
+			int T = in.nextInt();
+			for (int t = 1; t <= T; t++) {
+				out.println("Case " + t + ":");
+				solver.solve(t, in, out);
+			}
+		}
+
 		out.close();
 	}
 
