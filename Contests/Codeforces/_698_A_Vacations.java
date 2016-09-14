@@ -1,7 +1,8 @@
-import java.util.*;
 import java.io.*;
+import java.util.Arrays;
+import java.util.StringTokenizer;
 
-public class Codeforces {
+public class _698_A_Vacations {
 	public static void main(String[] args) throws Exception {
 		InputStream inputStream =
 			(args.length <= 0) ?
@@ -53,10 +54,36 @@ public class Codeforces {
 	static class Solver {
 		void solve(int testNumber, Scanner in, PrintWriter out) {
 			int n = in.nextInt();
-			int[] a = new int[n];
-			for (int i = 0; i < n; i++)
+			a = new int[n];
+			maxWorkMem = new int[n][3];
+
+			for (int i = 0; i < n; i++) {
 				a[i] = in.nextInt();
-			out.println(Arrays.toString(a));
+				Arrays.fill(maxWorkMem[i], -1);
+			}
+
+			out.println(n - maxWork(0, 2));
+		}
+
+		static int[] a;
+		static int[][] maxWorkMem;
+
+		static int maxWork(int i, int last) {
+			if (i >= a.length)
+				return 0;
+
+			if (maxWorkMem[i][last] != -1)
+				return maxWorkMem[i][last];
+
+			int result = maxWork(i + 1, 2);
+
+			if ((a[i] == 1 || a[i] == 3) && last != 0)
+				result = Math.max(result, maxWork(i + 1, 0) + 1);
+
+			if ((a[i] == 2 || a[i] == 3) && last != 1)
+				result = Math.max(result, maxWork(i + 1, 1) + 1);
+
+			return maxWorkMem[i][last] = result;
 		}
 	}
 }

@@ -1,7 +1,7 @@
-import java.util.*;
 import java.io.*;
+import java.util.StringTokenizer;
 
-public class Codeforces {
+public class _712_C_Memory_and_DeEvolution {
 	public static void main(String[] args) throws Exception {
 		InputStream inputStream =
 			(args.length <= 0) ?
@@ -53,10 +53,25 @@ public class Codeforces {
 	static class Solver {
 		void solve(int testNumber, Scanner in, PrintWriter out) {
 			int n = in.nextInt();
-			int[] a = new int[n];
-			for (int i = 0; i < n; i++)
-				a[i] = in.nextInt();
-			out.println(Arrays.toString(a));
+			int o = in.nextInt();
+
+			int[] a = new int[]{o, o, o};
+			int c = 0;
+			for (int i = 0; i < n * 3; i++) {
+				c++;
+
+				int tmp = Math.min(n, a[1] + a[2] - 1);
+				a[0] = a[1];
+				a[1] = a[2];
+				a[2] = tmp;
+
+				if (a[1] == n && a[2] == n)
+					break;
+			}
+			if (a[0] != n) c++;
+			out.println(c);
+
 		}
+
 	}
 }
