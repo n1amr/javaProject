@@ -1,1 +1,0 @@
-java -jar "D:\Lab\Eclipse\WorkSpace\javaProject\MyTools\JAR\SubtitlesShift.jar" %1 %2
