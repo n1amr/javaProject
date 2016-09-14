@@ -1,71 +1,64 @@
-import java.awt.BorderLayout;
-import java.awt.Font;
-
-import javax.swing.ImageIcon;
-import javax.swing.JLabel;
-import javax.swing.JPanel;
-import javax.swing.JScrollPane;
-import javax.swing.JTextArea;
-import javax.swing.SwingConstants;
+import javax.swing.*;
+import java.awt.*;
 
 public class DescriptionPanel extends JPanel {
-	/**
-	 *
-	 */
-	private static final long serialVersionUID = 1L;
+  /**
+   *
+   */
+  private static final long serialVersionUID = 1L;
 
-	/**
-	 * Label for displaying an image icon and a title
-	 */
-	private JLabel jlblImageTitle = new JLabel();
+  /**
+   * Label for displaying an image icon and a title
+   */
+  private JLabel jlblImageTitle = new JLabel();
 
-	/**
-	 * Text area for displaying text
-	 */
-	private JTextArea jtaDescription = new JTextArea();
+  /**
+   * Text area for displaying text
+   */
+  private JTextArea jtaDescription = new JTextArea();
 
-	public DescriptionPanel() {
-		// Center the icon and text and place the text under the icon
-		jlblImageTitle.setHorizontalAlignment(SwingConstants.CENTER);
-		jlblImageTitle.setHorizontalTextPosition(SwingConstants.CENTER);
-		jlblImageTitle.setVerticalTextPosition(SwingConstants.BOTTOM);
+  public DescriptionPanel() {
+    // Center the icon and text and place the text under the icon
+    jlblImageTitle.setHorizontalAlignment(SwingConstants.CENTER);
+    jlblImageTitle.setHorizontalTextPosition(SwingConstants.CENTER);
+    jlblImageTitle.setVerticalTextPosition(SwingConstants.BOTTOM);
 
-		// Set the font in the label and the text field
-		jlblImageTitle.setFont(new Font("SansSerif", Font.BOLD, 16));
-		jtaDescription.setFont(new Font("Serif", Font.PLAIN, 14));
+    // Set the font in the label and the text field
+    jlblImageTitle.setFont(new Font("SansSerif", Font.BOLD, 16));
+    jtaDescription.setFont(new Font("Serif", Font.PLAIN, 14));
 
-		// Set lineWrap and wrapStyleWord true for the text area
-		jtaDescription.setLineWrap(true);
-		jtaDescription.setWrapStyleWord(true);
-		jtaDescription.setEditable(false);
+    // Set lineWrap and wrapStyleWord true for the text area
+    jtaDescription.setLineWrap(true);
+    jtaDescription.setWrapStyleWord(true);
+    jtaDescription.setEditable(false);
 
-		// Create a scroll pane to hold the text area
-		JScrollPane scrollPane = new JScrollPane(jtaDescription);
+    // Create a scroll pane to hold the text area
+    JScrollPane scrollPane = new JScrollPane(jtaDescription);
 
-		// Set BorderLayout for the panel, add label and scrollpane
-		setLayout(new BorderLayout(5, 5));
-		add(scrollPane, BorderLayout.CENTER);
-		add(jlblImageTitle, BorderLayout.WEST);
-	}
+    // Set BorderLayout for the panel, add label and scrollpane
+    setLayout(new BorderLayout(5, 5));
+    add(scrollPane, BorderLayout.CENTER);
+    add(jlblImageTitle, BorderLayout.WEST);
+  }
 
-	/**
-	 * Set the title
-	 */
-	public void setTitle(String title) {
-		jlblImageTitle.setText(title);
-	}
+  /**
+   * Set the title
+   */
+  public void setTitle(String title) {
+    jlblImageTitle.setText(title);
+  }
 
-	/**
-	 * Set the image icon
-	 */
-	public void setImageIcon(ImageIcon icon) {
-		jlblImageTitle.setIcon(icon);
-	}
+  /**
+   * Set the image icon
+   */
+  public void setImageIcon(ImageIcon icon) {
+    jlblImageTitle.setIcon(icon);
+  }
 
-	/**
-	 * Set the text description
-	 */
-	public void setDescription(String text) {
-		jtaDescription.setText(text);
-	}
+  /**
+   * Set the text description
+   */
+  public void setDescription(String text) {
+    jtaDescription.setText(text);
+  }
 }

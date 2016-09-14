@@ -1,138 +1,129 @@
-import java.awt.BorderLayout;
+import javax.swing.*;
+import java.awt.*;
 import java.awt.event.ItemEvent;
 import java.awt.event.ItemListener;
 import java.io.InputStream;
-import java.sql.Blob;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.Statement;
-
-import javax.swing.ImageIcon;
-import javax.swing.JApplet;
-import javax.swing.JComboBox;
-import javax.swing.JFrame;
+import java.sql.*;
 
 public class StoreAndRetrieveImageOnOracle extends JApplet {
-	/**
-	 *
-	 */
-	private static final long serialVersionUID = 1L;
+  /**
+   *
+   */
+  private static final long serialVersionUID = 1L;
 
-	// Connection to the database
-	private Connection connection;
+  // Connection to the database
+  private Connection connection;
 
-	// Statement for static SQL statements
-	private Statement stmt;
+  // Statement for static SQL statements
+  private Statement stmt;
 
-	// Prepared statement
-	private PreparedStatement pstmt = null;
-	private DescriptionPanel descriptionPanel1 = new DescriptionPanel();
+  // Prepared statement
+  private PreparedStatement pstmt = null;
+  private DescriptionPanel descriptionPanel1 = new DescriptionPanel();
 
-	private JComboBox jcboCountry = new JComboBox();
+  private JComboBox jcboCountry = new JComboBox();
 
-	/**
-	 * Creates new form StoreAndRetrieveImageOnOracle
-	 */
-	public StoreAndRetrieveImageOnOracle() {
-		try {
-			connectDB(); // Connect to DB
-			storeDataToTable(); // Store data to the table (including image)
-			fillDataInComboBox(); // Fill in combo box
-			retrieveFlagInfo((String) jcboCountry.getSelectedItem());
-		} catch (Exception ex) {
-			ex.printStackTrace();
-		}
+  /**
+   * Creates new form StoreAndRetrieveImageOnOracle
+   */
+  public StoreAndRetrieveImageOnOracle() {
+    try {
+      connectDB(); // Connect to DB
+      storeDataToTable(); // Store data to the table (including image)
+      fillDataInComboBox(); // Fill in combo box
+      retrieveFlagInfo((String) jcboCountry.getSelectedItem());
+    } catch (Exception ex) {
+      ex.printStackTrace();
+    }
 
-		jcboCountry.addItemListener(new ItemListener() {
-			public void itemStateChanged(ItemEvent evt) {
-				retrieveFlagInfo((String) evt.getItem());
-			}
-		});
+    jcboCountry.addItemListener(new ItemListener() {
+      public void itemStateChanged(ItemEvent evt) {
+        retrieveFlagInfo((String) evt.getItem());
+      }
+    });
 
-		add(jcboCountry, BorderLayout.NORTH);
-		add(descriptionPanel1, BorderLayout.CENTER);
-	}
+    add(jcboCountry, BorderLayout.NORTH);
+    add(descriptionPanel1, BorderLayout.CENTER);
+  }
 
-	private void connectDB() throws Exception {
-		// Load the driver
-		Class.forName("oracle.jdbc.driver.OracleDriver");
-		System.out.println("Driver loaded");
+  private void connectDB() throws Exception {
+    // Load the driver
+    Class.forName("oracle.jdbc.driver.OracleDriver");
+    System.out.println("Driver loaded");
 
-		// Establish connection
-		connection = DriverManager.getConnection("jdbc:oracle:thin:@liang.armstrong.edu:1521:orcl", "scott", "tiger");
-		System.out.println("Database connected");
+    // Establish connection
+    connection = DriverManager.getConnection("jdbc:oracle:thin:@liang.armstrong.edu:1521:orcl", "scott", "tiger");
+    System.out.println("Database connected");
 
-		// Create a statement for static SQL
-		stmt = connection.createStatement();
+    // Create a statement for static SQL
+    stmt = connection.createStatement();
 
-		// Create a prepared statement to retrieve flag and description
-		pstmt = connection.prepareStatement("select flag, description " + "from Country where name = ?");
-	}
+    // Create a prepared statement to retrieve flag and description
+    pstmt = connection.prepareStatement("select flag, description " + "from Country where name = ?");
+  }
 
-	private void storeDataToTable() {
-		String[] countries = {"Canada", "UK", "USA", "Germany", "Indian", "China"};
+  private void storeDataToTable() {
+    String[] countries = {"Canada", "UK", "USA", "Germany", "Indian", "China"};
 
-		String[] imageFilenames = {"/image/ca.gif", "/image/uk.gif", "/image/us.gif", "/image/germany.gif",
-						"/image/india.gif", "/image/china.gif"};
+    String[] imageFilenames = {"/image/ca.gif", "/image/uk.gif", "/image/us.gif", "/image/germany.gif",
+        "/image/india.gif", "/image/china.gif"};
 
-		String[] descriptions = {"A text to describe Canadian " + "flag is omitted", "British flag ...",
-						"American flag ...", "German flag ...", "Indian flag ...", "Chinese flag ..."};
+    String[] descriptions = {"A text to describe Canadian " + "flag is omitted", "British flag ...",
+        "American flag ...", "German flag ...", "Indian flag ...", "Chinese flag ..."};
 
-		try {
-			// Create a prepared statement to insert records
-			PreparedStatement pstmt = connection.prepareStatement("insert into Country values(?, ?, ?)");
+    try {
+      // Create a prepared statement to insert records
+      PreparedStatement pstmt = connection.prepareStatement("insert into Country values(?, ?, ?)");
 
-			// Store all predefined records
-			for (int i = 0; i < countries.length; i++) {
-				pstmt.setString(1, countries[i]);
+      // Store all predefined records
+      for (int i = 0; i < countries.length; i++) {
+        pstmt.setString(1, countries[i]);
 
-				// Store image to the table cell
-				java.net.URL url = this.getClass().getResource(imageFilenames[i]);
-				InputStream inputImage = url.openStream();
-				pstmt.setBinaryStream(2, inputImage, inputImage.available());
+        // Store image to the table cell
+        java.net.URL url = this.getClass().getResource(imageFilenames[i]);
+        InputStream inputImage = url.openStream();
+        pstmt.setBinaryStream(2, inputImage, inputImage.available());
 
-				pstmt.setString(3, descriptions[i]);
-				pstmt.executeUpdate();
-			}
+        pstmt.setString(3, descriptions[i]);
+        pstmt.executeUpdate();
+      }
 
-			System.out.println("Table Country populated");
-		} catch (Exception ex) {
-			ex.printStackTrace();
-		}
-	}
+      System.out.println("Table Country populated");
+    } catch (Exception ex) {
+      ex.printStackTrace();
+    }
+  }
 
-	private void fillDataInComboBox() throws Exception {
-		ResultSet rs = stmt.executeQuery("select name from Country");
-		while (rs.next())
-			jcboCountry.addItem(rs.getString(1));
-	}
+  private void fillDataInComboBox() throws Exception {
+    ResultSet rs = stmt.executeQuery("select name from Country");
+    while (rs.next())
+      jcboCountry.addItem(rs.getString(1));
+  }
 
-	private void retrieveFlagInfo(String name) {
-		try {
-			pstmt.setString(1, name);
-			ResultSet rs = pstmt.executeQuery();
-			if (rs.next()) {
-				Blob blob = rs.getBlob(1);
-				ImageIcon imageIcon = new ImageIcon(blob.getBytes(1, (int) blob.length()));
-				descriptionPanel1.setImageIcon(imageIcon);
-				descriptionPanel1.setName(name);
-				String description = rs.getString(2);
-				descriptionPanel1.setDescription(description);
-			}
-		} catch (Exception ex) {
-			System.err.println(ex);
-		}
-	}
+  private void retrieveFlagInfo(String name) {
+    try {
+      pstmt.setString(1, name);
+      ResultSet rs = pstmt.executeQuery();
+      if (rs.next()) {
+        Blob blob = rs.getBlob(1);
+        ImageIcon imageIcon = new ImageIcon(blob.getBytes(1, (int) blob.length()));
+        descriptionPanel1.setImageIcon(imageIcon);
+        descriptionPanel1.setName(name);
+        String description = rs.getString(2);
+        descriptionPanel1.setDescription(description);
+      }
+    } catch (Exception ex) {
+      System.err.println(ex);
+    }
+  }
 
-	public static void main(String[] args) {
-		StoreAndRetrieveImageOnOracle applet = new StoreAndRetrieveImageOnOracle();
-		JFrame frame = new JFrame();
-		frame.getContentPane().add(applet);
-		frame.setDefaultCloseOperation(3);
-		frame.setTitle("StoreAndRetrieveImageOnOracle");
-		frame.setSize(400, 320);
-		frame.setVisible(true);
-	}
+  public static void main(String[] args) {
+    StoreAndRetrieveImageOnOracle applet = new StoreAndRetrieveImageOnOracle();
+    JFrame frame = new JFrame();
+    frame.getContentPane().add(applet);
+    frame.setDefaultCloseOperation(3);
+    frame.setTitle("StoreAndRetrieveImageOnOracle");
+    frame.setSize(400, 320);
+    frame.setVisible(true);
+  }
 }

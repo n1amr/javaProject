@@ -1,4 +1,3 @@
-
 package myWebservice;
 
 import javax.jws.WebMethod;
@@ -18,22 +17,22 @@ import javax.xml.ws.ResponseWrapper;
  */
 @WebService(name = "ScoreService", targetNamespace = "http://chapter45/")
 @XmlSeeAlso({
-				ObjectFactory.class
+    ObjectFactory.class
 })
 public interface ScoreService {
 
 
-	/**
-	 * @param arg0
-	 * @return returns double
-	 */
-	@WebMethod
-	@WebResult(targetNamespace = "")
-	@RequestWrapper(localName = "findScore", targetNamespace = "http://chapter45/", className = "myWebservice.FindScore")
-	@ResponseWrapper(localName = "findScoreResponse", targetNamespace = "http://chapter45/", className = "myWebservice.FindScoreResponse")
-	@Action(input = "http://chapter45/ScoreService/findScoreRequest", output = "http://chapter45/ScoreService/findScoreResponse")
-	public double findScore(
-					@WebParam(name = "arg0", targetNamespace = "")
-									String arg0);
+  /**
+   * @param arg0
+   * @return returns double
+   */
+  @WebMethod
+  @WebResult(targetNamespace = "")
+  @RequestWrapper(localName = "findScore", targetNamespace = "http://chapter45/", className = "myWebservice.FindScore")
+  @ResponseWrapper(localName = "findScoreResponse", targetNamespace = "http://chapter45/", className = "myWebservice.FindScoreResponse")
+  @Action(input = "http://chapter45/ScoreService/findScoreRequest", output = "http://chapter45/ScoreService/findScoreResponse")
+  public double findScore(
+      @WebParam(name = "arg0", targetNamespace = "")
+          String arg0);
 
 }

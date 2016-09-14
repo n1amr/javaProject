@@ -1,4 +1,3 @@
-
 package myWebservice;
 
 import javax.xml.bind.annotation.XmlAccessType;
@@ -25,30 +24,30 @@ import javax.xml.bind.annotation.XmlType;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "storeAddress", propOrder = {
-				"arg0"
+    "arg0"
 })
 public class StoreAddress {
 
-	protected Address arg0;
+  protected Address arg0;
 
-	/**
-	 * Gets the value of the arg0 property.
-	 *
-	 * @return possible object is
-	 * {@link Address }
-	 */
-	public Address getArg0() {
-		return arg0;
-	}
+  /**
+   * Gets the value of the arg0 property.
+   *
+   * @return possible object is
+   * {@link Address }
+   */
+  public Address getArg0() {
+    return arg0;
+  }
 
-	/**
-	 * Sets the value of the arg0 property.
-	 *
-	 * @param value allowed object is
-	 *              {@link Address }
-	 */
-	public void setArg0(Address value) {
-		this.arg0 = value;
-	}
+  /**
+   * Sets the value of the arg0 property.
+   *
+   * @param value allowed object is
+   *              {@link Address }
+   */
+  public void setArg0(Address value) {
+    this.arg0 = value;
+  }
 
 }

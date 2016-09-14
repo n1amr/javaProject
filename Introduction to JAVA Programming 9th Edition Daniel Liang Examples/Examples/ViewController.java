@@ -1,24 +1,24 @@
 import java.awt.event.MouseEvent;
 
 public class ViewController extends CircleView {
-	/**
-	 *
-	 */
-	private static final long serialVersionUID = 1L;
+  /**
+   *
+   */
+  private static final long serialVersionUID = 1L;
 
-	public ViewController() {
-		// Register mouse listener
-		addMouseListener(new java.awt.event.MouseAdapter() {
-			@Override
-			public void mousePressed(java.awt.event.MouseEvent e) {
-				CircleModel model = getModel(); // Get model
+  public ViewController() {
+    // Register mouse listener
+    addMouseListener(new java.awt.event.MouseAdapter() {
+      @Override
+      public void mousePressed(java.awt.event.MouseEvent e) {
+        CircleModel model = getModel(); // Get model
 
-				if (model != null)
-					if (e.getButton() == MouseEvent.BUTTON1)
-						model.setRadius(model.getRadius() + 5); // Left button
-					else if (e.getButton() == MouseEvent.BUTTON3)
-						model.setRadius(model.getRadius() - 5); // Right button
-			}
-		});
-	}
+        if (model != null)
+          if (e.getButton() == MouseEvent.BUTTON1)
+            model.setRadius(model.getRadius() + 5); // Left button
+          else if (e.getButton() == MouseEvent.BUTTON3)
+            model.setRadius(model.getRadius() - 5); // Right button
+      }
+    });
+  }
 }

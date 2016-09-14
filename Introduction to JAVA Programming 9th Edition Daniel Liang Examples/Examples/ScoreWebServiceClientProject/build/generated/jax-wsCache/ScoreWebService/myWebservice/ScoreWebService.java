@@ -1,14 +1,9 @@
-
 package myWebservice;
 
+import javax.xml.namespace.QName;
+import javax.xml.ws.*;
 import java.net.MalformedURLException;
 import java.net.URL;
-import javax.xml.namespace.QName;
-import javax.xml.ws.Service;
-import javax.xml.ws.WebEndpoint;
-import javax.xml.ws.WebServiceClient;
-import javax.xml.ws.WebServiceException;
-import javax.xml.ws.WebServiceFeature;
 
 
 /**
@@ -18,70 +13,70 @@ import javax.xml.ws.WebServiceFeature;
  */
 @WebServiceClient(name = "ScoreWebService", targetNamespace = "http://chapter45/", wsdlLocation = "http://localhost:8080/WebServiceProject/ScoreWebService?WSDL")
 public class ScoreWebService
-				extends Service {
+    extends Service {
 
-	private final static URL SCOREWEBSERVICE_WSDL_LOCATION;
-	private final static WebServiceException SCOREWEBSERVICE_EXCEPTION;
-	private final static QName SCOREWEBSERVICE_QNAME = new QName("http://chapter45/", "ScoreWebService");
+  private final static URL SCOREWEBSERVICE_WSDL_LOCATION;
+  private final static WebServiceException SCOREWEBSERVICE_EXCEPTION;
+  private final static QName SCOREWEBSERVICE_QNAME = new QName("http://chapter45/", "ScoreWebService");
 
-	static {
-		URL url = null;
-		WebServiceException e = null;
-		try {
-			url = new URL("http://localhost:8080/WebServiceProject/ScoreWebService?WSDL");
-		} catch (MalformedURLException ex) {
-			e = new WebServiceException(ex);
-		}
-		SCOREWEBSERVICE_WSDL_LOCATION = url;
-		SCOREWEBSERVICE_EXCEPTION = e;
-	}
+  static {
+    URL url = null;
+    WebServiceException e = null;
+    try {
+      url = new URL("http://localhost:8080/WebServiceProject/ScoreWebService?WSDL");
+    } catch (MalformedURLException ex) {
+      e = new WebServiceException(ex);
+    }
+    SCOREWEBSERVICE_WSDL_LOCATION = url;
+    SCOREWEBSERVICE_EXCEPTION = e;
+  }
 
-	public ScoreWebService() {
-		super(__getWsdlLocation(), SCOREWEBSERVICE_QNAME);
-	}
+  public ScoreWebService() {
+    super(__getWsdlLocation(), SCOREWEBSERVICE_QNAME);
+  }
 
-	public ScoreWebService(WebServiceFeature... features) {
-		super(__getWsdlLocation(), SCOREWEBSERVICE_QNAME, features);
-	}
+  public ScoreWebService(WebServiceFeature... features) {
+    super(__getWsdlLocation(), SCOREWEBSERVICE_QNAME, features);
+  }
 
-	public ScoreWebService(URL wsdlLocation) {
-		super(wsdlLocation, SCOREWEBSERVICE_QNAME);
-	}
+  public ScoreWebService(URL wsdlLocation) {
+    super(wsdlLocation, SCOREWEBSERVICE_QNAME);
+  }
 
-	public ScoreWebService(URL wsdlLocation, WebServiceFeature... features) {
-		super(wsdlLocation, SCOREWEBSERVICE_QNAME, features);
-	}
+  public ScoreWebService(URL wsdlLocation, WebServiceFeature... features) {
+    super(wsdlLocation, SCOREWEBSERVICE_QNAME, features);
+  }
 
-	public ScoreWebService(URL wsdlLocation, QName serviceName) {
-		super(wsdlLocation, serviceName);
-	}
+  public ScoreWebService(URL wsdlLocation, QName serviceName) {
+    super(wsdlLocation, serviceName);
+  }
 
-	public ScoreWebService(URL wsdlLocation, QName serviceName, WebServiceFeature... features) {
-		super(wsdlLocation, serviceName, features);
-	}
+  public ScoreWebService(URL wsdlLocation, QName serviceName, WebServiceFeature... features) {
+    super(wsdlLocation, serviceName, features);
+  }
 
-	/**
-	 * @return returns ScoreService
-	 */
-	@WebEndpoint(name = "ScoreServicePort")
-	public ScoreService getScoreServicePort() {
-		return super.getPort(new QName("http://chapter45/", "ScoreServicePort"), ScoreService.class);
-	}
+  /**
+   * @return returns ScoreService
+   */
+  @WebEndpoint(name = "ScoreServicePort")
+  public ScoreService getScoreServicePort() {
+    return super.getPort(new QName("http://chapter45/", "ScoreServicePort"), ScoreService.class);
+  }
 
-	/**
-	 * @param features A list of {@link javax.xml.ws.WebServiceFeature} to configure on the proxy.  Supported features not in the <code>features</code> parameter will have their default values.
-	 * @return returns ScoreService
-	 */
-	@WebEndpoint(name = "ScoreServicePort")
-	public ScoreService getScoreServicePort(WebServiceFeature... features) {
-		return super.getPort(new QName("http://chapter45/", "ScoreServicePort"), ScoreService.class, features);
-	}
+  /**
+   * @param features A list of {@link javax.xml.ws.WebServiceFeature} to configure on the proxy.  Supported features not in the <code>features</code> parameter will have their default values.
+   * @return returns ScoreService
+   */
+  @WebEndpoint(name = "ScoreServicePort")
+  public ScoreService getScoreServicePort(WebServiceFeature... features) {
+    return super.getPort(new QName("http://chapter45/", "ScoreServicePort"), ScoreService.class, features);
+  }
 
-	private static URL __getWsdlLocation() {
-		if (SCOREWEBSERVICE_EXCEPTION != null) {
-			throw SCOREWEBSERVICE_EXCEPTION;
-		}
-		return SCOREWEBSERVICE_WSDL_LOCATION;
-	}
+  private static URL __getWsdlLocation() {
+    if (SCOREWEBSERVICE_EXCEPTION != null) {
+      throw SCOREWEBSERVICE_EXCEPTION;
+    }
+    return SCOREWEBSERVICE_WSDL_LOCATION;
+  }
 
 }

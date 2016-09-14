@@ -1,21 +1,21 @@
-import javax.swing.JOptionPane;
+import javax.swing.*;
 
 public class SentinelValueUsingConfirmationDialog {
-	public static void main(String[] args) {
-		int sum = 0;
+  public static void main(String[] args) {
+    int sum = 0;
 
-		// Keep reading data until the user answers No
-		int option = 0;
-		while (option == JOptionPane.YES_OPTION) {
-			// Read the next data
-			String dataString = JOptionPane.showInputDialog("Enter an integer: ");
-			int data = Integer.parseInt(dataString);
+    // Keep reading data until the user answers No
+    int option = 0;
+    while (option == JOptionPane.YES_OPTION) {
+      // Read the next data
+      String dataString = JOptionPane.showInputDialog("Enter an integer: ");
+      int data = Integer.parseInt(dataString);
 
-			sum += data;
+      sum += data;
 
-			option = JOptionPane.showConfirmDialog(null, "Continue?");
-		}
+      option = JOptionPane.showConfirmDialog(null, "Continue?");
+    }
 
-		JOptionPane.showMessageDialog(null, "The sum is " + sum);
-	}
+    JOptionPane.showMessageDialog(null, "The sum is " + sum);
+  }
 }

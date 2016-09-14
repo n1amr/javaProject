@@ -1,4 +1,3 @@
-
 package myWebservice;
 
 import javax.xml.bind.annotation.XmlAccessType;

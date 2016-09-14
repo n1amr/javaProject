@@ -1,29 +1,29 @@
+import org.json.*;
+
 import java.io.File;
 import java.util.Arrays;
 import java.util.Scanner;
 
-import org.json.*;
-
 public class JSONParseTest {
-	public static void main(String[] args) throws Exception {
-		Scanner in = new Scanner(new File("g.JSON"));
+  public static void main(String[] args) throws Exception {
+    Scanner in = new Scanner(new File("g.JSON"));
 
-		String text = "";
-		while (in.hasNextLine())
-			text += in.nextLine();
-		JSONObject obj = new JSONObject(text);
-		System.out.println(Arrays.toString(JSONObject.getNames(obj)));
+    String text = "";
+    while (in.hasNextLine())
+      text += in.nextLine();
+    JSONObject obj = new JSONObject(text);
+    System.out.println(Arrays.toString(JSONObject.getNames(obj)));
 
-		JSONObject responseData = obj.getJSONObject("responseData");
-		JSONArray results = responseData.getJSONArray("results");
-		for (int i = 0; i < results.length(); i++) {
-			JSONObject arrayElement = (JSONObject) results.get(i);
-			String url = arrayElement.getString("url");
-			System.out.println(url);
+    JSONObject responseData = obj.getJSONObject("responseData");
+    JSONArray results = responseData.getJSONArray("results");
+    for (int i = 0; i < results.length(); i++) {
+      JSONObject arrayElement = (JSONObject) results.get(i);
+      String url = arrayElement.getString("url");
+      System.out.println(url);
 
-		}
-		in.close();
-	}
+    }
+    in.close();
+  }
 }
 
 // g.JSON

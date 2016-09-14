@@ -1,64 +1,59 @@
-import java.awt.BorderLayout;
-import java.awt.GridLayout;
+import javax.swing.*;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-import javax.swing.JComboBox;
-import javax.swing.JLabel;
-import javax.swing.JPanel;
-import javax.swing.JTextField;
-
 public class CircleController extends JPanel {
-	/**
-	 *
-	 */
-	private static final long serialVersionUID = 1L;
-	private CircleModel model;
-	private JTextField jtfRadius = new JTextField();
-	private JComboBox jcboFilled = new JComboBox(new Boolean[]{new Boolean(false), new Boolean(true)});
+  /**
+   *
+   */
+  private static final long serialVersionUID = 1L;
+  private CircleModel model;
+  private JTextField jtfRadius = new JTextField();
+  private JComboBox jcboFilled = new JComboBox(new Boolean[]{new Boolean(false), new Boolean(true)});
 
-	/**
-	 * Creates new form CircleController
-	 */
-	public CircleController() {
-		// Panel to group labels
-		JPanel panel1 = new JPanel();
-		panel1.setLayout(new GridLayout(2, 1));
-		panel1.add(new JLabel("Radius"));
-		panel1.add(new JLabel("Filled"));
+  /**
+   * Creates new form CircleController
+   */
+  public CircleController() {
+    // Panel to group labels
+    JPanel panel1 = new JPanel();
+    panel1.setLayout(new GridLayout(2, 1));
+    panel1.add(new JLabel("Radius"));
+    panel1.add(new JLabel("Filled"));
 
-		// Panel to group text field, combo box, and another panel
-		JPanel panel2 = new JPanel();
-		panel2.setLayout(new GridLayout(2, 1));
-		panel2.add(jtfRadius);
-		panel2.add(jcboFilled);
+    // Panel to group text field, combo box, and another panel
+    JPanel panel2 = new JPanel();
+    panel2.setLayout(new GridLayout(2, 1));
+    panel2.add(jtfRadius);
+    panel2.add(jcboFilled);
 
-		setLayout(new BorderLayout());
-		add(panel1, BorderLayout.WEST);
-		add(panel2, BorderLayout.CENTER);
+    setLayout(new BorderLayout());
+    add(panel1, BorderLayout.WEST);
+    add(panel2, BorderLayout.CENTER);
 
-		// Register listeners
-		jtfRadius.addActionListener(new ActionListener() {
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				if (model != null) // Set radius in the model
-					model.setRadius(Double.parseDouble(jtfRadius.getText()));
-			}
-		});
-		jcboFilled.addActionListener(new ActionListener() {
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				if (model != null) // Set filled property value in the model
-					model.setFilled(((Boolean) jcboFilled.getSelectedItem()).booleanValue());
-			}
-		});
-	}
+    // Register listeners
+    jtfRadius.addActionListener(new ActionListener() {
+      @Override
+      public void actionPerformed(ActionEvent e) {
+        if (model != null) // Set radius in the model
+          model.setRadius(Double.parseDouble(jtfRadius.getText()));
+      }
+    });
+    jcboFilled.addActionListener(new ActionListener() {
+      @Override
+      public void actionPerformed(ActionEvent e) {
+        if (model != null) // Set filled property value in the model
+          model.setFilled(((Boolean) jcboFilled.getSelectedItem()).booleanValue());
+      }
+    });
+  }
 
-	public void setModel(CircleModel newModel) {
-		model = newModel;
-	}
+  public void setModel(CircleModel newModel) {
+    model = newModel;
+  }
 
-	public CircleModel getModel() {
-		return model;
-	}
+  public CircleModel getModel() {
+    return model;
+  }
 }

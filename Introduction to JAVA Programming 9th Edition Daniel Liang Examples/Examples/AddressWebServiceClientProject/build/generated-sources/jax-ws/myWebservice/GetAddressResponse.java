@@ -1,4 +1,3 @@
-
 package myWebservice;
 
 import javax.xml.bind.annotation.XmlAccessType;
@@ -26,31 +25,31 @@ import javax.xml.bind.annotation.XmlType;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "getAddressResponse", propOrder = {
-				"_return"
+    "_return"
 })
 public class GetAddressResponse {
 
-	@XmlElement(name = "return")
-	protected Address _return;
+  @XmlElement(name = "return")
+  protected Address _return;
 
-	/**
-	 * Gets the value of the return property.
-	 *
-	 * @return possible object is
-	 * {@link Address }
-	 */
-	public Address getReturn() {
-		return _return;
-	}
+  /**
+   * Gets the value of the return property.
+   *
+   * @return possible object is
+   * {@link Address }
+   */
+  public Address getReturn() {
+    return _return;
+  }
 
-	/**
-	 * Sets the value of the return property.
-	 *
-	 * @param value allowed object is
-	 *              {@link Address }
-	 */
-	public void setReturn(Address value) {
-		this._return = value;
-	}
+  /**
+   * Sets the value of the return property.
+   *
+   * @param value allowed object is
+   *              {@link Address }
+   */
+  public void setReturn(Address value) {
+    this._return = value;
+  }
 
 }
