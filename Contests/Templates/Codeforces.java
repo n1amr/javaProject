@@ -1,27 +1,33 @@
 import java.io.*;
 import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
 
 public class Codeforces {
   public static void main(String[] args) throws Exception {
-    InputStream inputStream =
-        (args.length <= 0) ?
-            System.in : new FileInputStream(args[0]);
-    OutputStream outputStream =
-        (args.length <= 1) ?
-            System.out : new FileOutputStream(args[1]);
+    String inputFile = (args.length > 0) ? args[0] : null;
+    String outputFile = (args.length > 1) ? args[1] : null;
+
+    InputStream inputStream = inputFile != null ?
+        new FileInputStream(inputFile) : System.in;
+    OutputStream outputStream = outputFile != null ?
+        new FileOutputStream(outputFile) : System.out;
+
     Scanner in = new Scanner(inputStream);
     PrintWriter out = new PrintWriter(outputStream);
+
     Solver solver = new Solver();
-    if (args.length == 0)
-      solver.solve(1, in, out);
-    else {
+    if (args.length > 0) {
       int T = in.nextInt();
       for (int t = 1; t <= T; t++) {
-        out.println("Case " + t + ":");
-        solver.solve(t, in, out);
+        out.printf("Case #%d: ", t);
+        solver.solve(in, out, true);
       }
+    } else {
+      solver.solve(in, out, false);
     }
-
     out.close();
   }
 
@@ -35,14 +41,17 @@ public class Codeforces {
     }
 
     public String next() {
-      while (tokenizer == null || !tokenizer.hasMoreTokens()) {
-        try {
-          tokenizer = new StringTokenizer(reader.readLine());
-        } catch (IOException e) {
-          throw new RuntimeException(e);
-        }
-      }
+      while (tokenizer == null || !tokenizer.hasMoreTokens())
+        tokenizer = new StringTokenizer(nextLine());
       return tokenizer.nextToken();
+    }
+
+    public String nextLine() {
+      try {
+        return reader.readLine();
+      } catch (IOException e) {
+        return null;
+      }
     }
 
     public int nextInt() {
@@ -51,12 +60,14 @@ public class Codeforces {
   }
 
   static class Solver {
-    void solve(int testNumber, Scanner in, PrintWriter out) {
+    void solve(Scanner in, PrintWriter out, boolean debug) {
       int n = in.nextInt();
       int[] a = new int[n];
       for (int i = 0; i < n; i++)
         a[i] = in.nextInt();
-      out.println(Arrays.toString(a));
+
+      if (debug)
+        out.println(Arrays.toString(a));
     }
   }
 }
