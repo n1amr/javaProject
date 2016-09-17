@@ -4,7 +4,7 @@ import java.text.*;
 import java.math.*;
 import java.util.regex.*;
 
-public class Codeforces {
+public class Template {
   public static void main(String[] args) throws Exception {
     Scanner in = new Scanner(args.length < 1 ? System.in : new FileInputStream(args[0]));
     PrintWriter out = new PrintWriter(args.length < 2 ? System.out : new FileOutputStream(args[1]));
