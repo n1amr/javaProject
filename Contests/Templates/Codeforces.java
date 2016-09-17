@@ -4,70 +4,58 @@ import java.text.*;
 import java.math.*;
 import java.util.regex.*;
 
-
 public class Codeforces {
   public static void main(String[] args) throws Exception {
-    String inputFile = (args.length > 0) ? args[0] : null;
-    String outputFile = (args.length > 1) ? args[1] : null;
-
-    InputStream inputStream = inputFile != null ?
-        new FileInputStream(inputFile) : System.in;
-    OutputStream outputStream = outputFile != null ?
-        new FileOutputStream(outputFile) : System.out;
-
-    Scanner in = new Scanner(inputStream);
-    PrintWriter out = new PrintWriter(outputStream);
-
+    Scanner in = new Scanner(args.length < 1 ? System.in : new FileInputStream(args[0]));
+    PrintWriter out = new PrintWriter(args.length < 2 ? System.out : new FileOutputStream(args[1]));
     Solver solver = new Solver();
-    if (args.length > 0) {
-      int T = in.nextInt();
-      for (int t = 1; t <= T; t++) {
-        out.printf("Case #%d: ", t);
-        solver.solve(in, out, true);
-      }
+    if (args.length <= 0) {
+      solver.run(in, out);
     } else {
-      solver.solve(in, out, false);
+      int T = in.nextInt();
+      for (int t = 0; t < T; ) {
+        out.printf("Case #%d: ", ++t);
+        solver.run(in, out);
+      }
     }
     out.close();
   }
 
   static class Scanner {
-    public BufferedReader reader;
-    public StringTokenizer tokenizer;
+    BufferedReader reader;
+    StringTokenizer tokenizer = null;
 
-    public Scanner(InputStream stream) {
-      reader = new BufferedReader(new InputStreamReader(stream), 32768);
-      tokenizer = null;
+    Scanner(InputStream stream) {
+      reader = new BufferedReader(new InputStreamReader(stream), 1 << 15);
     }
 
-    public String next() {
+    String nextLine() {
+      try {
+        return reader.readLine();
+      } catch (Exception e) {
+        return null;
+      }
+    }
+
+    String next() {
       while (tokenizer == null || !tokenizer.hasMoreTokens())
         tokenizer = new StringTokenizer(nextLine());
       return tokenizer.nextToken();
     }
 
-    public String nextLine() {
-      try {
-        return reader.readLine();
-      } catch (IOException e) {
-        return null;
-      }
-    }
-
-    public int nextInt() {
+    int nextInt() {
       return Integer.parseInt(next());
     }
   }
 
   static class Solver {
-    void solve(Scanner in, PrintWriter out, boolean debug) {
+    void run(Scanner in, PrintWriter out) {
       int n = in.nextInt();
       int[] a = new int[n];
       for (int i = 0; i < n; i++)
         a[i] = in.nextInt();
 
-      if (debug)
-        out.println(Arrays.toString(a));
+      out.println(Arrays.toString(a));
     }
   }
 }
