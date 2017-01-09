@@ -14,11 +14,11 @@ public class CD {
       if (i >= k) {
         out.print(a[indices.getFirst()] + " ");
 
-        while ((!indices.isEmpty()) && indices.getFirst() <= i - k)
+        while (!indices.isEmpty() && indices.getFirst() < i - k + 1)
           indices.removeFirst();
       }
 
-      while ((!indices.isEmpty()) && a[i] >= a[indices.getLast()])
+      while (!indices.isEmpty() && a[i] >= a[indices.getLast()])
         indices.removeLast();
 
       indices.addLast(i);
